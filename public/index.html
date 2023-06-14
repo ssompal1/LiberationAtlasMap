@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Demo: Prostitution & Unlicensed Massage Arrests</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+<link
+href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css"
+rel="stylesheet"
+/>
+<link rel="stylesheet" href="../styles.css"/>
+</head>
+ 
+<body>
+<div id="map"></div>
+<div id="console">
+<h1>Prostitution & Unlicensed Massage Arrests</h1>
+<p>
+Data:
+<a
+href="https://data.cityofnewyork.us/Public-Safety/NYPD-Arrests-Data-Historic-/8h9b-rp9u"
+>NYC OpenData Historic Arrests</a
+>,
+Last Updated May 2023
+</p>
+<div class="session">
+<h2>Year: <label id="active-year">2006</label></h2>
+<input
+id="slider"
+class="row"
+type="range"
+min="2006"
+max="2023"
+step="1"
+value="2006"
+/>
+</div>
+<div class="session">
+    <h2>Arrest Charges</h2>
+    <div class="row" id="filters">
+    <input id="prostitution" type="checkbox" name="toggle" value="prostitution" />
+    <label for="prostitution">Prostitution </label> <br />
+    <input id="unlicensed massage" type="checkbox" name="toggle" value="unlicensed massage" />
+    <label for="unlicensed massage">Unlicensed Massage</label><br />
+    <h2>Housing Violations </h2>
+    <input id="housing violation" type="checkbox" name="toggle" value="housing violation" />
+    <label for="housing violation">DOB & Maintenance Code Violations </label> <br />
+
+    </div>
+    </div>
+</div>
+<script src="../src/script.js"></script>
+</body>
+</html>
