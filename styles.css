@@ -1,0 +1,57 @@
+body {
+margin: 0;
+padding: 0;
+font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+ 
+#map {
+position: absolute;
+top: 0;
+bottom: 0;
+width: 100%;
+}
+ 
+h1 {
+font-size: 20px;
+line-height: 30px;
+}
+ 
+h2 {
+font-size: 14px;
+line-height: 20px;
+margin-bottom: 10px;
+}
+ 
+a {
+text-decoration: none;
+color: #3366CC;
+}
+ 
+#console {
+position: absolute;
+margin: 20px;
+width: 240px;
+height: 370px;
+background-color: white;
+padding: 20px;
+}
+ 
+.session {
+margin-bottom: 10px;
+}
+ 
+.row {
+height: 12px;
+width: 100%;
+}
+ 
+.label {
+width: 15%;
+display: inline-block;
+flex-wrap: wrap;
+text-align: center;
+}
+
+.radio {
+    flex-wrap: wrap;
+}
