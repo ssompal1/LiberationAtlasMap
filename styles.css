@@ -13,7 +13,7 @@ width: 100%;
  
 h1 {
 font-size: 20px;
-line-height: 30px;
+line-height: 25px;
 }
  
 h2 {
@@ -31,7 +31,7 @@ color: #3366CC;
 position: absolute;
 margin: 20px;
 width: 240px;
-height: 370px;
+height: 375px;
 background-color: white;
 padding: 20px;
 }
@@ -44,6 +44,12 @@ margin-bottom: 10px;
 height: 12px;
 width: 100%;
 }
+
+.time {
+    height: 10px;
+    width: 100%;
+    margin: 0px;
+    }
  
 .label {
 width: 15%;

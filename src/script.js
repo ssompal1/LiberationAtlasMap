@@ -222,22 +222,56 @@ map.addLayer({
     
     'filter': ['all', filterHouseYear]
     });
-
- 
 // update hour filter when the slider is dragged
 document.getElementById('slider').addEventListener('input', (event) => {
-const year = parseInt(event.target.value);
-// update the map
-filterYear = ['<=', ['number', ['get', 'ARREST_YEAR']], year];
-filterHouseYear = ['<=', ['number', ['get', 'Year']], year];
-filterP = ['==', ['string', ['get', 'LAW_CODE']], "PL 2300000"]
-filterU = ['==', ['string', ['get', 'LAW_CODE']], "ED 6512001"]
-map.setFilter('collisions', ['all', filterYear, filterP]);
-map.setFilter('collisions1', ['all', filterYear, filterU]);
-map.setFilter('collisions2',['all',filterHouseYear]);
-// update text in the UI
-document.getElementById('active-year').innerText = year;
+    const year = parseInt(event.target.value);
+    //update the map
+    const cumBreakdown = document.getElementById("cumulative").checked
+    const byYearBreakdown = document.getElementById("byYear").checked
+    if (cumBreakdown) {
+        filterYear = ['<=', ['number', ['get', 'ARREST_YEAR']], year];
+        filterHouseYear = ['<=', ['number', ['get', 'Year']], year];
+    }
+    else if (byYearBreakdown) {
+        filterYear = ['==', ['number', ['get', 'ARREST_YEAR']], year];
+        filterHouseYear = ['==', ['number', ['get', 'Year']], year];
+    }
+    else {
+        console.log('error');
+    }  
+    filterP = ['==', ['string', ['get', 'LAW_CODE']], "PL 2300000"]
+    filterU = ['==', ['string', ['get', 'LAW_CODE']], "ED 6512001"]
+    map.setFilter('collisions', ['all', filterYear, filterP]);
+    map.setFilter('collisions1', ['all', filterYear, filterU]);
+    map.setFilter('collisions2',['all',filterHouseYear]);
+    // update text in the UI
+    document.getElementById('active-year').innerText = year;
+    });
+    
+//update map when toggle is changed
+document
+.getElementById('timefilters')
+.addEventListener('input', (e) => {
+    const timeBreakdown = e.target.value;
+    const year = parseInt(document.getElementById('active-year').innerText)
+    console.log(timeBreakdown)
+    if (timeBreakdown == 'cumulative') {
+        filterYear = ['<=', ['number', ['get', 'ARREST_YEAR']], year];
+        filterHouseYear = ['<=', ['number', ['get', 'Year']], year];
+    }
+    else if (timeBreakdown == 'byYear') {
+        filterYear = ['==', ['number', ['get', 'ARREST_YEAR']], year];
+        filterHouseYear = ['==', ['number', ['get', 'Year']], year];
+    }
+    else {
+        console.log('error');
+    }
+    map.setFilter('collisions', ['all', filterYear, filterP]);
+    map.setFilter('collisions1', ['all', filterYear, filterU]);
+    map.setFilter('collisions2',['all',filterHouseYear]);
 });
+
+
 
 const layerIDs = ['collisions','collisions1','collisions2']
 const checks = ['prostitution','unlicensed massage', 'housing violation']
@@ -254,59 +288,6 @@ for (let i=0;i<checks.length;i++){
         });
 
 }
-/*document
-.getElementById('filters')
-.addEventListener('change', (e) => {
-    console.log(e)
-    for (let i=0;i<layerIDs.length;i++){
-        map.setLayoutProperty(
-            layerIDs[i],
-            'visibility',
-            e.target.checked ? 'visible' : 'none'
-            );
-        }*/
-
-
-/*const charge = event.target.value;
-map.setFilter('collisions', ['all', filterYear, filterP]);
-// update the map filter
-if (charge === 'prostitution') {
-map.setLayoutProperty(
-    'collisions1',
-    'visibility',
-    'none'
-    );
-map.setLayoutProperty(
-    'collisions',
-    'visibility',
-    'visible'
-    );
-}
-else{
-    map.setLayoutProperty(
-        'collisions',
-        'visibility',
-        'none'
-        );
-}
- if (charge === 'unlicensed massage') {
-map.setLayoutProperty(
-    'collisions',
-    'visibility',
-    'none'
-    );
-map.setLayoutProperty(
-    'collisions1',
-    'visibility',
-    'visible'
-    );
-} else {
-    map.setLayoutProperty(
-        'collisions1',
-        'visibility',
-        'none'
-        );
-}*/
 });
 
 
