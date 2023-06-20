@@ -170,7 +170,7 @@ map.addLayer({
     type: 'heatmap',
     source: {
     type: 'geojson',
-    data: '../src/geoData/OATH_MUP_geocoded.geojson' 
+    data: '../src/geoData/OATH_MUP_inspections_geocoded.geojson' 
     },
     
     // Increase the heatmap color weight weight by zoom level
