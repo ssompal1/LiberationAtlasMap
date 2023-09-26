@@ -1,7 +1,9 @@
 body {
 margin: 0;
 padding: 0;
-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+font-size: 16px;
+font-family: 'EBGaramond';
+src: local('EBGaramond'), url(./assets/fonts/EB_Garamond/static/EBGaramond-Medium.ttf) format('opentype');
 }
  
 #map {
@@ -12,32 +14,34 @@ width: 100%;
 }
  
 h1 {
-font-size: 20px;
+font-size: 23px;
 line-height: 25px;
 }
  
 h2 {
-font-size: 14px;
-line-height: 20px;
+font-size: 16px;
+line-height: 15px;
 margin-bottom: 10px;
 }
  
 a {
 text-decoration: none;
-color: #3366CC;
+color: #b40505fb;
 }
  
 #console {
 position: absolute;
-margin: 20px;
+margin: 15px;
 width: 240px;
-height: 375px;
-background-color: white;
-padding: 20px;
+height: 395px;
+background-color:rgb(251, 248, 224);
+padding: 5px 20px;
+border-radius: 10px; 
 }
  
 .session {
 margin-bottom: 10px;
+margin-top: 10px;
 }
  
 .row {
@@ -56,8 +60,10 @@ width: 15%;
 display: inline-block;
 flex-wrap: wrap;
 text-align: center;
+background-color:rgb(251, 248, 224);
 }
 
 .radio {
     flex-wrap: wrap;
+    background-color:rgb(251, 248, 224);
 }
