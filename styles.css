@@ -32,8 +32,8 @@ color: #b40505fb;
 #console {
 position: absolute;
 margin: 15px;
-width: 240px;
-height: 395px;
+width: 215px;
+height: 300px;
 background-color:rgb(251, 248, 224);
 padding: 5px 20px;
 border-radius: 10px; 
@@ -67,3 +67,23 @@ background-color:rgb(251, 248, 224);
     flex-wrap: wrap;
     background-color:rgb(251, 248, 224);
 }
+.marker {
+    background-image: url('./assets/logo.png');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+#panel {
+    position: fixed;
+    right: -11px;
+    display: none;
+    margin: 15px;
+    width: 300px;
+    height: 810px;
+    background-color:rgb(251, 248, 224);
+    padding: 5px 20px;
+    border-radius: 10px; 
+    }
