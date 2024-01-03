@@ -303,6 +303,7 @@ map.addLayer({
     'filter': ['all']
     });
 //comment
+///hearogiheoirghoaeig
 // update hour filter when the slider is dragged
 // document.getElementById('slider').addEventListener('input', (event) => {
 //     const year = parseInt(event.target.value);
