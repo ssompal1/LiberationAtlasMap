@@ -302,6 +302,7 @@ map.addLayer({
     
     'filter': ['all']
     });
+//comment
 // update hour filter when the slider is dragged
 // document.getElementById('slider').addEventListener('input', (event) => {
 //     const year = parseInt(event.target.value);
@@ -448,7 +449,7 @@ marker4.getElement().addEventListener('click', function() {
     // Show the panel
     console.log("Clicked");
     document.getElementById('popup-title').innerText = 'NAME';
-    document.getElementById('popup-description').innerText = 'Anonymous';
+    document.getElementById('popup-description').innerText = 'Mrs. H';
     document.getElementById('interview-title').innerText = 'DESCRIPTION'
     document.getElementById('interview-description').innerText = ' "At first, I was in it for money only. I started because I needed money. I believed it was worthwhile to sacrifice myself for my family and my siblings. I would have done anything if I could earn money… I was ready to sacrifice myself, and now it’s my job. Now… I think the world needs this kind of occupation and we need people who do this work for others… in our society. So now, rather than considering my job as excruciating, I think that massage work is an occupation that contributes to the development of the society, like a wheel of a wheelbarrow. Other people might think I’m crazy or I should say such a thing. But in my opinion, massage work is an indispensable occupation. I think someone has to do this work, because everyone needs massage." '
     document.getElementById('panel').style.display = 'block';

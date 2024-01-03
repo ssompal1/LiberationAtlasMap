@@ -80,10 +80,17 @@ background-color:rgb(251, 248, 224);
     position: fixed;
     right: -11px;
     display: none;
-    margin: 15px;
+    margin: 25px;
     width: 300px;
-    height: 810px;
+    height: 760px;
     background-color:rgb(251, 248, 224);
     padding: 5px 20px;
     border-radius: 10px; 
     }
+
+
+.w3-display-topright {
+    position: absolute;
+    top: 5px; /* Adjust the top position as needed */
+    right: 10px; /* Adjust the right position as needed */
+}
