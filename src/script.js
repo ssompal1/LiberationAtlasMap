@@ -33,8 +33,8 @@ const geojson = {
   ]
 };
 map.on('load', () => {
-  // let filterYear = ['==', ['number', ['get', 'ARREST_YEAR']], 2000];
-  // let filterHouseYear = ['==', ['number', ['get', 'year_of_violation']], 2000];
+  let filterYear = ['==', ['number', ['get', 'ARREST_YEAR']], 2000];
+  let filterHouseYear = ['==', ['number', ['get', 'year_of_violation']], 2000];
   let filterP = ['==', ['string', ['get', 'LAW_CODE']], "PL 2300000"]
   let filterU = ['==', ['string', ['get', 'LAW_CODE']], "ED 6512001"]
   let filterDOB = ['==', ['string', ['get', 'type_of_violation']], "DOB code violation"]
@@ -132,7 +132,7 @@ map.on('load', () => {
         'rgb(229,205,255)'
         ]},*/
 
-    'filter': ['all', filterP]
+    'filter': ['all', filterYear, filterP]
   });
 
   map.addLayer({
@@ -229,7 +229,7 @@ map.on('load', () => {
       ]
     },
 
-    'filter': ['all', filterU]
+    'filter': ['all', filterYear, filterU]
   });
 
   map.addLayer({
@@ -306,58 +306,58 @@ map.on('load', () => {
       visibility: 'none'
     },
 
-    'filter': ['all']
+    'filter': ['all', filterHouseYear]
   });
   //comment
   ///hearogiheoirghoaeig
   // update hour filter when the slider is dragged
-  // document.getElementById('slider').addEventListener('input', (event) => {
-  //     const year = parseInt(event.target.value);
-  //     //update the map
-  //     const cumBreakdown = document.getElementById("cumulative").checked
-  //     const byYearBreakdown = document.getElementById("byYear").checked
-  //     if (cumBreakdown) {
-  //         filterYear = ['<=', ['number', ['get', 'ARREST_YEAR']], year];
-  //         filterHouseYear = ['<=', ['number', ['get', 'Year']], year];
-  //     }
-  //     else if (byYearBreakdown) {
-  //         filterYear = ['==', ['number', ['get', 'ARREST_YEAR']], year];
-  //         filterHouseYear = ['==', ['number', ['get', 'Year']], year];
-  //     }
-  //     else {
-  //         console.log('error');
-  //     }  
-  //     filterP = ['==', ['string', ['get', 'LAW_CODE']], "PL 2300000"]
-  //     filterU = ['==', ['string', ['get', 'LAW_CODE']], "ED 6512001"]
-  //     map.setFilter('collisions', ['all', filterYear, filterP]);
-  //     map.setFilter('collisions1', ['all', filterYear, filterU]);
-  //     map.setFilter('collisions2',['all',filterHouseYear]);
-  //     // update text in the UI
-  //     document.getElementById('active-year').innerText = year;
-  //     });
+  document.getElementById('slider').addEventListener('input', (event) => {
+      const year = parseInt(event.target.value);
+      //update the map
+      const cumBreakdown = document.getElementById("cumulative").checked
+      const byYearBreakdown = document.getElementById("byYear").checked
+      if (cumBreakdown) {
+          filterYear = ['<=', ['number', ['get', 'ARREST_YEAR']], year];
+          filterHouseYear = ['<=', ['number', ['get', 'Year']], year];
+      }
+      else if (byYearBreakdown) {
+          filterYear = ['==', ['number', ['get', 'ARREST_YEAR']], year];
+          filterHouseYear = ['==', ['number', ['get', 'Year']], year];
+      }
+      else {
+          console.log('error');
+      }  
+      filterP = ['==', ['string', ['get', 'LAW_CODE']], "PL 2300000"]
+      filterU = ['==', ['string', ['get', 'LAW_CODE']], "ED 6512001"]
+      map.setFilter('collisions', ['all', filterYear, filterP]);
+      map.setFilter('collisions1', ['all', filterYear, filterU]);
+      map.setFilter('collisions2',['all',filterHouseYear]);
+      // update text in the UI
+      document.getElementById('active-year').innerText = year;
+      });
 
   //update map when toggle is changed
-  // document
-  // .getElementById('timefilters')
-  // .addEventListener('input', (e) => {
-  //     const timeBreakdown = e.target.value;
-  //     const year = parseInt(document.getElementById('active-year').innerText)
-  //     console.log(timeBreakdown)
-  //     if (timeBreakdown == 'cumulative') {
-  //         filterYear = ['<=', ['number', ['get', 'ARREST_YEAR']], year];
-  //         filterHouseYear = ['<=', ['number', ['get', 'Year']], year];
-  //     }
-  //     else if (timeBreakdown == 'byYear') {
-  //         filterYear = ['==', ['number', ['get', 'ARREST_YEAR']], year];
-  //         filterHouseYear = ['==', ['number', ['get', 'Year']], year];
-  //     }
-  //     else {
-  //         console.log('error');
-  //     }
-  //     map.setFilter('collisions', ['all', filterYear, filterP]);
-  //     map.setFilter('collisions1', ['all', filterYear, filterU]);
-  //     map.setFilter('collisions2',['all',filterHouseYear]);
-  // });
+  document
+  .getElementById('timefilters')
+  .addEventListener('input', (e) => {
+      const timeBreakdown = e.target.value;
+      const year = parseInt(document.getElementById('active-year').innerText)
+      console.log(timeBreakdown)
+      if (timeBreakdown == 'cumulative') {
+          filterYear = ['<=', ['number', ['get', 'ARREST_YEAR']], year];
+          filterHouseYear = ['<=', ['number', ['get', 'Year']], year];
+      }
+      else if (timeBreakdown == 'byYear') {
+          filterYear = ['==', ['number', ['get', 'ARREST_YEAR']], year];
+          filterHouseYear = ['==', ['number', ['get', 'Year']], year];
+      }
+      else {
+          console.log('error');
+      }
+      map.setFilter('collisions', ['all', filterYear, filterP]);
+      map.setFilter('collisions1', ['all', filterYear, filterU]);
+      map.setFilter('collisions2',['all',filterHouseYear]);
+  });
 
 
 
@@ -410,16 +410,23 @@ e4.className = 'marker';
 const marker4 = new mapboxgl.Marker(e4)
   .setLngLat([-73.9970, 40.7158])
   .addTo(map);
+
 const e5 = document.createElement('div');
 e5.className = 'marker';
 const marker5 = new mapboxgl.Marker(e5)
   .setLngLat([-73.8307, 40.7685])
   .addTo(map);
 
+const e6 = document.createElement('div')
+e6.className = 'marker';
+const marker6 = new mapboxgl.Marker(e6)
+.setLngLat([-73.9973, 40.7309])
+.addTo(map)
+
 marker1.getElement().addEventListener('click', function () {
   // Show the panel
   console.log("Clicked");
-  // document.getElementById('popup-title').innerText = 'NAME';
+  document.getElementById('popup-title').innerText = 'LISA';
   // document.getElementById('popup-description').innerText = 'Person 1';
   // document.getElementById('interview-title').innerText = 'DESCRIPTION'
   // document.getElementById('interview-description').innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
@@ -430,7 +437,7 @@ marker1.getElement().addEventListener('click', function () {
 marker2.getElement().addEventListener('click', function () {
   // Show the panel
   console.log("Clicked");
-  // document.getElementById('popup-title').innerText = 'NAME';
+  document.getElementById('popup-title').innerText = 'LISA';
   // document.getElementById('popup-description').innerText = 'Person 2';
   // document.getElementById('interview-title').innerText = 'DESCRIPTION'
   // document.getElementById('interview-description').innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
@@ -442,7 +449,7 @@ marker2.getElement().addEventListener('click', function () {
 marker3.getElement().addEventListener('click', function () {
   // Show the panel
   console.log("Clicked");
-  // document.getElementById('popup-title').innerText = 'NAME 3';
+  document.getElementById('popup-title').innerText = 'LISA';
   // document.getElementById('popup-description').innerText = 'Person 3';
   // document.getElementById('interview-title').innerText = 'DESCRIPTION'
   // document.getElementById('interview-description').innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
@@ -453,8 +460,8 @@ marker3.getElement().addEventListener('click', function () {
 marker4.getElement().addEventListener('click', function () {
   // Show the panel
   console.log("Clicked");
-  document.getElementById('popup-title').innerText = 'NAME';
-  document.getElementById('popup-description').innerText = 'Mrs. H';
+  document.getElementById('popup-title').innerText = 'LISA';
+  // document.getElementById('popup-description').innerText = 'Mrs. H';
   document.getElementById('interview-title').innerText = 'DESCRIPTION'
   document.getElementById('interview-description').innerText = ' "At first, I was in it for money only. I started because I needed money. I believed it was worthwhile to sacrifice myself for my family and my siblings. I would have done anything if I could earn money… I was ready to sacrifice myself, and now it’s my job. Now… I think the world needs this kind of occupation and we need people who do this work for others… in our society. So now, rather than considering my job as excruciating, I think that massage work is an occupation that contributes to the development of the society, like a wheel of a wheelbarrow. Other people might think I’m crazy or I should say such a thing. But in my opinion, massage work is an indispensable occupation. I think someone has to do this work, because everyone needs massage." '
   document.getElementById('mp4-content').src = 'oralHistories/Ex1.mp4';
@@ -464,15 +471,24 @@ marker4.getElement().addEventListener('click', function () {
 marker5.getElement().addEventListener('click', function () {
   // Show the panel
   console.log("Clicked");
-  document.getElementById('popup-title').innerText = 'NAME';
-  document.getElementById('popup-description').innerText = 'Person 5';
+  document.getElementById('popup-title').innerText = 'Mrs. H';
+  // document.getElementById('popup-description').innerText = 'Person 5';
   document.getElementById('interview-title').innerText = 'DESCRIPTION'
-  document.getElementById('interview-description').innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  // document.getElementById('interview-description').innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
   document.getElementById('mp4-content').src = 'oralHistories/LA_oralhistory_1.mp4';
   document.getElementById('panel').style.display = 'block';
 });
 
-
+marker6.getElement().addEventListener('click', function () {
+  // Show the panel
+  console.log("Clicked");
+  document.getElementById('popup-title').innerText = 'Si Si';
+  // document.getElementById('popup-description').innerText = 'Person 6';
+  document.getElementById('interview-title').innerText = 'DESCRIPTION'
+  // document.getElementById('interview-description').innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  document.getElementById('mp4-content').src = 'oralHistories/Si Si Excerpt.mp4';
+  document.getElementById('panel').style.display = 'block';
+});
 
 var videoElement = document.getElementById('mp4-content');
 // Add an event listener to the close button
