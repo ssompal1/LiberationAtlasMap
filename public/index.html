@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8" />
-<title>Demo: Prostitution & Unlicensed Massage Arrests</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
-<link
-href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css"
-rel="stylesheet"
-/>
-<link rel="stylesheet" href="../styles.css"/>
-<!-- <style>
+    <meta charset="utf-8" />
+    <title>Demo: Prostitution & Unlicensed Massage Arrests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <!-- <style>
     #panel {
     position: absolute;
     right: 200px;
@@ -24,38 +22,38 @@ rel="stylesheet"
     }
 </style> -->
 </head>
- 
+
 <body>
-<div id="map"></div>
-<div id="panel">
-    <span onclick="this.parentElement.style.display='none'"
-  class="w3-button w3-display-topright">x</span>
-  <break></break>
-    <h3 id="popup-title"></h3>
-    <p id="popup-description"></p>
-    <h3 id="interview-title"></h3>
-    <p id="interview-description"></p>
-    <h3 id="audio-title"></h3>
-    <p id="audio-description-korean"></p>
+    <div id="map"></div>
+    <div id="panel">
+        <span onclick="this.parentElement.style.display='noe'" class="w3-button w3-display-topright">X</span>
+        <break></break>
+        <h3 id="popup-title"></h3>
+        <video id="mp4-content" autoplay controls>
+        </video>
+        <p id="popup-description"></p>
+        <h3 id="interview-title"></h3>
+        <p id="interview-description"></p>
+        <h3 id="audio-title"></h3>
+
+        <!-- <p id="audio-description-korean"></p>
     <audio controls>
         <source src="horse.ogg" type="audio/ogg">
-      </audio>
-      <p id="audio-description-english"></p>
-      <audio controls>
-          <source src="horse.ogg" type="audio/ogg">
-        </audio>
-</div>
-<div id="console">
-<h1>Prostitution & Unlicensed Massage Arrests</h1>
-<p>
-Data:
-<a
-href="https://data.cityofnewyork.us/Public-Safety/NYPD-Arrests-Data-Historic-/8h9b-rp9u"
->NYC OpenData Historic Arrests</a
->,
-Last Updated May 2023
-</p>
-<!-- <div class="session">
+      </audio> -->
+        <!-- <p id="audio-description-english"></p>
+        <audio controls>
+            <source src="horse.ogg" type="audio/ogg">
+        </audio> -->
+    </div>
+    <div id="console">
+        <h1>Prostitution & Unlicensed Massage Arrests</h1>
+        <p>
+            Data:
+            <a href="https://data.cityofnewyork.us/Public-Safety/NYPD-Arrests-Data-Historic-/8h9b-rp9u">NYC OpenData
+                Historic Arrests</a>,
+            Last Updated May 2023
+        </p>
+        <!-- <div class="session">
     <div class="time" id="timefilters">
     <input id="cumulative" type="radio" name="timetoggle" value="cumulative" checked='checked' />
     <label for="cumulative">Cumulative</label> 
@@ -75,20 +73,21 @@ value="2006"
 />
 <br />
 </div> -->
-<div class="session">
-    <h2>Arrest Charges</h2>
-    <div class="row" id="filters">
-    <input id="prostitution" type="checkbox" name="toggle" value="prostitution" />
-    <label for="prostitution">Prostitution </label> <br />
-    <input id="unlicensed massage" type="checkbox" name="toggle" value="unlicensed massage" />
-    <label for="unlicensed massage">Unlicensed Massage</label><br />
-    <h2>Housing Violations </h2>
-    <input id="housing violation" type="checkbox" name="toggle" value="housing violation" />
-    <label for="housing violation">DOB Inspections </label> <br />
+        <div class="session">
+            <h2>Arrest Charges</h2>
+            <div class="row" id="filters">
+                <input id="prostitution" type="checkbox" name="toggle" value="prostitution" />
+                <label for="prostitution">Prostitution </label> <br />
+                <input id="unlicensed massage" type="checkbox" name="toggle" value="unlicensed massage" />
+                <label for="unlicensed massage">Unlicensed Massage</label><br />
+                <h2>Housing Violations </h2>
+                <input id="housing violation" type="checkbox" name="toggle" value="housing violation" />
+                <label for="housing violation">DOB Inspections </label> <br />
 
+            </div>
+        </div>
     </div>
-    </div>
-</div>
-<script src="../src/script.js"></script>
+    <script src="../src/script.js"></script>
 </body>
+
 </html>
