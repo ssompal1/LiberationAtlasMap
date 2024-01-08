@@ -51,7 +51,7 @@ map.on('load', () => {
       visibility: 'none'
     },
 
-    // Increase the heatmap color weight weight by zoom level
+    // Increase the heatmap color weight by zoom level
     // heatmap-intensity is a multiplier on top of heatmap-weight
     paint: {
       'heatmap-intensity': [
@@ -416,45 +416,40 @@ const marker5 = new mapboxgl.Marker(e5)
   .setLngLat([-73.8307, 40.7685])
   .addTo(map);
 
-
-
-// Add a popup to the marker
-// var popup = new mapboxgl.Popup({ closeButton: false })
-//     .setHTML('<h3>Marker Title</h3><p>Marker description.</p>');
-
-// marker2.setPopup(popup);
-
-// // Add a click event to the marker
 marker1.getElement().addEventListener('click', function () {
   // Show the panel
   console.log("Clicked");
-  document.getElementById('popup-title').innerText = 'NAME';
-  document.getElementById('popup-description').innerText = 'Person 1';
-  document.getElementById('interview-title').innerText = 'DESCRIPTION'
-  document.getElementById('interview-description').innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  // document.getElementById('popup-title').innerText = 'NAME';
+  // document.getElementById('popup-description').innerText = 'Person 1';
+  // document.getElementById('interview-title').innerText = 'DESCRIPTION'
+  // document.getElementById('interview-description').innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
   document.getElementById('mp4-content').src = 'oralHistories/Harm.mp4';
   document.getElementById('panel').style.display = 'block';
 });
+
 marker2.getElement().addEventListener('click', function () {
   // Show the panel
   console.log("Clicked");
-  document.getElementById('popup-title').innerText = 'NAME';
-  document.getElementById('popup-description').innerText = 'Person 2';
-  document.getElementById('interview-title').innerText = 'DESCRIPTION'
-  document.getElementById('interview-description').innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  // document.getElementById('popup-title').innerText = 'NAME';
+  // document.getElementById('popup-description').innerText = 'Person 2';
+  // document.getElementById('interview-title').innerText = 'DESCRIPTION'
+  // document.getElementById('interview-description').innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
   document.getElementById('mp4-content').src = 'oralHistories/DOB.mp4';
   document.getElementById('panel').style.display = 'block';
+   
 });
+
 marker3.getElement().addEventListener('click', function () {
   // Show the panel
   console.log("Clicked");
-  document.getElementById('popup-title').innerText = 'NAME';
-  document.getElementById('popup-description').innerText = 'Person 3';
-  document.getElementById('interview-title').innerText = 'DESCRIPTION'
-  document.getElementById('interview-description').innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  // document.getElementById('popup-title').innerText = 'NAME 3';
+  // document.getElementById('popup-description').innerText = 'Person 3';
+  // document.getElementById('interview-title').innerText = 'DESCRIPTION'
+  // document.getElementById('interview-description').innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
   document.getElementById('mp4-content').src = 'oralHistories/cops.mp4';
   document.getElementById('panel').style.display = 'block';
 });
+
 marker4.getElement().addEventListener('click', function () {
   // Show the panel
   console.log("Clicked");
@@ -465,6 +460,7 @@ marker4.getElement().addEventListener('click', function () {
   document.getElementById('mp4-content').src = 'oralHistories/Ex1.mp4';
   document.getElementById('panel').style.display = 'block';
 });
+
 marker5.getElement().addEventListener('click', function () {
   // Show the panel
   console.log("Clicked");
@@ -475,6 +471,8 @@ marker5.getElement().addEventListener('click', function () {
   document.getElementById('mp4-content').src = 'oralHistories/LA_oralhistory_1.mp4';
   document.getElementById('panel').style.display = 'block';
 });
+
+
 
 var videoElement = document.getElementById('mp4-content');
 // Add an event listener to the close button
@@ -487,4 +485,3 @@ document.querySelector('.w3-button.w3-display-topright').addEventListener('click
 // map.on('click', function() {
 //     document.getElementById('panel').style.display = 'none';
 // });
-

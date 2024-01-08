@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-size: 16px;
-    font-family: 'EBGaramond';
+    font-family: 'Teko';
     src: local('EBGaramond'), url(./assets/fonts/EB_Garamond/static/EBGaramond-Medium.ttf) format('opentype');
 }
 
@@ -34,7 +34,7 @@ a {
     margin: 15px;
     width: 215px;
     height: 300px;
-    background-color: rgb(251, 248, 224);
+    background-color: whitesmoke;
     padding: 5px 20px;
     border-radius: 10px;
 }
@@ -60,12 +60,12 @@ a {
     display: inline-block;
     flex-wrap: wrap;
     text-align: center;
-    background-color: rgb(251, 248, 224);
+    background-color: rgb(255, 182, 193);
 }
 
 .radio {
     flex-wrap: wrap;
-    background-color: rgb(251, 248, 224);
+    background-color: rgb(255, 182, 193);
 }
 
 .marker {
@@ -82,11 +82,12 @@ a {
     right: -11px;
     display: none;
     margin: 25px;
-    width: 25%;
-    height: 92%;
-    background-color: rgb(251, 248, 224);
+    width: 60%;
+    height: 80%;
+    background-color: whitesmoke;
     padding: 5px 20px;
     border-radius: 10px;
+    overflow-y: auto;
 }
 
 
