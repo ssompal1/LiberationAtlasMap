@@ -428,7 +428,7 @@ marker1.getElement().addEventListener('click', function () {
   console.log("Clicked");
   document.getElementById('popup-title').innerText = 'LISA';
   // document.getElementById('popup-description').innerText = 'Person 1';
-  // document.getElementById('interview-title').innerText = 'DESCRIPTION'
+  document.getElementById('interview-title').innerText = 'DESCRIPTION'
   // document.getElementById('interview-description').innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
   document.getElementById('mp4-content').src = 'oralHistories/Harm.mp4';
   document.getElementById('panel').style.display = 'block';
@@ -439,7 +439,7 @@ marker2.getElement().addEventListener('click', function () {
   console.log("Clicked");
   document.getElementById('popup-title').innerText = 'LISA';
   // document.getElementById('popup-description').innerText = 'Person 2';
-  // document.getElementById('interview-title').innerText = 'DESCRIPTION'
+  document.getElementById('interview-title').innerText = 'DESCRIPTION'
   // document.getElementById('interview-description').innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
   document.getElementById('mp4-content').src = 'oralHistories/DOB.mp4';
   document.getElementById('panel').style.display = 'block';
@@ -451,7 +451,7 @@ marker3.getElement().addEventListener('click', function () {
   console.log("Clicked");
   document.getElementById('popup-title').innerText = 'LISA';
   // document.getElementById('popup-description').innerText = 'Person 3';
-  // document.getElementById('interview-title').innerText = 'DESCRIPTION'
+  document.getElementById('interview-title').innerText = 'DESCRIPTION'
   // document.getElementById('interview-description').innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
   document.getElementById('mp4-content').src = 'oralHistories/cops.mp4';
   document.getElementById('panel').style.display = 'block';
@@ -463,7 +463,7 @@ marker4.getElement().addEventListener('click', function () {
   document.getElementById('popup-title').innerText = 'LISA';
   // document.getElementById('popup-description').innerText = 'Mrs. H';
   document.getElementById('interview-title').innerText = 'DESCRIPTION'
-  document.getElementById('interview-description').innerText = ' "At first, I was in it for money only. I started because I needed money. I believed it was worthwhile to sacrifice myself for my family and my siblings. I would have done anything if I could earn money… I was ready to sacrifice myself, and now it’s my job. Now… I think the world needs this kind of occupation and we need people who do this work for others… in our society. So now, rather than considering my job as excruciating, I think that massage work is an occupation that contributes to the development of the society, like a wheel of a wheelbarrow. Other people might think I’m crazy or I should say such a thing. But in my opinion, massage work is an indispensable occupation. I think someone has to do this work, because everyone needs massage." '
+  //document.getElementById('interview-description').innerText = ' "At first, I was in it for money only. I started because I needed money. I believed it was worthwhile to sacrifice myself for my family and my siblings. I would have done anything if I could earn money… I was ready to sacrifice myself, and now it’s my job. Now… I think the world needs this kind of occupation and we need people who do this work for others… in our society. So now, rather than considering my job as excruciating, I think that massage work is an occupation that contributes to the development of the society, like a wheel of a wheelbarrow. Other people might think I’m crazy or I should say such a thing. But in my opinion, massage work is an indispensable occupation. I think someone has to do this work, because everyone needs massage." '
   document.getElementById('mp4-content').src = 'oralHistories/Ex1.mp4';
   document.getElementById('panel').style.display = 'block';
 });
