@@ -33,8 +33,8 @@ const geojson = {
   ]
 };
 map.on('load', () => {
-  let filterYear = ['==', ['number', ['get', 'ARREST_YEAR']], 2000];
-  let filterHouseYear = ['==', ['number', ['get', 'year_of_violation']], 2000];
+  let filterYear = ['==', ['number', ['get', 'ARREST_YEAR']], 2006];
+  let filterHouseYear = ['==', ['number', ['get', 'Year']], 2006];
   let filterP = ['==', ['string', ['get', 'LAW_CODE']], "PL 2300000"]
   let filterU = ['==', ['string', ['get', 'LAW_CODE']], "ED 6512001"]
   let filterDOB = ['==', ['string', ['get', 'type_of_violation']], "DOB code violation"]
@@ -45,7 +45,7 @@ map.on('load', () => {
     type: 'heatmap',
     source: {
       type: 'geojson',
-      data: '../src/geoData/arrests_by_year.geojson'
+      data: '../src/geoData/NYPDArrestsNov2023.geojson'
     },
     layout: {
       visibility: 'none'
@@ -140,7 +140,7 @@ map.on('load', () => {
     type: 'heatmap',
     source: {
       type: 'geojson',
-      data: '../src/geoData/arrests_by_year.geojson'
+      data: '../src/geoData/NYPDArrestsNov2023.geojson'
     },
     layout: {
       visibility: 'none'
@@ -237,7 +237,7 @@ map.on('load', () => {
     type: 'heatmap',
     source: {
       type: 'geojson',
-      data: '../src/geoData/OATH_MUP_inspections_geocoded.geojson'
+      data: '../src/geoData/OATH_MUP_inspections_Jan2024.geojson'
     },
 
     // Increase the heatmap color weight weight by zoom level
