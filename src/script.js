@@ -398,17 +398,17 @@ const marker1 = new mapboxgl.Marker(e1)
 const e2 = document.createElement('div');
 e2.className = 'marker';
 const marker2 = new mapboxgl.Marker(e2)
-  .setLngLat([-74.00, 40.71])
+  .setLngLat([-73.790066, 40.768593])
   .addTo(map);
 const e3 = document.createElement('div');
 e3.className = 'marker';
 const marker3 = new mapboxgl.Marker(e3)
-  .setLngLat([-73.9757, 40.7479])
+  .setLngLat([-73.827695, 40.756897])
   .addTo(map);
 const e4 = document.createElement('div');
 e4.className = 'marker';
 const marker4 = new mapboxgl.Marker(e4)
-  .setLngLat([-73.9970, 40.7158])
+  .setLngLat([-73.807975, 40.753624])
   .addTo(map);
 
 const e5 = document.createElement('div');
@@ -420,7 +420,7 @@ const marker5 = new mapboxgl.Marker(e5)
 const e6 = document.createElement('div')
 e6.className = 'marker';
 const marker6 = new mapboxgl.Marker(e6)
-.setLngLat([-73.9973, 40.7309])
+.setLngLat([-73.88504484381795, 40.756106297889026])
 .addTo(map)
 
 marker1.getElement().addEventListener('click', function () {
