@@ -337,6 +337,7 @@ map.on('load', () => {
       });
 
   //update map when toggle is changed
+
   document
   .getElementById('timefilters')
   .addEventListener('input', (e) => {
@@ -357,6 +358,24 @@ map.on('load', () => {
       map.setFilter('collisions', ['all', filterYear, filterP]);
       map.setFilter('collisions1', ['all', filterYear, filterU]);
       map.setFilter('collisions2',['all',filterHouseYear]);
+  });
+
+  document.getElementById('x').addEventListener('click', function(){
+    document.getElementById('intropanel').style.display= 'none';
+    document.getElementById('map').style.filter = 'none';
+    document.getElementById('console').style.display = 'block';
+  });
+
+  document.getElementById('explore').addEventListener('click', function(){
+    document.getElementById('intropanel').style.display= 'none';
+    document.getElementById('map').style.filter = 'none';
+    document.getElementById('console').style.display = 'block';
+  });
+
+  document.getElementById('viewhist').addEventListener('click', function(){
+    document.getElementById('intropanel').style.display= 'none';
+    document.getElementById('map').style.filter = 'none';
+    document.getElementById('console').style.display = 'block';
   });
 
 
