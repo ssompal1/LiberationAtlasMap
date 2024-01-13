@@ -103,6 +103,9 @@ a {
     border-radius: 10px;
     overflow-y: auto;
 }
+
+
+
 #intropanel {
     position: absolute;
     display: block;
@@ -116,17 +119,6 @@ a {
     border-radius: 15px;
     overflow-y: auto;
 }
-
-p {
-    margin: -100px;
-
-}
-
-a {
-    margin-bottom: 10px;
-    text-align: bottom;
-}
-
 
 .viewhist {
     margin: 0px 0px auto;
