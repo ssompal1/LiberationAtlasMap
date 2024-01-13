@@ -376,7 +376,59 @@ map.on('load', () => {
     document.getElementById('intropanel').style.display= 'none';
     document.getElementById('map').style.filter = 'none';
     document.getElementById('console').style.display = 'block';
+    document.getElementById('hist-title').innerText = 'A Brief History of Policing of Asian Massage Workers in NYC';
+    document.getElementById('hist-description').innerText = 'Welcome! This demonstration will walk through the major changes in policies leading to transitions in how massage workers were policed';
+    document.getElementById('histpanel').style.display = 'block';
   });
+
+
+  var years = ['initial', '2006-2013','2014-2017','2018-2023'];
+  var text = ['inital', 'text 1', 'text 2', 'text 3'];
+  var histYear = document.getElementById('hist-year').innerText;
+  var i=0;
+
+  document.getElementById('next').addEventListener('click', function(){
+    next();
+  });
+
+  function next(){
+    if (i >=years.length-1) i= -1;
+    i++;
+    return setHistText()
+  }
+
+  function setHistText(){
+    document.getElementById('hist-description').innerText = text[i];
+    document.getElementById('hist-year').innerText = years[i];
+    return animate();
+  }
+
+
+
+  async function animate(){
+    if (document.getElementById('hist-year').innerText =='2006-2013'){
+      alert('reached if');
+      for (let i = 0; i < checks.length; i++) {
+        document
+          .getElementById(checks[i]).click();}
+      for (let y = 2006; y< 2014;y++){
+        await delayFor(1000);
+        const inputEvent = new InputEvent('input', {
+          bubbles: true,
+          cancelable: true,
+      });
+        document.getElementById('slider').value=y;
+        document.getElementById('slider').dispatchEvent(inputEvent);
+    }
+  }
+}
+function delayFor(delay) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, delay);
+  });
+}
 
 
 
