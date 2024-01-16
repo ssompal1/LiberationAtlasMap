@@ -377,8 +377,16 @@ map.on('load', () => {
     document.getElementById('map').style.filter = 'none';
     document.getElementById('console').style.display = 'block';
     document.getElementById('hist-title').innerText = 'A Brief History of Policing of Asian Massage Workers in NYC';
-    document.getElementById('hist-description').innerText = 'Welcome! This demonstration will walk through the major changes in policies leading to transitions in how massage workers were policed';
+    document.getElementById('hist-description').innerText = 'Welcome! This demonstration will walk through major periods of policing of Asian massage work as a result of changes in state policies and tactics of criminalization';
     document.getElementById('histpanel').style.display = 'block';
+  });
+
+  document.getElementById('reset').addEventListener('click', function(){
+    // document.getElementById('intropanel').style.display= 'block';
+    // document.getElementById('map').style.filter = 'blur(2px);';
+    // document.getElementById('console').style.display = 'none';
+    // document.getElementById('panel').style.display= 'none';
+    window.location.reload();
   });
 
 
@@ -400,19 +408,28 @@ map.on('load', () => {
   function setHistText(){
     document.getElementById('hist-description').innerText = text[i];
     document.getElementById('hist-year').innerText = years[i];
-    return animate();
+    if (document.getElementById('hist-year').innerText =='2006-2013'){
+      return animate(years[i],2006,2013);}
+    if (document.getElementById('hist-year').innerText =='2014-2017'){
+        return animate(years[i],2014,2017);}
+    if (document.getElementById('hist-year').innerText =='2018-2023'){
+      return animate(years[i],2018,2023);}
+
   }
 
 
 
-  async function animate(){
-    if (document.getElementById('hist-year').innerText =='2006-2013'){
-      alert('reached if');
+  async function animate(yearString,beginYear,endYear){
+    while (document.getElementById('hist-year').innerText == yearString){
+      if (document.getElementById(checks[0]).checked == false ){
       for (let i = 0; i < checks.length; i++) {
         document
-          .getElementById(checks[i]).click();}
-      for (let y = 2006; y< 2014;y++){
+          .getElementById(checks[i]).click();}}
+      for (let y = beginYear; y< endYear+1;y++){
         await delayFor(1000);
+        if (document.getElementById('hist-year').innerText != yearString){
+          break;
+        }
         const inputEvent = new InputEvent('input', {
           bubbles: true,
           cancelable: true,
