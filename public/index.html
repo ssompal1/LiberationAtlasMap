@@ -6,6 +6,7 @@
     <title>Demo: Prostitution & Unlicensed Massage Arrests</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+    <script src="https://kit.fontawesome.com/aa8de0180e.js" crossorigin="anonymous"></script>
     <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet" />
     <link rel="stylesheet" href="../styles.css" />
     <!-- <style>
@@ -31,18 +32,18 @@
         <h3 id="hist-title"></h3>
         <h3 id="hist-year"></h3>
         <p id="hist-description"></p>
-        <div class="center">
         <button id= "next" class="next"> NEXT</button>
+        <div class="center">
         </div>
     </div>
     <div id="panel">
-        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"> X </span>
+        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright" id="markerclose"> X </span>
         <break></break>
         <h3 id="popup-title"></h3>
         <video id="mp4-content" controls>
         </video>
         <p id="popup-description"></p>
-        <h3 id="interview-title"></h3>
+        <h2 id="interview-title"></h2>
         <p id="interview-description"></p>
         <h3 id="audio-title"></h3>
 
@@ -55,18 +56,42 @@
             <source src="horse.ogg" type="audio/ogg">
         </audio> -->
     </div>
+    <div id= "zinepanel">
+        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright" id="markerclose"> X </span>
+        <break></break>
+        <div id="zine">
+        </div>
+    </div>
+
     <div id="intropanel">
         <x id= "x" class="w3-button w3-display-topright"> X </x>
         <break></break>
-        <h3 id="intro-title"> Welcome to Liberation Atlas!</h3>
+        <!-- <h3 id="intro-title"> Welcome to Liberation Atlas</h3>
         <p id="intro-description">
             We welcome you to explore and grapple with the policing of migrant Asian massage work throughout New York City through seeing the various forms of widespread criminalization of massage work and listening to how it affects workers in the city. Liberation Atlas offers an alternative understanding of carceral anti-trafficking organizations own maps which celebrate growing points across a map as evidence of the success of policies which in reality criminalize racialized and gendered low wage work. We invite you to engage these maps and share them as a way of amplifying the struggle and power of migrant massage worker organizing
-        </p>
+        </p> -->
+
+        <div id="headerDiv">
+            <p id="headerText">
+                Liberation Atlas </p>
+            <p id="headerTwoText">Data Justice for Migrant Massage Workers</p>
+            <div id="headerLine"></div>
+
+            <p id="intro-description">
+                We welcome you to explore and grapple with the policing of migrant Asian massage work throughout New York City through seeing the various forms of widespread criminalization of massage work and listening to how it affects workers in the city. Liberation Atlas offers an alternative understanding of carceral anti-trafficking organizations own maps which celebrate growing points across a map as evidence of the success of policies which in reality criminalize racialized and gendered low wage work. We invite you to engage these maps and share them as a way of amplifying the struggle and power of migrant massage worker organizing
+            </p> 
+         
+        </div>
+        <img id='bird' src="/assets/bird.png" />
+        <!-- <img id='redD' src= "/assets/redDecor.png"/> -->
+       
+
         <div id="btn-container">
             <button id = "explore" class="explore">explore the map</button>
-            <button id = "viewhist" class="viewhist">walk through a brief history</button>
+            <button id = "viewhist" class="viewhist">view the history</button>
         </div>
     </div>
+
     <div id="console">
         <h1>Prostitution & Unlicensed Massage Arrests</h1>
         <p>
