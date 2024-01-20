@@ -2,8 +2,8 @@ mapboxgl.accessToken = "pk.eyJ1Ijoic2hyYXZ5YS1zb21wYWxsaSIsImEiOiJjbGEycmZ3YnAwM
 const map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/dark-v11',
-  center: [-74.0059, 40.7128],
-  zoom: 11
+  center: [-73.9010, 40.7555],
+  zoom: 11.25
 });
 const geojson = {
   type: 'FeatureCollection',
@@ -312,76 +312,84 @@ map.on('load', () => {
   ///hearogiheoirghoaeig
   // update hour filter when the slider is dragged
   document.getElementById('slider').addEventListener('input', (event) => {
-      const year = parseInt(event.target.value);
-      //update the map
-      const cumBreakdown = document.getElementById("cumulative").checked
-      const byYearBreakdown = document.getElementById("byYear").checked
-      if (cumBreakdown) {
-          filterYear = ['<=', ['number', ['get', 'ARREST_YEAR']], year];
-          filterHouseYear = ['<=', ['number', ['get', 'Year']], year];
-      }
-      else if (byYearBreakdown) {
-          filterYear = ['==', ['number', ['get', 'ARREST_YEAR']], year];
-          filterHouseYear = ['==', ['number', ['get', 'Year']], year];
-      }
-      else {
-          console.log('error');
-      }  
-      filterP = ['==', ['string', ['get', 'LAW_CODE']], "PL 2300000"]
-      filterU = ['==', ['string', ['get', 'LAW_CODE']], "ED 6512001"]
-      map.setFilter('collisions', ['all', filterYear, filterP]);
-      map.setFilter('collisions1', ['all', filterYear, filterU]);
-      map.setFilter('collisions2',['all',filterHouseYear]);
-      // update text in the UI
-      document.getElementById('active-year').innerText = year;
-      });
+    const year = parseInt(event.target.value);
+    //update the map
+    const cumBreakdown = document.getElementById("cumulative").checked
+    const byYearBreakdown = document.getElementById("byYear").checked
+    if (cumBreakdown) {
+      filterYear = ['<=', ['number', ['get', 'ARREST_YEAR']], year];
+      filterHouseYear = ['<=', ['number', ['get', 'Year']], year];
+    }
+    else if (byYearBreakdown) {
+      filterYear = ['==', ['number', ['get', 'ARREST_YEAR']], year];
+      filterHouseYear = ['==', ['number', ['get', 'Year']], year];
+    }
+    else {
+      console.log('error');
+    }
+    filterP = ['==', ['string', ['get', 'LAW_CODE']], "PL 2300000"]
+    filterU = ['==', ['string', ['get', 'LAW_CODE']], "ED 6512001"]
+    map.setFilter('collisions', ['all', filterYear, filterP]);
+    map.setFilter('collisions1', ['all', filterYear, filterU]);
+    map.setFilter('collisions2', ['all', filterHouseYear]);
+    // update text in the UI
+    document.getElementById('active-year').innerText = year;
+  });
 
   //update map when toggle is changed
 
   document
-  .getElementById('timefilters')
-  .addEventListener('input', (e) => {
+    .getElementById('timefilters')
+    .addEventListener('input', (e) => {
       const timeBreakdown = e.target.value;
       const year = parseInt(document.getElementById('active-year').innerText)
       console.log(timeBreakdown)
       if (timeBreakdown == 'cumulative') {
-          filterYear = ['<=', ['number', ['get', 'ARREST_YEAR']], year];
-          filterHouseYear = ['<=', ['number', ['get', 'Year']], year];
+        filterYear = ['<=', ['number', ['get', 'ARREST_YEAR']], year];
+        filterHouseYear = ['<=', ['number', ['get', 'Year']], year];
       }
       else if (timeBreakdown == 'byYear') {
-          filterYear = ['==', ['number', ['get', 'ARREST_YEAR']], year];
-          filterHouseYear = ['==', ['number', ['get', 'Year']], year];
+        filterYear = ['==', ['number', ['get', 'ARREST_YEAR']], year];
+        filterHouseYear = ['==', ['number', ['get', 'Year']], year];
       }
       else {
-          console.log('error');
+        console.log('error');
       }
       map.setFilter('collisions', ['all', filterYear, filterP]);
       map.setFilter('collisions1', ['all', filterYear, filterU]);
-      map.setFilter('collisions2',['all',filterHouseYear]);
-  });
+      map.setFilter('collisions2', ['all', filterHouseYear]);
+    });
 
-  document.getElementById('x').addEventListener('click', function(){
-    document.getElementById('intropanel').style.display= 'none';
+  document.getElementById('x').addEventListener('click', function () {
+    document.getElementById('intropanel').style.display = 'none';
     document.getElementById('map').style.filter = 'none';
     document.getElementById('console').style.display = 'block';
+    document.getElementById('reset').style.display = 'block';
   });
 
-  document.getElementById('explore').addEventListener('click', function(){
-    document.getElementById('intropanel').style.display= 'none';
+  document.getElementById('explore').addEventListener('click', function () {
+    document.getElementById('intropanel').style.display = 'none';
     document.getElementById('map').style.filter = 'none';
     document.getElementById('console').style.display = 'block';
+    document.getElementById('reset').style.display = 'block';
   });
 
-  document.getElementById('viewhist').addEventListener('click', function(){
-    document.getElementById('intropanel').style.display= 'none';
+  document.getElementById('viewhist').addEventListener('click', function () {
+    document.getElementById('intropanel').style.display = 'none';
     document.getElementById('map').style.filter = 'none';
     document.getElementById('console').style.display = 'block';
-    document.getElementById('hist-title').innerText = 'A Brief History of Policing of Asian Massage Workers in NYC';
+    document.getElementById('reset').style.display = 'block';
+    document.getElementById('hist-title').innerText = 'Policing of Asian Massage Workers in NYC';
+    document.getElementById('hist-year').innerText = '2006-2023';
     document.getElementById('hist-description').innerText = 'Welcome! This demonstration will walk through major periods of policing of Asian massage work as a result of changes in state policies and tactics of criminalization';
+    if (document.getElementById('hist-title').innerText === 'Policing of Asian Massage Workers in NYC') { document.getElementById('back').style.display = 'none'; }
+    else { document.getElementById('back').innerText = 'BACK'; }
+    if (document.getElementById('hist-title').innerText === 'Policing of Asian Massage Workers in NYC') { document.getElementById('next').innerText = 'START'; }
+    else { document.getElementById('next').innerText = 'NEXT'; }
     document.getElementById('histpanel').style.display = 'block';
   });
 
-  document.getElementById('reset').addEventListener('click', function(){
+  document.getElementById('reset').addEventListener('click', function () {
     // document.getElementById('intropanel').style.display= 'block';
     // document.getElementById('map').style.filter = 'blur(2px);';
     // document.getElementById('console').style.display = 'none';
@@ -390,62 +398,84 @@ map.on('load', () => {
   });
 
 
-  var years = ['initial', '2006-2013','2014-2017','2018-2023'];
-  var text = ['inital', 'text 1', 'text 2', 'text 3'];
+  var years = ['2006-2013', '2014-2017', '2018-2023'];
+  var text = ['text 1', 'text 2', 'text 3'];
   var histYear = document.getElementById('hist-year').innerText;
-  var i=0;
+  var i = -1;
 
-  document.getElementById('next').addEventListener('click', function(){
+  document.getElementById('next').addEventListener('click', function () {
     next();
+    document.getElementById('next').innerText = 'NEXT';
+    document.getElementById('back').style.display = 'block';
   });
 
-  function next(){
-    if (i >=years.length-1) i= -1;
+  document.getElementById('back').addEventListener('click', function () {
+    back();
+  });
+
+  function next() {
+    if (i >= 2) { return setHistText() };
     i++;
+    if (i == 0) { }
     return setHistText()
   }
 
-  function setHistText(){
+  function back() {
+    if (i == 0) { return setHistText() };
+    i--;
+    return setHistText()
+  }
+
+  function setHistText() {
     document.getElementById('hist-description').innerText = text[i];
-    document.getElementById('hist-year').innerText = years[i];
-    if (document.getElementById('hist-year').innerText =='2006-2013'){
-      return animate(years[i],2006,2013);}
-    if (document.getElementById('hist-year').innerText =='2014-2017'){
-        return animate(years[i],2014,2017);}
-    if (document.getElementById('hist-year').innerText =='2018-2023'){
-      return animate(years[i],2018,2023);}
+    document.getElementById('hist-year').innerText = years[i]
+    if (i == 0) { document.getElementById('back').className = ('backOff') }
+    else { document.getElementById('back').className = ('back') }
+    if (i == 2) { document.getElementById('next').className = ('backOff') }
+    else { document.getElementById('next').className = ('next') }
+    if (document.getElementById('hist-year').innerText == '2006-2013') {
+      return animate(years[i], 2006, 2013);
+    }
+    if (document.getElementById('hist-year').innerText == '2014-2017') {
+      return animate(years[i], 2014, 2017);
+    }
+    if (document.getElementById('hist-year').innerText == '2018-2023') {
+      return animate(years[i], 2018, 2023);
+    }
 
   }
 
 
 
-  async function animate(yearString,beginYear,endYear){
-    while (document.getElementById('hist-year').innerText == yearString){
-      if (document.getElementById(checks[0]).checked == false ){
-      for (let i = 0; i < checks.length; i++) {
-        document
-          .getElementById(checks[i]).click();}}
-      for (let y = beginYear; y< endYear+1;y++){
+  async function animate(yearString, beginYear, endYear) {
+    while (document.getElementById('hist-year').innerText == yearString) {
+      if (document.getElementById(checks[0]).checked == false) {
+        for (let i = 0; i < checks.length; i++) {
+          document
+            .getElementById(checks[i]).click();
+        }
+      }
+      for (let y = beginYear; y < endYear + 1; y++) {
         await delayFor(1000);
-        if (document.getElementById('hist-year').innerText != yearString){
+        if (document.getElementById('hist-year').innerText != yearString) {
           break;
         }
         const inputEvent = new InputEvent('input', {
           bubbles: true,
           cancelable: true,
-      });
-        document.getElementById('slider').value=y;
+        });
+        document.getElementById('slider').value = y;
         document.getElementById('slider').dispatchEvent(inputEvent);
+      }
     }
   }
-}
-function delayFor(delay) {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve();
-    }, delay);
-  });
-}
+  function delayFor(delay) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, delay);
+    });
+  }
 
 
 
@@ -508,8 +538,8 @@ const marker5 = new mapboxgl.Marker(e5)
 const e6 = document.createElement('div')
 e6.className = 'marker';
 const marker6 = new mapboxgl.Marker(e6)
-.setLngLat([-73.88504484381795, 40.756106297889026])
-.addTo(map)
+  .setLngLat([-73.88504484381795, 40.756106297889026])
+  .addTo(map)
 
 marker1.getElement().addEventListener('click', function () {
   // Show the panel
@@ -531,7 +561,7 @@ marker2.getElement().addEventListener('click', function () {
   // document.getElementById('interview-description').innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
   document.getElementById('mp4-content').src = 'oralHistories/DOB.mp4';
   document.getElementById('panel').style.display = 'block';
-   
+
 });
 
 marker3.getElement().addEventListener('click', function () {
