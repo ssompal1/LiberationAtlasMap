@@ -399,7 +399,10 @@ map.on('load', () => {
 
 
   var years = ['2006-2013', '2014-2017', '2018-2023'];
-  var text = ['text 1', 'text 2', 'text 3'];
+  var text1 = 'The introduction of the 2000 UN Palermo Protocol and passage of the 2000 US Trafficking Victims Protection Act, unleashed the contemporary movement to combat human trafficking, consolidating previous laws around gender, sex, child, labor, and migrant rights into a new framework. Used together, they have endorsed new forms of US imperialism and empire through mechanisms like the annual US State Department’s Trafficking in Persons report, an annual report, released each June, that ranks countries around the world on a four-tier ranking system in accordance with with compliance with a US set of “minimum standards” to address human trafficking. In 2006, legal scholar Janie Chuang first warned of the US’ “global sheriff” tendencies in anointing itself as the judge of anti-trafficking efforts around the world. The “sheriff” part of Dr. Chuang’s critique has been echoed by countless sex workers, activists, and scholars who assert that anti-trafficking policies have consistently prioritized policing and prosecutorial efforts over victim protection. RCS joins this chorus of voices in arguing for “rights not rescue,” – a rallying cry that demands worker protection, safe migration, and labor organizing, over police presence in our communities.'
+  var text2 = 'In the past decade, Asian massage work has become synonymous with human trafficking. This is not accidental, but was an active target of US anti-trafficking organizations that have designed and devoted entire campaigns to shutting down “Illicit Massage Businesses.” Since the passage of the 2000 US Trafficking Victims Protection Act, most anti-trafficking rescue efforts have been funneled through the criminal legal system, often seeking criminal prosecution over victim protection (Chapkis 2005). Research on global anti-trafficking interventions—especially when they aim to target sex trafficking, as Asian massage work is often considered—have been critiqued for their predominantly “carceral feminist” commitments (Bernstein 2007). During this time period–taking their cues, funding, and political power from anti-trafficking organizations–dozens of laws were passed throughout North America that created new categories of “bodywork” (see, e.g. Rhode Island H7007 (2016) that allows law enforcement to police Asian massage work. Other laws, like North Carolina’s 2017 Senate Bill 548, were forged through a collaboration between the Polaris Project, one of the nation’s largest anti-trafficking organizations, and the American Massage Therapy Association. This law requires all massage therapists to display posters in their waiting rooms that show the phone number for the national human trafficking hotline. It also requires that workers have a high school diploma and demonstrate satisfactory proficiency in the English language. Such blatantly xenophobic requirements underscore how labor is legitimated through national and class markers, allowing the legitimate policing of Asian work. We invite you to see how the lobbying and adoption of these laws during this time period, led to escalated policing and arrests in the next.'
+  var text3 = 'In recent years, a growing national consensus around the human rights merits of decriminalizing sex work has signaled important legislative changes. For instance, in 2021, New York City District Attorneys across the five boroughs announced that they would cease prosecuting prostitution and would close all open prostitution solicitation charges. Yet, paradoxically, since 2021, the arrests and citations of Asian massage workers for unlicensed massage and department of buildings violations has increased dramatically. In New York City, more than 90 percent of those receiving citations through these civil statutes are migrant Asian low wage women workers (Urban Justice 2021). In NYC Asian massage workers are cited and/or arrested for unlicensed massage under an age-old education statute. Unlicensed massage citations in New York apply a violation of New York Education Law 6512, which prohibits a person from practicing unlicensed massage therapies and from knowingly aiding three or more unlicensed persons to practice. These licensing laws have scripted white supremacy and xenophobia into law, while claiming to rescue Asian victims of human trafficking.These intrusions into civil justice have detrimental impacts on social, emotional, and economic livelihood of all migrant low wage workers. We invite you to see these shifting trends in policing through these maps.'
+  var text = [text1, text2, text3];
   var histYear = document.getElementById('hist-year').innerText;
   var i = -1;
 
@@ -510,7 +513,7 @@ const e1 = document.createElement('div');
 e1.className = 'marker';
 
 const marker1 = new mapboxgl.Marker(e1)
-  .setLngLat([-73.8831, 40.7557])
+  .setLngLat([-73.871042, 40.752154])
   .addTo(map);
 
 const e2 = document.createElement('div');
@@ -529,25 +532,25 @@ const marker4 = new mapboxgl.Marker(e4)
   .setLngLat([-73.807975, 40.753624])
   .addTo(map);
 
-const e5 = document.createElement('div');
-e5.className = 'marker';
-const marker5 = new mapboxgl.Marker(e5)
-  .setLngLat([-73.8307, 40.7685])
-  .addTo(map);
-
-const e6 = document.createElement('div')
-e6.className = 'marker';
-const marker6 = new mapboxgl.Marker(e6)
+  const e5 = document.createElement('div');
+  e5.className = 'marker';
+  const marker5 = new mapboxgl.Marker(e5)
+    .setLngLat([-73.8307, 40.7685])
+    .addTo(map);
+  
+  const e6 = document.createElement('div')
+  e6.className = 'marker';
+  const marker6 = new mapboxgl.Marker(e6)
   .setLngLat([-73.88504484381795, 40.756106297889026])
   .addTo(map)
 
 marker1.getElement().addEventListener('click', function () {
   // Show the panel
   console.log("Clicked");
-  document.getElementById('popup-title').innerText = 'LISA';
+  document.getElementById('popup-title').innerText = 'Lisa';
   // document.getElementById('popup-description').innerText = 'Person 1';
-  document.getElementById('interview-title').innerText = 'DESCRIPTION'
-  // document.getElementById('interview-description').innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  document.getElementById('interview-title').innerText = 'Lisa is a migrant Chinese massage worker who is also a lead organizer for the Red Canary Song Chinese outreach team.'
+  document.getElementById('interview-description').innerText = ''
   document.getElementById('mp4-content').src = 'oralHistories/Harm.mp4';
   document.getElementById('panel').style.display = 'block';
 });
@@ -555,10 +558,10 @@ marker1.getElement().addEventListener('click', function () {
 marker2.getElement().addEventListener('click', function () {
   // Show the panel
   console.log("Clicked");
-  document.getElementById('popup-title').innerText = 'LISA';
+  document.getElementById('popup-title').innerText = 'Lisa';
   // document.getElementById('popup-description').innerText = 'Person 2';
-  document.getElementById('interview-title').innerText = 'DESCRIPTION'
-  // document.getElementById('interview-description').innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  document.getElementById('interview-title').innerText = 'Lisa is a migrant Chinese massage worker who is also a lead organizer for the Red Canary Song Chinese outreach team.'
+  document.getElementById('interview-description').innerText = ''
   document.getElementById('mp4-content').src = 'oralHistories/DOB.mp4';
   document.getElementById('panel').style.display = 'block';
 
@@ -567,10 +570,10 @@ marker2.getElement().addEventListener('click', function () {
 marker3.getElement().addEventListener('click', function () {
   // Show the panel
   console.log("Clicked");
-  document.getElementById('popup-title').innerText = 'LISA';
+  document.getElementById('popup-title').innerText = 'Lisa';
   // document.getElementById('popup-description').innerText = 'Person 3';
-  document.getElementById('interview-title').innerText = 'DESCRIPTION'
-  // document.getElementById('interview-description').innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  document.getElementById('interview-title').innerText = 'Lisa is a migrant Chinese massage worker who is also a lead organizer for the Red Canary Song Chinese outreach team.'
+  document.getElementById('interview-description').innerText = ''
   document.getElementById('mp4-content').src = 'oralHistories/cops.mp4';
   document.getElementById('panel').style.display = 'block';
 });
@@ -578,10 +581,10 @@ marker3.getElement().addEventListener('click', function () {
 marker4.getElement().addEventListener('click', function () {
   // Show the panel
   console.log("Clicked");
-  document.getElementById('popup-title').innerText = 'LISA';
+  document.getElementById('popup-title').innerText = 'Lisa';
   // document.getElementById('popup-description').innerText = 'Mrs. H';
-  document.getElementById('interview-title').innerText = 'DESCRIPTION'
-  //document.getElementById('interview-description').innerText = ' "At first, I was in it for money only. I started because I needed money. I believed it was worthwhile to sacrifice myself for my family and my siblings. I would have done anything if I could earn money… I was ready to sacrifice myself, and now it’s my job. Now… I think the world needs this kind of occupation and we need people who do this work for others… in our society. So now, rather than considering my job as excruciating, I think that massage work is an occupation that contributes to the development of the society, like a wheel of a wheelbarrow. Other people might think I’m crazy or I should say such a thing. But in my opinion, massage work is an indispensable occupation. I think someone has to do this work, because everyone needs massage." '
+  document.getElementById('interview-title').innerText = 'Lisa is a migrant Chinese massage worker who is also a lead organizer for the Red Canary Song Chinese outreach team.'
+  document.getElementById('interview-description').innerText = ''
   document.getElementById('mp4-content').src = 'oralHistories/Ex1.mp4';
   document.getElementById('panel').style.display = 'block';
 });
@@ -589,11 +592,11 @@ marker4.getElement().addEventListener('click', function () {
 marker5.getElement().addEventListener('click', function () {
   // Show the panel
   console.log("Clicked");
-  document.getElementById('popup-title').innerText = 'Mrs. H';
+  document.getElementById('popup-title').innerText = 'Ms. Hwang';
   // document.getElementById('popup-description').innerText = 'Person 5';
-  document.getElementById('interview-title').innerText = 'DESCRIPTION'
-  // document.getElementById('interview-description').innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-  document.getElementById('mp4-content').src = 'oralHistories/LA_oralhistory_1.mp4';
+  document.getElementById('interview-title').innerText = 'Ms. Hwang is a Korean migrant massage worker living and working in New York.'
+  document.getElementById('interview-description').innerText = ''
+  document.getElementById('mp4-content').src = 'oralHistories/RCS_LA_draft.mp4';
   document.getElementById('panel').style.display = 'block';
 });
 
@@ -602,15 +605,30 @@ marker6.getElement().addEventListener('click', function () {
   console.log("Clicked");
   document.getElementById('popup-title').innerText = 'Si Si';
   // document.getElementById('popup-description').innerText = 'Person 6';
-  document.getElementById('interview-title').innerText = 'DESCRIPTION'
-  // document.getElementById('interview-description').innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-  document.getElementById('mp4-content').src = 'oralHistories/Si Si Excerpt.mp4';
+  document.getElementById('interview-title').innerText = 'Si Si is a massage worker in her 50s from Chongqing. She arrived in the US in 2017 and has lived in Queens and Long Island ever since.'
+  var transcript = "<strong>What kind of work did you do when you first came to the US? </strong>\nWhen I arrived in New York, I knew one person from my hometown who helped me get settled. I always thought I would work in a restaurant, \
+   and worked a number of restaurant jobs and quickly learned that the pay was very low, I didn’t earn enough to pay back my debts. My friends told me, if you can’t speak English, massage \
+   is the only way to make enough money to return our debts. Those of us who are older face a lot of pressure to pay back our debts quickly.\nSo working in massage helps us return our debts, \
+   and is also less tiring, but its emotionally tiring because we are constantly scared of the police. So many of us are undocumented or don’t have massage licenses. Right after I learned massage, \
+   I worked at a spa in Long Island, and I was arrested. At that time, I didn’t know too much. I had just been working a few months, and one day, seven of us were working, and the police went “fishing.” They asked if we were documented, \
+   and first asked to see our work permits, then after that asked to see our licenses. When we couldn’t’ produce licenses, they arrested us.\nThat day we were arrested for two charges: prostitution and unlicensed massage. A free lawyer was assigned \
+   to our case and told us that if you don’t have a massage license, I recommend you to accept the prostitution charge, he said it was a lighter charge. He told us that if we accepted the prostitution charge, and didn’t get arrested within the \
+   next year, that we shouldn’t have future problems. At the time, I hadn’t done sex work. But still he told me to take the charge to avoid jail time.\n<strong>Was this the only time you were arrested?</strong>\nI was arrested one \
+   other time coming out of a bar, after drinking with friends. There was a large group of us women on the street corner talking, waiting for friends. Some saw the police coming and went home. I didn’t leave immediately, \
+   and they asked what you are doing on this street corner? I couldn’t understand or speak English, and later learned that they charged us with blocking transportation thoroughfare. When I showed up to my court date, my court \
+   assigned lawyer told me that if I plead guilty, then I would pay a $35 fine. I thought to myself, that fine is less than my transportation costs to show up at court and so I paid it.\nI can’t speak English. If I could, I’m not sure I would have pleaded guilty to these crimes if I understood them." 
+  transcript = transcript.replace(/\n/g, '</p><p>&nbsp;</p><p>');
+  // transcript = '<p>' + transcript + '</p>';
+
+  document.getElementById('interview-description').innerHTML = transcript
+  document.getElementById('mp4-content').src = 'oralHistories/Si SI.mp4';
   document.getElementById('panel').style.display = 'block';
 });
 
 var videoElement = document.getElementById('mp4-content');
+
 // Add an event listener to the close button
-document.querySelector('.w3-button.w3-display-topright').addEventListener('click', function () {
+document.getElementById('markerclose').addEventListener('click', function () {
   // Pause the video when the panel is closed
   videoElement.pause();
 });

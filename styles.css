@@ -116,7 +116,8 @@ a {
     background-color: whitesmoke;
     padding: 5px 20px;
     border-radius: 10px;
-    align-items: center
+    align-items: center;
+    overflow-y: auto;
 }
 
 #intro-title {
