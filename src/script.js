@@ -544,6 +544,13 @@ const marker4 = new mapboxgl.Marker(e4)
   .setLngLat([-73.88504484381795, 40.756106297889026])
   .addTo(map)
 
+  const e7 = document.createElement('div')
+  e7.className = 'marker';
+  const marker7 = new mapboxgl.Marker(e7)
+  .setLngLat([-73.812606, 40.771048])
+  .addTo(map)
+
+
 marker1.getElement().addEventListener('click', function () {
   // Show the panel
   console.log("Clicked");
@@ -625,6 +632,27 @@ marker6.getElement().addEventListener('click', function () {
   document.getElementById('panel').style.display = 'block';
 });
 
+marker7.getElement().addEventListener('click', function () {
+  // var iframeContainer = document.createElement('div');
+  // iframeContainer.style = "position:relative;padding-top:max(60%,324px);width:100%;height:0;";
+
+  // var iframe = document.createElement('iframe');
+  // iframe.style = "position:absolute;border:none;width:100%;height:100%;left:0;top:0;";
+  // iframe.src = "https://online.fliphtml5.com/thsxk/zopq/";
+  // iframe.seamless = "seamless";
+  // iframe.scrolling = "no";
+  // iframe.frameborder = "0";
+  // iframe.allowtransparency = "true";
+  // iframe.allowfullscreen = "true";
+
+  // iframeContainer.appendChild(iframe);
+
+  // document.getElementById('zine').innerHTML = "";
+  // document.getElementById('zine').appendChild(iframeContainer);
+
+  document.getElementById('zinepanel').style.display = 'block';
+});
+
 var videoElement = document.getElementById('mp4-content');
 
 // Add an event listener to the close button
@@ -632,6 +660,7 @@ document.getElementById('markerclose').addEventListener('click', function () {
   // Pause the video when the panel is closed
   videoElement.pause();
 });
+
 
 // // Close the panel when the map is clicked
 // map.on('click', function() {
