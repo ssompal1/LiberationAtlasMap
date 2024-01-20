@@ -510,7 +510,7 @@ const e1 = document.createElement('div');
 e1.className = 'marker';
 
 const marker1 = new mapboxgl.Marker(e1)
-  .setLngLat([-73.871042, 40.752154])
+  .setLngLat([-73.8831, 40.7557])
   .addTo(map);
 
 const e2 = document.createElement('div');
@@ -541,19 +541,13 @@ const marker6 = new mapboxgl.Marker(e6)
   .setLngLat([-73.88504484381795, 40.756106297889026])
   .addTo(map)
 
-const e7 = document.createElement('div')
-e7.className = 'marker';
-const marker7 = new mapboxgl.Marker(e7)
-.setLngLat([-73.812606, 40.771048])
-.addTo(map)
-
 marker1.getElement().addEventListener('click', function () {
   // Show the panel
   console.log("Clicked");
   document.getElementById('popup-title').innerText = 'LISA';
   // document.getElementById('popup-description').innerText = 'Person 1';
   document.getElementById('interview-title').innerText = 'DESCRIPTION'
-  document.getElementById('interview-description').innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  // document.getElementById('interview-description').innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
   document.getElementById('mp4-content').src = 'oralHistories/Harm.mp4';
   document.getElementById('panel').style.display = 'block';
 });
@@ -585,7 +579,7 @@ marker4.getElement().addEventListener('click', function () {
   // Show the panel
   console.log("Clicked");
   document.getElementById('popup-title').innerText = 'LISA';
-  // document.getElementById('popup-description').innerText = 'Ms. H';
+  // document.getElementById('popup-description').innerText = 'Mrs. H';
   document.getElementById('interview-title').innerText = 'DESCRIPTION'
   //document.getElementById('interview-description').innerText = ' "At first, I was in it for money only. I started because I needed money. I believed it was worthwhile to sacrifice myself for my family and my siblings. I would have done anything if I could earn money… I was ready to sacrifice myself, and now it’s my job. Now… I think the world needs this kind of occupation and we need people who do this work for others… in our society. So now, rather than considering my job as excruciating, I think that massage work is an occupation that contributes to the development of the society, like a wheel of a wheelbarrow. Other people might think I’m crazy or I should say such a thing. But in my opinion, massage work is an indispensable occupation. I think someone has to do this work, because everyone needs massage." '
   document.getElementById('mp4-content').src = 'oralHistories/Ex1.mp4';
@@ -599,7 +593,7 @@ marker5.getElement().addEventListener('click', function () {
   // document.getElementById('popup-description').innerText = 'Person 5';
   document.getElementById('interview-title').innerText = 'DESCRIPTION'
   // document.getElementById('interview-description').innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-  document.getElementById('mp4-content').src = 'oralHistories/RCS_LA_draft.mp4';
+  document.getElementById('mp4-content').src = 'oralHistories/LA_oralhistory_1.mp4';
   document.getElementById('panel').style.display = 'block';
 });
 
@@ -608,51 +602,15 @@ marker6.getElement().addEventListener('click', function () {
   console.log("Clicked");
   document.getElementById('popup-title').innerText = 'Si Si';
   // document.getElementById('popup-description').innerText = 'Person 6';
-  document.getElementById('interview-title').innerText = 'Si Si is a massage worker in her 50s from Chongqing. She arrived in the US in 2017 and has lived in Queens and Long Island ever since.'
-  var transcript = "<strong>What kind of work did you do when you first came to the US? </strong>\nWhen I arrived in New York, I knew one person from my hometown who helped me get settled. I always thought I would work in a restaurant, \
-   and worked a number of restaurant jobs and quickly learned that the pay was very low, I didn’t earn enough to pay back my debts. My friends told me, if you can’t speak English, massage \
-   is the only way to make enough money to return our debts. Those of us who are older face a lot of pressure to pay back our debts quickly.\nSo working in massage helps us return our debts, \
-   and is also less tiring, but its emotionally tiring because we are constantly scared of the police. So many of us are undocumented or don’t have massage licenses. Right after I learned massage, \
-   I worked at a spa in Long Island, and I was arrested. At that time, I didn’t know too much. I had just been working a few months, and one day, seven of us were working, and the police went “fishing.” They asked if we were documented, \
-   and first asked to see our work permits, then after that asked to see our licenses. When we couldn’t’ produce licenses, they arrested us.\nThat day we were arrested for two charges: prostitution and unlicensed massage. A free lawyer was assigned \
-   to our case and told us that if you don’t have a massage license, I recommend you to accept the prostitution charge, he said it was a lighter charge. He told us that if we accepted the prostitution charge, and didn’t get arrested within the \
-   next year, that we shouldn’t have future problems. At the time, I hadn’t done sex work. But still he told me to take the charge to avoid jail time.\n<strong>Was this the only time you were arrested?</strong>\nI was arrested one \
-   other time coming out of a bar, after drinking with friends. There was a large group of us women on the street corner talking, waiting for friends. Some saw the police coming and went home. I didn’t leave immediately, \
-   and they asked what you are doing on this street corner? I couldn’t understand or speak English, and later learned that they charged us with blocking transportation thoroughfare. When I showed up to my court date, my court \
-   assigned lawyer told me that if I plead guilty, then I would pay a $35 fine. I thought to myself, that fine is less than my transportation costs to show up at court and so I paid it.\nI can’t speak English. If I could, I’m not sure I would have pleaded guilty to these crimes if I understood them." 
-  transcript = transcript.replace(/\n/g, '</p><p>&nbsp;</p><p>');
-  transcript = '<p>' + transcript + '</p>';
-
-  document.getElementById('interview-description').innerHTML = transcript
+  document.getElementById('interview-title').innerText = 'DESCRIPTION'
+  // document.getElementById('interview-description').innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
   document.getElementById('mp4-content').src = 'oralHistories/Si Si Excerpt.mp4';
   document.getElementById('panel').style.display = 'block';
 });
 
-marker7.getElement().addEventListener('click', function () {
-  var iframeContainer = document.createElement('div');
-  iframeContainer.style = "position:relative;padding-top:max(60%,324px);width:100%;height:0;";
-
-  var iframe = document.createElement('iframe');
-  iframe.style = "position:absolute;border:none;width:100%;height:100%;left:0;top:0;";
-  iframe.src = "https://online.fliphtml5.com/thsxk/ckmq/";
-  iframe.seamless = "seamless";
-  iframe.scrolling = "no";
-  iframe.frameborder = "0";
-  iframe.allowtransparency = "true";
-  iframe.allowfullscreen = "true";
-
-  iframeContainer.appendChild(iframe);
-
-  document.getElementById('zine').innerHTML = "";
-  document.getElementById('zine').appendChild(iframeContainer);
-
-  document.getElementById('zinepanel').style.display = 'block';
-});
-
 var videoElement = document.getElementById('mp4-content');
-
 // Add an event listener to the close button
-document.getElementById('markerclose').addEventListener('click', function () {
+document.querySelector('.w3-button.w3-display-topright').addEventListener('click', function () {
   // Pause the video when the panel is closed
   videoElement.pause();
 });
