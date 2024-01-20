@@ -32,8 +32,9 @@
         <h3 id="hist-title"></h3>
         <h3 id="hist-year"></h3>
         <p id="hist-description"></p>
-        <button id= "next" class="next"> NEXT</button>
-        <div class="center">
+        <div id="center">
+            <button id="back" class="back"> BACK</button>
+            <button id="next" class="next"> NEXT</button>
         </div>
     </div>
     <div id="panel">
@@ -64,31 +65,21 @@
     </div>
 
     <div id="intropanel">
-        <x id= "x" class="w3-button w3-display-topright"> X </x>
+        <x id="x" class="w3-button w3-display-topright"> X </x>
         <break></break>
         <!-- <h3 id="intro-title"> Welcome to Liberation Atlas</h3>
         <p id="intro-description">
-            We welcome you to explore and grapple with the policing of migrant Asian massage work throughout New York City through seeing the various forms of widespread criminalization of massage work and listening to how it affects workers in the city. Liberation Atlas offers an alternative understanding of carceral anti-trafficking organizations own maps which celebrate growing points across a map as evidence of the success of policies which in reality criminalize racialized and gendered low wage work. We invite you to engage these maps and share them as a way of amplifying the struggle and power of migrant massage worker organizing
-        </p> -->
-
-        <div id="headerDiv">
-            <p id="headerText">
-                Liberation Atlas </p>
-            <p id="headerTwoText">Data Justice for Migrant Massage Workers</p>
-            <div id="headerLine"></div>
-
-            <p id="intro-description">
-                We welcome you to explore and grapple with the policing of migrant Asian massage work throughout New York City through seeing the various forms of widespread criminalization of massage work and listening to how it affects workers in the city. Liberation Atlas offers an alternative understanding of carceral anti-trafficking organizations own maps which celebrate growing points across a map as evidence of the success of policies which in reality criminalize racialized and gendered low wage work. We invite you to engage these maps and share them as a way of amplifying the struggle and power of migrant massage worker organizing
-            </p> 
-         
-        </div>
-        <img id='bird' src="/assets/bird.png" />
-        <!-- <img id='redD' src= "/assets/redDecor.png"/> -->
-       
-
+            We welcome you to explore and grapple with the policing of migrant Asian massage work throughout New York
+            City through seeing the various forms of widespread criminalization of massage work and listening to how it
+            affects workers in the city. Liberation Atlas offers an alternative understanding of carceral
+            anti-trafficking organizations own maps which celebrate growing points across a map as evidence of the
+            success of policies which in reality criminalize racialized and gendered low wage work. We invite you to
+            engage these maps and share them as a way of amplifying the struggle and power of migrant massage worker
+            organizing
+        </p>
         <div id="btn-container">
-            <button id = "explore" class="explore">explore the map</button>
-            <button id = "viewhist" class="viewhist">view the history</button>
+            <button id="explore" class="explore">explore the map</button>
+            <button id="viewhist" class="viewhist">walk through a brief history</button>
         </div>
     </div>
 
@@ -97,46 +88,40 @@
         <p>
             Data: NYC OpenData
             <a href="https://data.cityofnewyork.us/Public-Safety/NYPD-Arrests-Data-Historic-/8h9b-rp9u">
-                Historic Arrests</a> & <a href="https://data.cityofnewyork.us/City-Government/OATH-Hearings-Division-Case-Status/jz4z-kudi/data">
-                    OATH Hearings</a>,
+                Historic Arrests</a> & <a
+                href="https://data.cityofnewyork.us/City-Government/OATH-Hearings-Division-Case-Status/jz4z-kudi/data">
+                OATH Hearings</a>,
             Updated January 2024
         </p>
         <div class="session">
             <div class="time" id="timefilters">
-            <input id="cumulative" type="radio" name="timetoggle" value="cumulative" checked='checked' />
-            <label for="cumulative">Cumulative</label> 
-            <input id="byYear" type="radio" name="timetoggle" value="byYear" />
-            <label for="byYear">By Year</label> <br />
+                <input id="cumulative" type="radio" name="timetoggle" value="cumulative" checked='checked' />
+                <label for="cumulative">Cumulative</label>
+                <input id="byYear" type="radio" name="timetoggle" value="byYear" />
+                <label for="byYear">By Year</label> <br />
             </div>
             <br>
-        <h2>Year: <label id="active-year">2006</label></h2>
-        <input
-        id="slider"
-        class="row"
-        type="range"
-        min="2006"
-        max="2023"
-        step="1"
-        value="2006"
-        />
-        <br />
+            <h2>Year: <label id="active-year">2006</label></h2>
+            <input id="slider" class="row" type="range" min="2006" max="2023" step="1" value="2006" />
+            <br />
         </div>
         <div class="session">
             <h2>Arrest Charges</h2>
             <div class="row" id="filters">
-            <input id="prostitution" type="checkbox" name="toggle" value="prostitution" />
-            <label for="prostitution">Prostitution </label> <br />
-            <input id="unlicensed massage" type="checkbox" name="toggle" value="unlicensed massage" />
-            <label for="unlicensed massage">Unlicensed Massage</label><br />
-            <h2>Housing Violations </h2>
-            <input id="housing violation" type="checkbox" name="toggle" value="housing violation" />
-            <label for="housing violation">DOB Inspections </label> <br />
-            </div>
-            <div id="reset-container">
-            <button id = "reset" class="reset">RESET</button>
-            </div>
+                <input id="prostitution" type="checkbox" name="toggle" value="prostitution" />
+                <label for="prostitution">Prostitution </label> <br />
+                <input id="unlicensed massage" type="checkbox" name="toggle" value="unlicensed massage" />
+                <label for="unlicensed massage">Unlicensed Massage</label><br />
+                <h2>Housing Violations </h2>
+                <input id="housing violation" type="checkbox" name="toggle" value="housing violation" />
+                <label for="housing violation">Building Inspections (DOB) </label> <br />
             </div>
         </div>
+
+    </div>
+    <div id="reset-container">
+        <button id="reset" class="reset">RESET WALKTHROUGH</button>
+    </div>
     <script src="../src/script.js"></script>
 </body>
 
