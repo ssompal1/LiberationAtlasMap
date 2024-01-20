@@ -74,44 +74,46 @@
             <button id="viewhist" class="viewhist">walk through a brief history</button>
         </div>
     </div>
-    <div id="console">
-        <h1>Prostitution & Unlicensed Massage Arrests</h1>
-        <p>
-            Data: NYC OpenData
-            <a href="https://data.cityofnewyork.us/Public-Safety/NYPD-Arrests-Data-Historic-/8h9b-rp9u">
-                Historic Arrests</a> & <a
-                href="https://data.cityofnewyork.us/City-Government/OATH-Hearings-Division-Case-Status/jz4z-kudi/data">
-                OATH Hearings</a>,
-            Updated January 2024
-        </p>
-        <div class="session">
-            <div class="time" id="timefilters">
-                <input id="cumulative" type="radio" name="timetoggle" value="cumulative" checked='checked' />
-                <label for="cumulative">Cumulative</label>
-                <input id="byYear" type="radio" name="timetoggle" value="byYear" />
-                <label for="byYear">By Year</label> <br />
+    <div id="consolecontainer">
+        <div id="console">
+            <h1>Prostitution & Unlicensed Massage Arrests</h1>
+            <p>
+                Data: NYC OpenData
+                <a href="https://data.cityofnewyork.us/Public-Safety/NYPD-Arrests-Data-Historic-/8h9b-rp9u">
+                    Historic Arrests</a> & <a
+                    href="https://data.cityofnewyork.us/City-Government/OATH-Hearings-Division-Case-Status/jz4z-kudi/data">
+                    OATH Hearings</a>,
+                Updated January 2024
+            </p>
+            <div class="session">
+                <div class="time" id="timefilters">
+                    <input id="cumulative" type="radio" name="timetoggle" value="cumulative" checked='checked' />
+                    <label for="cumulative">Cumulative</label>
+                    <input id="byYear" type="radio" name="timetoggle" value="byYear" />
+                    <label for="byYear">By Year</label> <br />
+                </div>
+                <br>
+                <h2>Year: <label id="active-year">2006</label></h2>
+                <input id="slider" class="row" type="range" min="2006" max="2023" step="1" value="2006" />
+                <br />
             </div>
-            <br>
-            <h2>Year: <label id="active-year">2006</label></h2>
-            <input id="slider" class="row" type="range" min="2006" max="2023" step="1" value="2006" />
-            <br />
-        </div>
-        <div class="session">
-            <h2>Arrest Charges</h2>
-            <div class="row" id="filters">
-                <input id="prostitution" type="checkbox" name="toggle" value="prostitution" />
-                <label for="prostitution">Prostitution </label> <br />
-                <input id="unlicensed massage" type="checkbox" name="toggle" value="unlicensed massage" />
-                <label for="unlicensed massage">Unlicensed Massage</label><br />
-                <h2>Housing Violations </h2>
-                <input id="housing violation" type="checkbox" name="toggle" value="housing violation" />
-                <label for="housing violation">Building Inspections (DOB) </label> <br />
+            <div class="session">
+                <h2>Arrest Charges</h2>
+                <div class="row" id="filters">
+                    <input id="prostitution" type="checkbox" name="toggle" value="prostitution" />
+                    <label for="prostitution">Prostitution </label> <br />
+                    <input id="unlicensed massage" type="checkbox" name="toggle" value="unlicensed massage" />
+                    <label for="unlicensed massage">Unlicensed Massage</label><br />
+                    <h2>Housing Violations </h2>
+                    <input id="housing violation" type="checkbox" name="toggle" value="housing violation" />
+                    <label for="housing violation">Building Inspections (DOB) </label> <br />
+                </div>
             </div>
+            <button id="reset" class="reset">RESET MAP</button>
         </div>
-
-    </div>
-    <div id="reset-container">
-        <button id="reset" class="reset">RESET WALKTHROUGH</button>
+        <div id="reset-container">
+           
+        </div>
     </div>
     <script src="../src/script.js"></script>
 </body>
