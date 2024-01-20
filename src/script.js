@@ -452,7 +452,7 @@ map.on('load', () => {
 
   async function animate(yearString, beginYear, endYear) {
     while (document.getElementById('hist-year').innerText == yearString) {
-      if (document.getElementById(checks[0]).checked == false) {
+      if ((document.getElementById('slider').value == beginYear) && (document.getElementById(checks[0]).checked == false) &&(document.getElementById(checks[1]).checked == false) && (document.getElementById(checks[2]).checked == false) ) {
         for (let i = 0; i < checks.length; i++) {
           document
             .getElementById(checks[i]).click();
