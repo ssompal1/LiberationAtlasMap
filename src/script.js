@@ -613,17 +613,17 @@ marker6.getElement().addEventListener('click', function () {
   document.getElementById('popup-title').innerText = 'Si Si';
   // document.getElementById('popup-description').innerText = 'Person 6';
   document.getElementById('interview-title').innerText = 'Si Si is a massage worker in her 50s from Chongqing. She arrived in the US in 2017 and has lived in Queens and Long Island ever since.'
-  var transcript = "<strong>What kind of work did you do when you first came to the US? </strong>\nWhen I arrived in New York, I knew one person from my hometown who helped me get settled. I always thought I would work in a restaurant, \
+  var transcript = "<strong>What kind of work did you do when you first came to the US? </strong> <br><br>When I arrived in New York, I knew one person from my hometown who helped me get settled. I always thought I would work in a restaurant, \
    and worked a number of restaurant jobs and quickly learned that the pay was very low, I didn’t earn enough to pay back my debts. My friends told me, if you can’t speak English, massage \
-   is the only way to make enough money to return our debts. Those of us who are older face a lot of pressure to pay back our debts quickly.\nSo working in massage helps us return our debts, \
+   is the only way to make enough money to return our debts. Those of us who are older face a lot of pressure to pay back our debts quickly.<br><br>So working in massage helps us return our debts, \
    and is also less tiring, but its emotionally tiring because we are constantly scared of the police. So many of us are undocumented or don’t have massage licenses. Right after I learned massage, \
    I worked at a spa in Long Island, and I was arrested. At that time, I didn’t know too much. I had just been working a few months, and one day, seven of us were working, and the police went “fishing.” They asked if we were documented, \
-   and first asked to see our work permits, then after that asked to see our licenses. When we couldn’t’ produce licenses, they arrested us.\nThat day we were arrested for two charges: prostitution and unlicensed massage. A free lawyer was assigned \
+   and first asked to see our work permits, then after that asked to see our licenses. When we couldn’t’ produce licenses, they arrested us.<br><br>That day we were arrested for two charges: prostitution and unlicensed massage. A free lawyer was assigned \
    to our case and told us that if you don’t have a massage license, I recommend you to accept the prostitution charge, he said it was a lighter charge. He told us that if we accepted the prostitution charge, and didn’t get arrested within the \
-   next year, that we shouldn’t have future problems. At the time, I hadn’t done sex work. But still he told me to take the charge to avoid jail time.\n<strong>Was this the only time you were arrested?</strong>\nI was arrested one \
+   next year, that we shouldn’t have future problems. At the time, I hadn’t done sex work. But still he told me to take the charge to avoid jail time.<br><br><strong>Was this the only time you were arrested?</strong><br><br>I was arrested one \
    other time coming out of a bar, after drinking with friends. There was a large group of us women on the street corner talking, waiting for friends. Some saw the police coming and went home. I didn’t leave immediately, \
    and they asked what you are doing on this street corner? I couldn’t understand or speak English, and later learned that they charged us with blocking transportation thoroughfare. When I showed up to my court date, my court \
-   assigned lawyer told me that if I plead guilty, then I would pay a $35 fine. I thought to myself, that fine is less than my transportation costs to show up at court and so I paid it.\nI can’t speak English. If I could, I’m not sure I would have pleaded guilty to these crimes if I understood them." 
+   assigned lawyer told me that if I plead guilty, then I would pay a $35 fine. I thought to myself, that fine is less than my transportation costs to show up at court and so I paid it.<br><br>I can’t speak English. If I could, I’m not sure I would have pleaded guilty to these crimes if I understood them." 
   transcript = transcript.replace(/\n/g, '</p><p>&nbsp;</p><p>');
   // transcript = '<p>' + transcript + '</p>';
 
