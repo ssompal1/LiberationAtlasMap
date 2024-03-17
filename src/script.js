@@ -550,6 +550,11 @@ const marker4 = new mapboxgl.Marker(e4)
   .setLngLat([-73.812606, 40.771048])
   .addTo(map)
 
+  const e8 = document.createElement('div')
+  e8.className = 'marker';
+  const marker8 = new mapboxgl.Marker(e8)
+  .setLngLat([-73.815718, 40.766841])
+  .addTo(map)
 
 marker1.getElement().addEventListener('click', function () {
   // Show the panel
@@ -651,6 +656,25 @@ marker7.getElement().addEventListener('click', function () {
   // document.getElementById('zine').appendChild(iframeContainer);
 
   document.getElementById('zinepanel').style.display = 'block';
+});
+
+marker8.getElement().addEventListener('click', function () {
+  // Show the panel
+  console.log("Clicked");
+  document.getElementById('popup-title').innerText = 'Sally';
+  document.getElementById('mp4-content').style.display = 'none';
+  document.getElementById('interview-title').innerText = 'Sally is a 51-year-old migrant sex worker who was displaced in a January 2024 raid of Jackson Heights, Corona, and Elmhurst, Queens. \
+   This raid targeted Asian migrant street-based sex workers by posting Department of Buildings violation notices on businesses and subsequently arresting any workers entering these businesses.'
+  document.getElementById('interview-description').innerText = "Since the massage parlor was closed down, there is no place to work. This Spring Festival has been very cold.\
+   I was afraid of taking calls from my family in China.I had no money to pay the rent, eat, or send back to my family. My children need money for food. I was very sad that I couldn't answer the phone call from my family even though it was new year. \
+   Every day, I go to the supermarket, which opens at nine o'clock, and buy expired vegetables for a dollar a bunch.\n \n I was crying silently in my rented room during the holiday, and my heart was dripping blood.\
+    When I think of all the hardships I encountered in the United States, coupled with not being able to work, I don't know when this kind of suffering will come to an end.\n \nIn the middle of the night, when it's quiet, I secretly cry, shed tears, and my heart drips blood. \
+    I don't know when these days will come to an end. I also want to end these days earlier and give us a job to earn money by ourselves, for the sake of our family and for ourselves. \
+    I hope we will be given a chance to work.\n\n New Year's is supposed to be a time of celebration. But this year, there is no gathering with friends. My community members are all very sad and upset, there is no job, they can't pay the rent, they also buy expired food for a dollar. \
+    Not in the mood to party together. There is no work on New Year's Eve, and there is no money for food. I should have been happy on New Year's Eve, wearing new clothes, but now my pants are torn. We should have gotten together, AA, and sang. \
+    Every time we are in a rented room at night, we shed tears by ourselves every day, and we can't tell our family that we are having a bad time, and we have to report the good news. But we are really very bad, can not sleep every day, afraid of family worry.\n \n \
+    I hope that friends from all walks of life will pay attention to our group and not come back to hurt us, our hearts are also very fragile. Thank you for your attention to our community as we demand change."
+  document.getElementById('panel').style.display = 'block';
 });
 
 var videoElement = document.getElementById('mp4-content');
