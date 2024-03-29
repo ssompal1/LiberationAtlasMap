@@ -397,7 +397,7 @@ map.on('load', () => {
       document.getElementById('hist-description').innerText = '欢迎！这幅图表会带你走过几个主要的时期，了解纽约州政策和定罪方式的变化，以及它们给亚裔按摩工人带来的监控和暴力。';
       if (document.getElementById('hist-title').innerText === '纽约市对于亚裔按摩工人的监控与暴力') { document.getElementById('back').style.display = 'none'; }
       else { document.getElementById('back').innerText = '回去'; }
-      if (document.getElementById('hist-title').innerText === '纽约市对于亚裔按摩工人的监控与暴力') { document.getElementById('next').innerText = 'INICIAR'; }
+      if (document.getElementById('hist-title').innerText === '纽约市对于亚裔按摩工人的监控与暴力') { document.getElementById('next').innerText = '开始'; }
       else { document.getElementById('next').innerText = '下一个'; }
   }
 }
@@ -439,7 +439,7 @@ map.on('load', () => {
 
   document.getElementById('next').addEventListener('click', function () {
     next();
-    document.getElementById('next').innerText = 'NEXT';
+    //document.getElementById('next').innerText = 'NEXT';
   
     document.getElementById('back').style.display = 'block';
   });
@@ -464,13 +464,19 @@ map.on('load', () => {
   function setHistText() {
     if (window.location.hash) {
       if (window.location.hash == "#en") {
+        document.getElementById('next').innerText = 'NEXT';
+        document.getElementById('back').innerText = 'BACK';
         document.getElementById('hist-description').innerText = text[i];
     }
     else if (window.location.hash == '#es'){
+      document.getElementById('next').innerText = 'SIGUIENTE';
+      document.getElementById('back').innerText = 'REGRESAR';
       document.getElementById('hist-description').innerText = textes[i];
       
     }
     else if (window.location.hash == "#zh") {
+      document.getElementById('back').innerText = '回去'; 
+      document.getElementById('next').innerText = '下一个';
       document.getElementById('hist-description').innerText = textzh[i];
   }
 }
@@ -604,14 +610,21 @@ marker1.getElement().addEventListener('click', function () {
     if (window.location.hash == "#en") {
       document.getElementById('popup-title').innerText = 'Lisa';
       document.getElementById('interview-title').innerText = 'Lisa is a migrant Chinese massage worker who is also a lead organizer for the Red Canary Song Chinese outreach team.'
-  }
+      document.getElementById('interview-description').innerText = '';
+    }
+  else if (window.location.hash == "#es") {
+    document.getElementById('popup-title').innerText = 'Lisa';
+    document.getElementById('interview-title').innerText = 'Lisa es una masajista china migrante que también es organizadora principal del equipo de alcance a personas chinas de Red Canary Song.'
+    document.getElementById('interview-description').innerText = 'Los propietarios de negocios y la farmacia de al lado piensan que tenemos demasiados hombres de ida y vuelta a toda hora. Si eres masajista, claro que no te van a respetar, ¿verdad? Primero que todo, piensan que eres un(a) migrante, una recién llegada. Nosotras no tenemos tanto tiempo en este barrio como ellos y ellas, que han estado aquí por como diez o veinte años… solo te verán como una chica migrante. Nosotras los hacemos sentir incómodos. Si por accidente dejamos la basura en algún lado yo se nos olvida, ellos la arrastran hasta el escalón. Un señor hizo esto dos veces - él esparció la basura por todo nuestro escalón. Mi punto de vista en todo esto… como lo puedo explicar… Honestamente, estamos haciendo una buena acción. Nosotros ayudamos a los trabajadores migrantes en esta ciudad. Cuando ellos se cansan, nosotras ayudamos a aliviar su cansancio. Para sus necesidades corporales, nosotras no ayudamos con nuestros cuerpos, si no que ayudamos con nuestras técnicas manuales. Para ellos, esto también es una forma de catarsis corporal, una pequeña consolación. Honestamente, esto no es fácil para estos hombres trabajadores migrantes. Sus casas no están aquí, ni sus espozas o hijos. Cuando ves esta expresión de ser deseado en sus caras, no puedes evitar sentir un poco de simpatía. Algunos hombres no lloran fácilmente. Pero, una vez me encontré con este señor – en serio me abrazo y lloro. Él me dijo que hacía investigaciones en una instalación restringida y que no había visto a una mujer en tres años. ¿Qué haces en esa situación? Seguro estaba sufriendo demasiado a causa de toda esta represión. Él prácticamente te estaba suplicando. Entonces qué le dices a eso? Él era joven, un seńor de como treinta y pico ańos. ¿Qué haces en esa situación? Mi deseo es que cada vez lleve a mis hermanas a cantar karaoke! [risa…] Yo las puedo hacer felices – si ellas se sienten felices, yo soy feliz. Si ellas se sienten tristes, yo también estoy triste.';
+}
   else if (window.location.hash == "#zh") {
     document.getElementById('popup-title').innerText = '丽莎';
     document.getElementById('interview-title').innerText = 'Lisa是一位中国移民按摩女工，也是红莺歌中国外展队的队长和组织者。';
+    document.getElementById('interview-description').innerText = '';
+  }
 }
-}
-  document.getElementById('interview-description').innerText = ''
   document.getElementById('mp4-content').src = 'oralHistories/Harm.mp4';
+  document.getElementById('mp4-content').style.display = 'inline';
   document.getElementById('panel').style.display = 'block';
 });
 
@@ -620,14 +633,22 @@ marker2.getElement().addEventListener('click', function () {
     if (window.location.hash == "#en") {
       document.getElementById('popup-title').innerText = 'Lisa';
       document.getElementById('interview-title').innerText = 'Lisa is a migrant Chinese massage worker who is also a lead organizer for the Red Canary Song Chinese outreach team.'
+      document.getElementById('interview-description').innerText = '';
+    }
+  else if (window.location.hash == "#es") {
+    document.getElementById('popup-title').innerText = 'Lisa';
+    document.getElementById('interview-title').innerText = 'Lisa es una masajista china migrante que también es organizadora principal del equipo de alcance a personas chinas de Red Canary Song.'
+    document.getElementById('interview-description').innerText = 'La segunda vez que vinieron nos acusaron de las dos cosas: masaje sin licencia y prostitucion. Después vinieron una tercera vez. Esta tercera vez no nos arrestaron ni nos pidieron que nos fuésemos con ellos. Vinieron como una docena, algunos con el departamento de edificios, algunos con la FBI. En cualquier caso, gente de varios departamentos vinieron todos. Cerraron la sala de masajes. Después, fue la demanda. Todos los días por como tres meses cargaba mi mochila conmigo, tomando café en frente del precinto 109. Sin trabajo ni saber a donde ir, sufrí cada día de esa manera. Claro, el propietario estaba equivocado. Pero aunque estaba equivocado, pensé que era mejor no gastar energía en luchar contra algo como esto, porque si de alguna manera ganas en la corte, todavía habrás perdido el tiempo. Mucha gente no lucharía. Uno solo puede enfocarse en sí mismo, soltar, y perdurar.';
+    //document.getElementById('interview-description').innerText = 'Es como la vez que me robaron. Paso en esta misma sala. Ese dia estaba a punto de salir del trabajo, pero el me dijo que “solo necesitaba que le haga media hora (de masaje)”. Cuando terminé, no se levantó por un largo rato. Al fin me dijo “paseme su telefono, telefono, telefono”. Pensé que a lo mejor necesitaba usar una aplicación para traducir algo. Pero, él escribió “acuéstese” y “robo”. Me pregunto si quería ver a mi madre y a mi padre de nuevo. Yo le entendi. Claro que quería ver a mis padres. “Si quieres ver a tu madre y a tu padre, saca tu dinero”. “Dinero, dinero dinero.” Me decía, “dinero dinero dinero dinero.” “dinero dinero dinero”. Yo le dije, “no dinero”. No tenía dinero, entonces me apuntó el arma. El busco en todas partes, destrozó todo el lugar. Él lo encontró en ese gabinete. El dijo que yo le mentí – que había tanta plata ahí pero yo dije que “no tenía dinero”. Me amenazó con dispararme. Lo único que pude hacer fue arrodillarme en el suelo y dije “perdoneme, perdoneme, perdoneme”. Dije que este dinero era para pagar el alquiler de la casa. “Perdoneme perdoneme perdoneme”. Dinero - pagar - casa - dinero. Porque lo había guardado en una bolsa plástica, había ahorrado para poder pagar dos meses de alquiler. Originalmente iba a pagar un mes, pero el propietario de la casa me había ofrecido un descuento si pagaba los dos meses en un solo pago. En esa bolsa tenía esa plata más lo que había ganado ese día. Ese día había tenido mucha suerte. Todos los clientes que había conocido fueran tan generosos, pensé yo. $120, $120… había hecho como dos o tres sesiones de $120. Fue lo máximo que había ganado en un solo día desde mi llegada a nueva york–todo me lo robaron. Llamar a la policía no ayudaría nada. Ellos no pueden perseguir la plata hasta que me la regresen, de todos modos. Además, si hubiese ido a la estación, me hubieran interrogado toda la noche.';
   }
   else if (window.location.hash == "#zh") {
     document.getElementById('popup-title').innerText = '丽莎';
     document.getElementById('interview-title').innerText = 'Lisa是一位中国移民按摩女工，也是红莺歌中国外展队的队长和组织者。';
+    document.getElementById('interview-description').innerText = '';
+  }
 }
-}
-  document.getElementById('interview-description').innerText = ''
   document.getElementById('mp4-content').src = 'oralHistories/DOB.mp4';
+  document.getElementById('mp4-content').style.display = 'inline';
   document.getElementById('panel').style.display = 'block';
 
 });
@@ -637,14 +658,21 @@ marker3.getElement().addEventListener('click', function () {
     if (window.location.hash == "#en") {
       document.getElementById('popup-title').innerText = 'Lisa';
       document.getElementById('interview-title').innerText = 'Lisa is a migrant Chinese massage worker who is also a lead organizer for the Red Canary Song Chinese outreach team.'
+      document.getElementById('interview-description').innerText = '';
+    }
+  else if (window.location.hash == "#es") {
+    document.getElementById('popup-title').innerText = 'Lisa';
+    document.getElementById('interview-title').innerText = 'Lisa es una masajista china migrante que también es organizadora principal del equipo de alcance a personas chinas de Red Canary Song.'
+    document.getElementById('interview-description').innerText = 'Es como la vez que me robaron. Paso en esta misma sala. Ese dia estaba a punto de salir del trabajo, pero el me dijo que “solo necesitaba que le haga media hora (de masaje)”. Cuando terminé, no se levantó por un largo rato. Al fin me dijo “paseme su telefono, telefono, telefono”. Pensé que a lo mejor necesitaba usar una aplicación para traducir algo. Pero, él escribió “acuéstese” y “robo”. Me pregunto si quería ver a mi madre y a mi padre de nuevo. Yo le entendi. Claro que quería ver a mis padres. “Si quieres ver a tu madre y a tu padre, saca tu dinero”. “Dinero, dinero dinero.” Me decía, “dinero dinero dinero dinero.” “dinero dinero dinero”. Yo le dije, “no dinero”. No tenía dinero, entonces me apuntó el arma. El busco en todas partes, destrozó todo el lugar. Él lo encontró en ese gabinete. El dijo que yo le mentí – que había tanta plata ahí pero yo dije que “no tenía dinero”. Me amenazó con dispararme. Lo único que pude hacer fue arrodillarme en el suelo y dije “perdoneme, perdoneme, perdoneme”. Dije que este dinero era para pagar el alquiler de la casa. “Perdoneme perdoneme perdoneme”. Dinero - pagar - casa - dinero. Porque lo había guardado en una bolsa plástica, había ahorrado para poder pagar dos meses de alquiler. Originalmente iba a pagar un mes, pero el propietario de la casa me había ofrecido un descuento si pagaba los dos meses en un solo pago. En esa bolsa tenía esa plata más lo que había ganado ese día. Ese día había tenido mucha suerte. Todos los clientes que había conocido fueran tan generosos, pensé yo. $120, $120… había hecho como dos o tres sesiones de $120. Fue lo máximo que había ganado en un solo día desde mi llegada a nueva york–todo me lo robaron. Llamar a la policía no ayudaría nada. Ellos no pueden perseguir la plata hasta que me la regresen, de todos modos. Además, si hubiese ido a la estación, me hubieran interrogado toda la noche.';
   }
   else if (window.location.hash == "#zh") {
     document.getElementById('popup-title').innerText = '丽莎';
     document.getElementById('interview-title').innerText = 'Lisa是一位中国移民按摩女工，也是红莺歌中国外展队的队长和组织者。';
+    document.getElementById('interview-description').innerText = '';
+  }
 }
-}
-  document.getElementById('interview-description').innerText = ''
   document.getElementById('mp4-content').src = 'oralHistories/cops.mp4';
+  document.getElementById('mp4-content').style.display = 'inline';
   document.getElementById('panel').style.display = 'block';
 });
 
@@ -653,14 +681,21 @@ marker4.getElement().addEventListener('click', function () {
     if (window.location.hash == "#en") {
       document.getElementById('popup-title').innerText = 'Lisa';
       document.getElementById('interview-title').innerText = 'Lisa is a migrant Chinese massage worker who is also a lead organizer for the Red Canary Song Chinese outreach team.'
+      document.getElementById('interview-description').innerText = '';
+    }
+  else if (window.location.hash == "#es") {
+    document.getElementById('popup-title').innerText = 'Lisa';
+    document.getElementById('interview-title').innerText = 'Lisa es una masajista china migrante que también es organizadora principal del equipo de alcance a personas chinas de Red Canary Song.'
+    document.getElementById('interview-description').innerText = 'Cuando llegué por primera vez, busqué trabajo en todas partes. Al final, sentí que era muy difícil empezar en la industria de restaurantes o salones de uñas. Mi espalda estaba demasiado mal para trabajar en un restaurante todo el día parada; y mi vista era demasiado mala para pintar uñas. Para hacer masaje, había un periodo corto para aprender. Pude empezar a trabajar entre las primeras dos o tres semanas. Cuando primero llegas a un lugar, no sabes nada– es como estar en oscuridad total. Si no trabajas, ¿cómo puedes sobrevivir, comer y pagar el arriendo? Al fin hice un turno en la noche. Trabajaba de las 10:30 de la mañana hasta las 10:00 de la noche y de las 11 de la noche hasta las 4 de la mañana en otro sitio de masaje. Trabajaba dos trabajos en ese entonces, y lo pude hacer por como la mitad de un año. Al principio nunca descansaba – no podía parar. Como acaba de llegar de China, tenía mucho estrés y tenía muchas deudas. Quería agotarme en vez de tomar un descanso. Si descansaba, me distraería, y se me distraía, empezaba a llorar. Por cuatro meses, solo descansé por la mitad de un día. Al principio no sabía que había riesgos. Porque mi único deber era venir a trabajar, las otras no me decían todo. Nadie me dijo que era prohibido que trabajara en masajes. No fue hasta un año después que me enteré de los riesgos, porque llegó la policía a arrestarnos. Estábamos sorprendidas, como idiotas. Yo no tenía idea lo que estaba pasando. Llegaron como si fueran comensales normales. El me pidió que le diera un masaje, entonces lo dejé entrar. Solo le había hecho masaje por un minuto – ni siquiera se había quitado la ropa. El me pidió que le apretara el hombro, entonces le apreté el hombro. En ese momento entraron todos los policías. No trajeron interpretador entonces no entendía nada de lo que me decían. Me atraparon. Después, tomaron mi foto. Tenía puesto una camisa manga-corta. Mi ropa era un poco reveladora entonces les pregunté si me podía arreglar un poco. No me dejo ajustar a mi ropa, si no me la jalo para que me vea mas indecente. [...motor de avión sobre Flushing…] Estaba totalmente aturdida. No sabía que estaba pasando. Fui arrestada y pasé la noche en la cárcel.';
   }
   else if (window.location.hash == "#zh") {
     document.getElementById('popup-title').innerText = '丽莎';
     document.getElementById('interview-title').innerText = 'Lisa是一位中国移民按摩女工，也是红莺歌中国外展队的队长和组织者。';
+    document.getElementById('interview-description').innerText = '';
+  }
 }
-}
-  document.getElementById('interview-description').innerText = ''
   document.getElementById('mp4-content').src = 'oralHistories/Ex1.mp4';
+  document.getElementById('mp4-content').style.display = 'inline';
   document.getElementById('panel').style.display = 'block';
 });
 
@@ -668,46 +703,64 @@ marker5.getElement().addEventListener('click', function () {
   if (window.location.hash) {
     if (window.location.hash == "#en") {
       document.getElementById('popup-title').innerText = 'Ms. Hwang';
-      document.getElementById('interview-title').innerText = 'Ms. Hwang is a Korean migrant massage worker living and working in New York.'
+      document.getElementById('interview-title').innerText = 'Ms. Hwang is a Korean migrant massage worker living and working in New York.';
+      document.getElementById('interview-description').innerText = '';
+    }
+  else if (window.location.hash == "#es") {
+    document.getElementById('popup-title').innerText = 'Sra. Hwang';
+    document.getElementById('interview-title').innerText = 'La Sra. Hwang es una masajista migrante coreana que vive y trabaja en Nueva York.';
+    document.getElementById('interview-description').innerText = 'En esta profesión, le toca a uno vivir varios accidentes, bastante represión policial, *ruido al fondo* redadas, clientes, robo, y comer y trabajar a la vez. Si si, puede compartir algunas de las situaciones más difíciles que ha vivido? La parte más difícil de este trabajo son las redadas. Yo nunca quisiera que mi familia sepa lo que hago para mi trabajo. Entonces es muy fuerte ser arrestada e interrogada por la policía. Además, los clientes… Hay todo tipo de clientes. Entonces tienes que preparar a tu mente desde el principio. Yo ya estaba preparada mentalmente cuando empecé a trabajar en esto. Yo soy bastante indulgente, tolero a casi todos los clientes. La cosa más importante son las redadas. Cuando viene la policía. Esa es la parte más difícil. Yo pienso, “porque tengo que vivir así? Porque me tratan como si fuera menos que una persona?” En momentos como estos, siento un gran sentimiento de autodestrucción. Después me doy la vuelta y pienso : no, no debería sabotearme así. Debería concentrarme y vivir más fuertemente. Mi mente da vueltas en momentos como estos. ¿Puede compartir algunos accidentes memorables? Cuando te atrapan en una redada, ¿cómo entra la policía a tu lugar de trabajo? ¿Cómo te arrestaron y llevaron a la estación de policía? ¿Cuánto tiempo te detuvieron? Por favor dime si has vivido algo como esto. Para mi, normalmente entra la policía como cliente. ¿En Corea del Sur? Si, pretendiendo ser cliente. Cómo policía encubierto. Si, encubierto, como cliente. Le abrí la puerta a un señor, pensando que era cliente pero era policía. Me agarro la muñeca para que no me mueva de ahí.  Quería huir y dejarle saber a las personas trabajando dentro. Trate de huir y advertirlas, pero me sostuvo la muñeca fuertemente para prevenir que me vaya. Entonces no tuve opción si no gritar. Grite fuertemente para que me escuchen adentro y para que sepan lo que venía. Porque grité tan fuertemente. Todos dentro de la sala, empleados y clientes. Así pasó la redada. Típicamente pasan así. Entonces vienen encubiertos, les abres la puerta, y te agarran la muñeca. Si, tienes razón. Si, pero ahora que lo estamos hablando, me recuerdo que un policía ya estaba adentro pretendiendo ser cliente también. Ya veo. Si, hay casos donde eso pasa. Al entrar, empiezan a buscar. Buscan en los cuartos. Buscan evidencia. A todos les da pánico. Los pequeños se ocupan en vestirse y tratar de escapar, entonces dejan evidencia. Después, la encuentra la policía y nos metemos en problemas. ¿Qué quieres decir con evidencia? Condones.';
   }
   else if (window.location.hash == "#zh") {
     document.getElementById('popup-title').innerText = '黄小姐';
     document.getElementById('interview-title').innerText = '黄小姐是一位韩国移民按摩女工，在纽约工作生活。 ';
+    document.getElementById('interview-description').innerText = '';
+  }
 }
-}
-  document.getElementById('interview-description').innerText = ''
   document.getElementById('mp4-content').src = 'oralHistories/RCS_LA_draft.mp4';
+  document.getElementById('mp4-content').style.display = 'inline';
   document.getElementById('panel').style.display = 'block';
 });
 
 marker6.getElement().addEventListener('click', function () {
   // Show the panel
+  var transcript;
   if (window.location.hash) {
     if (window.location.hash == "#en") {
       document.getElementById('popup-title').innerText = 'Si Si';
       document.getElementById('interview-title').innerText = 'Si Si is a massage worker in her 50s from Chongqing. She arrived in the US in 2017 and has lived in Queens and Long Island ever since.'
+      transcript = "<strong>What kind of work did you do when you first came to the US? </strong> <br><br>When I arrived in New York, I knew one person from my hometown who helped me get settled. I always thought I would work in a restaurant, \
+      and worked a number of restaurant jobs and quickly learned that the pay was very low, I didn’t earn enough to pay back my debts. My friends told me, if you can’t speak English, massage \
+      is the only way to make enough money to return our debts. Those of us who are older face a lot of pressure to pay back our debts quickly.<br><br>So working in massage helps us return our debts, \
+      and is also less tiring, but its emotionally tiring because we are constantly scared of the police. So many of us are undocumented or don’t have massage licenses. Right after I learned massage, \
+      I worked at a spa in Long Island, and I was arrested. At that time, I didn’t know too much. I had just been working a few months, and one day, seven of us were working, and the police went “fishing.” They asked if we were documented, \
+      and first asked to see our work permits, then after that asked to see our licenses. When we couldn’t’ produce licenses, they arrested us.<br><br>That day we were arrested for two charges: prostitution and unlicensed massage. A free lawyer was assigned \
+      to our case and told us that if you don’t have a massage license, I recommend you to accept the prostitution charge, he said it was a lighter charge. He told us that if we accepted the prostitution charge, and didn’t get arrested within the \
+      next year, that we shouldn’t have future problems. At the time, I hadn’t done sex work. But still he told me to take the charge to avoid jail time.<br><br><strong>Was this the only time you were arrested?</strong><br><br>I was arrested one \
+      other time coming out of a bar, after drinking with friends. There was a large group of us women on the street corner talking, waiting for friends. Some saw the police coming and went home. I didn’t leave immediately, \
+      and they asked what you are doing on this street corner? I couldn’t understand or speak English, and later learned that they charged us with blocking transportation thoroughfare. When I showed up to my court date, my court \
+      assigned lawyer told me that if I plead guilty, then I would pay a $35 fine. I thought to myself, that fine is less than my transportation costs to show up at court and so I paid it.<br><br>I can’t speak English. If I could, I’m not sure I would have pleaded guilty to these crimes if I understood them." 
+    }
+  else if (window.location.hash == "#es") {
+    document.getElementById('popup-title').innerText = 'Si Si';
+    document.getElementById('interview-title').innerText = 'Si Si es una masajista de cincuenta y tantos años de Chongqing. Llegó a los Estados Unidos en el año 2017 y desde entonces ha vivido en Queens y Long Island.'
+    transcript = "<strong>¿Qué tipo de trabajo hacía usted cuando llegó por primera vez a los Estados Unidos? </strong> <br><br>Cuando llegué a Nueva York, conocía a una persona de mi ciudad natal que me ayudó a instalarme. Siempre pensé que trabajaría en un restaurante, \
+entonces trabajé en varios restaurantes y rápidamente me di cuenta que el salario era muy bajo y que no ganaba lo suficiente para pagar mis deudas. Mis amigos me dijeron que si no puedes hablar inglés, el masaje \
+es la única forma de ganar suficiente dinero para pagar nuestras deudas. Nosotras que somos mayores enfrentamos mucha presión para pagar nuestras deudas rápidamente.Entonces trabajar en masajes nos ayuda a pagar nuestras deudas y también es menos agotador, pero es emocionalmente agotador porque le tenemos miedo constantemente a la policía. Muchas de nosotras somos indocumentadas o no tenemos licencias de masaje. Inmediatamente después de aprender el masaje, \
+trabajé en un spa en Long Island y me arrestaron. <br><br>En ese momento, no sabía mucho. Llevaba apenas unos meses trabajando y un día estábamos siete personas trabajando y la policía se fue a “pescar”. Nos preguntaron si estábamos documentados, y primero pidieron ver nuestros permisos de trabajo, luego pidieron ver nuestras licencias. Cuando no pudimos presentar las licencias, nos arrestaron.Ese día nos arrestaron por dos cargos: prostitución y masajes sin licencia. Nos asignaron un abogado gratuito a nuestro caso y el nos dijo que si uno no tiene licencia de masaje le recomienda que acepte el cargo de prostitución, nos dijo que era un cargo más leve. Nos dijo que si aceptábamos el cargo de prostitución y no nos arrestaban durante el próximo año, no deberíamos tener problemas en el futuro. En ese momento, no había hecho trabajo sexual. Pero aun así me dijo que aceptara el cargo para evitar ir a la cárcel.<br><br><strong>Esta fue la única vez que la arrestaron? </strong><br><br>Me arrestaron en otra ocasión cuando estaba saliendo de un bar donde había tomado con unos amigos.  En la esquina del bar había un grupo grande de mujeres esperando a sus amigos y amigas. Algunas vieron que venía la policía y se fueron a casa. Yo me quedé un rato más y me preguntaron que hacía en la esquina. No podía entender ni hablar inglés y luego supe que nos acusaron de bloquear la vía de transporte. Cuando me presenté a mi cita en la corte, mi abogado asignado por la corte me dijo que si me declaraba culpable, solo me tocaría pagar una multa de $35. Pensé que para mis adentros, esa multa era menor que los costos de transporte para presentarme en la corte y entonces la pagué.<br><br>No puedo hablar inglés. Si pudiera, no estoy segura que me hubiera declarado culpable de estos crímenes si los hubiera entendido en ese entonces.";
   }
   else if (window.location.hash == "#zh") {
     document.getElementById('popup-title').innerText = '西西';
     document.getElementById('interview-title').innerText = '西西是一位50多岁的按摩工人，来自重庆。她在2017年到达美国，从那以后一直生活在皇后区和长岛。';
+    transcript = '';
+  }
 }
-}
-  var transcript = "<strong>What kind of work did you do when you first came to the US? </strong> <br><br>When I arrived in New York, I knew one person from my hometown who helped me get settled. I always thought I would work in a restaurant, \
-   and worked a number of restaurant jobs and quickly learned that the pay was very low, I didn’t earn enough to pay back my debts. My friends told me, if you can’t speak English, massage \
-   is the only way to make enough money to return our debts. Those of us who are older face a lot of pressure to pay back our debts quickly.<br><br>So working in massage helps us return our debts, \
-   and is also less tiring, but its emotionally tiring because we are constantly scared of the police. So many of us are undocumented or don’t have massage licenses. Right after I learned massage, \
-   I worked at a spa in Long Island, and I was arrested. At that time, I didn’t know too much. I had just been working a few months, and one day, seven of us were working, and the police went “fishing.” They asked if we were documented, \
-   and first asked to see our work permits, then after that asked to see our licenses. When we couldn’t’ produce licenses, they arrested us.<br><br>That day we were arrested for two charges: prostitution and unlicensed massage. A free lawyer was assigned \
-   to our case and told us that if you don’t have a massage license, I recommend you to accept the prostitution charge, he said it was a lighter charge. He told us that if we accepted the prostitution charge, and didn’t get arrested within the \
-   next year, that we shouldn’t have future problems. At the time, I hadn’t done sex work. But still he told me to take the charge to avoid jail time.<br><br><strong>Was this the only time you were arrested?</strong><br><br>I was arrested one \
-   other time coming out of a bar, after drinking with friends. There was a large group of us women on the street corner talking, waiting for friends. Some saw the police coming and went home. I didn’t leave immediately, \
-   and they asked what you are doing on this street corner? I couldn’t understand or speak English, and later learned that they charged us with blocking transportation thoroughfare. When I showed up to my court date, my court \
-   assigned lawyer told me that if I plead guilty, then I would pay a $35 fine. I thought to myself, that fine is less than my transportation costs to show up at court and so I paid it.<br><br>I can’t speak English. If I could, I’m not sure I would have pleaded guilty to these crimes if I understood them." 
-  transcript = transcript.replace(/\n/g, '</p><p>&nbsp;</p><p>');
+transcript = transcript.replace(/\n/g, '</p><p>&nbsp;</p><p>');
   // transcript = '<p>' + transcript + '</p>';
 
   document.getElementById('interview-description').innerHTML = transcript
   document.getElementById('mp4-content').src = 'oralHistories/Si SI.mp4';
+  document.getElementById('mp4-content').style.display = 'inline';
   document.getElementById('panel').style.display = 'block';
 });
 
@@ -728,8 +781,14 @@ marker7.getElement().addEventListener('click', function () {
 
   // document.getElementById('zine').innerHTML = "";
   // document.getElementById('zine').appendChild(iframeContainer);
-
+  if (window.location.hash) {
+    if (window.location.hash == "#es") {
+      document.getElementById('zine-popup-title').innerText = 'EL MUNDO DEBE RECONOCER NUESTRO LABOR';
+      document.getElementById('zine-popup-description').innerText = 'una historia oral de trabajo sexual migrante';
+      document.getElementById('zine-interview-description').innerHTML = 'Esta revista contribuye a una extensa iniciativa de historia oral liderado por Red Canary Song, un colectivo de base organizando masajistas y trabajadores sexuales asiáticos y migrantes en una escala global. El propósito de este proyecto de historia oral consiste en recopilar relatos de trabajadoras sexuales, masajistas y organizadores, dando forma a un archivo de comunidad dentro del contexto de los derechos laborales, la justicia migratoria, y un marco alineado con la abolición del Complejo Industrial Penitenciario (PIC). \n \n Esta revista contribuye a una antología de novelas gráficas, traducida al coreano(, al español,) y al chino, destacando las experiencias compartidas de quienes ejercen el trabajo sexual, el trabajo de masajes, y el activismo. \n \n El contenido de esta revista proviene de un diálogo de historia oral entre Charlotte, una trabajadora social de Red Canary Song, y la Sra. Jang, una migrante coreana. La pieza visualmente representa partes de la historia que la Sra. Jang compartió con nosotros, que abarca aspectos del trabajo de masajes, trabajo sexual, y relaciones familiares.\n \n Esta revista fue visualizada, impresa y encuadernada por Karen Hu. \n \n Los agradecimientos por este trabajo se extienden a quienes participan en la recopilación y organización de estas historias orales, incluidos Yeonhoo Cho y Mona Malone.';
+    }}
   document.getElementById('zinepanel').style.display = 'block';
+  //document.getElementById('panel').style.display = 'block';
 });
 
 marker8.getElement().addEventListener('click', function () {
@@ -737,19 +796,42 @@ marker8.getElement().addEventListener('click', function () {
   console.log("Clicked");
   document.getElementById('popup-title').innerText = 'Sally';
   document.getElementById('mp4-content').style.display = 'none';
-  document.getElementById('interview-title').innerText = 'Sally is a 51-year-old migrant sex worker who was displaced in a January 2024 raid of Jackson Heights, Corona, and Elmhurst, Queens. \
-   This raid targeted Asian migrant street-based sex workers by posting Department of Buildings violation notices on businesses and subsequently arresting any workers entering these businesses.'
-  document.getElementById('interview-description').innerText = "Since the massage parlor was closed down, there is no place to work. This Spring Festival has been very cold.\
-   I was afraid of taking calls from my family in China.I had no money to pay the rent, eat, or send back to my family. My children need money for food. I was very sad that I couldn't answer the phone call from my family even though it was new year. \
-   Every day, I go to the supermarket, which opens at nine o'clock, and buy expired vegetables for a dollar a bunch.\n \n I was crying silently in my rented room during the holiday, and my heart was dripping blood.\
-    When I think of all the hardships I encountered in the United States, coupled with not being able to work, I don't know when this kind of suffering will come to an end.\n \nIn the middle of the night, when it's quiet, I secretly cry, shed tears, and my heart drips blood. \
-    I don't know when these days will come to an end. I also want to end these days earlier and give us a job to earn money by ourselves, for the sake of our family and for ourselves. \
-    I hope we will be given a chance to work.\n\n New Year's is supposed to be a time of celebration. But this year, there is no gathering with friends. My community members are all very sad and upset, there is no job, they can't pay the rent, they also buy expired food for a dollar. \
-    Not in the mood to party together. There is no work on New Year's Eve, and there is no money for food. I should have been happy on New Year's Eve, wearing new clothes, but now my pants are torn. We should have gotten together, AA, and sang. \
-    Every time we are in a rented room at night, we shed tears by ourselves every day, and we can't tell our family that we are having a bad time, and we have to report the good news. But we are really very bad, can not sleep every day, afraid of family worry.\n \n \
-    I hope that friends from all walks of life will pay attention to our group and not come back to hurt us, our hearts are also very fragile. Thank you for your attention to our community as we demand change."
+  if (window.location.hash) {
+    if (window.location.hash == "#en") {
+      document.getElementById('interview-title').innerText = 'Sally is a 51-year-old migrant sex worker who was displaced in a January 2024 raid of Jackson Heights, Corona, and Elmhurst, Queens. \
+        This raid targeted Asian migrant street-based sex workers by posting Department of Buildings violation notices on businesses and subsequently arresting any workers entering these businesses.'
+      document.getElementById('interview-description').innerText = "Since the massage parlor was closed down, there is no place to work. This Spring Festival has been very cold.\
+        I was afraid of taking calls from my family in China.I had no money to pay the rent, eat, or send back to my family. My children need money for food. I was very sad that I couldn't answer the phone call from my family even though it was new year. \
+        Every day, I go to the supermarket, which opens at nine o'clock, and buy expired vegetables for a dollar a bunch.\n \n I was crying silently in my rented room during the holiday, and my heart was dripping blood.\
+        When I think of all the hardships I encountered in the United States, coupled with not being able to work, I don't know when this kind of suffering will come to an end.\n \nIn the middle of the night, when it's quiet, I secretly cry, shed tears, and my heart drips blood. \
+        I don't know when these days will come to an end. I also want to end these days earlier and give us a job to earn money by ourselves, for the sake of our family and for ourselves. \
+        I hope we will be given a chance to work.\n\n New Year's is supposed to be a time of celebration. But this year, there is no gathering with friends. My community members are all very sad and upset, there is no job, they can't pay the rent, they also buy expired food for a dollar. \
+        Not in the mood to party together. There is no work on New Year's Eve, and there is no money for food. I should have been happy on New Year's Eve, wearing new clothes, but now my pants are torn. We should have gotten together, AA, and sang. \
+        Every time we are in a rented room at night, we shed tears by ourselves every day, and we can't tell our family that we are having a bad time, and we have to report the good news. But we are really very bad, can not sleep every day, afraid of family worry.\n \n \
+        I hope that friends from all walks of life will pay attention to our group and not come back to hurt us, our hearts are also very fragile. Thank you for your attention to our community as we demand change."
+    }
+    else if (window.location.hash == "#es"){
+      document.getElementById('interview-title').innerText = 'Sally es una trabajadora sexual migrante de 51 años que fue desplazada en una redada en enero de 2024 en Jackson Heights, Corona y Elmhurst, Queens. \
+        Esta redada tuvo como objetivo a las trabajadoras sexuales inmigrantes asiáticas que trabajan en la calle, publicando avisos de infracción del Departamento de Edificios en las empresas y posteriormente arrestando a cualquier trabajador que ingresara a estas empresas.';
+
+      document.getElementById('interview-description').innerText = "Desde que cerraron el salón de masajes, no hay lugar para trabajar. Este Festival de Primavera ha sido muy frío.Tenía miedo de recibir llamadas de mi familia en China. No tenía dinero para pagar el alquiler, comer ni enviárselo a mi familia. Mis hijos necesitan dinero para comer. Me entristeció mucho no poder contestar la llamada telefónica de mi familia a pesar de que era año nuevo. \
+      Todos los días voy al supermercado, que abre a las nueve, y compro verduras caducadas por un dólar el manojo.\n \n Lloré en silencio en mi habitación alquilada durante las vacaciones y mi corazón goteaba sangre. \
+      Cuando pienso en todas las dificultades que encontré en los Estados Unidos, además de no poder trabajar, no sé cuándo terminará este tipo de sufrimiento.\n \nEn medio de la noche, lloro en secreto, derramo lágrimas y mi corazón gotea sangre. \
+      No sé cuándo terminarán estos días. También quiero terminar estos días antes y darnos un trabajo para ganar dinero por nosotros mismos, por el bien de nuestra familia y por nosotros mismos. \
+      Espero que tengamos la oportunidad de trabajar.\n\n Se supone que el Año Nuevo es un momento de celebración. Pero este año no hay reunión con amigos. Los miembros de mi comunidad están todos muy tristes y molestos, no hay trabajo, no pueden pagar el alquiler, además compran comida vencida por un dólar. \
+      No estoy de humor para festejar juntos. No hay trabajo en Nochevieja y no hay dinero para comida. Debería haber sido feliz en Nochevieja, usando ropa nueva, pero ahora tengo los pantalones rotos. Deberíamos habernos reunido, AA, y cantar. \
+      Cada vez que estamos en una habitación alquilada por la noche, derramamos lágrimas solos todos los días, no podemos decirle a nuestra familia que lo estamos pasando mal y tenemos que contar las buenas noticias. Pero estamos realmente muy mal, no podemos dormir todos los días por miedo a las preocupaciones familiares.\n \n \
+      Espero que amigos de todos los ámbitos de la vida presten atención a nuestro grupo y no vuelvan a lastimarnos, nuestros corazones también son muy frágiles. Gracias por su atención a nuestra comunidad mientras exigimos cambios.";
+    }
+    else if (window.location.hash == "#zh"){
+      document.getElementById('interview-title').innerText = '莎莉是一名 51 岁的移民性工作者，她在 2024 年 1 月对科罗纳杰克逊高地和皇后区埃尔姆赫斯特的一次突袭中流离失所。 \
+        这次突袭针对亚洲移民街头性工作者，在企业上张贴建筑部违规通知，随后逮捕任何进入这些企业的工人。';
+      document.getElementById('interview-description').innerText = '自从店关了以后，没有地方干活，这个春节过得很寒心，中国的家里打电话不敢接，没有钱交房租，吃饭，往回寄，孩子吃饭需要钱。非常难过，不敢接电话。每天去超市，九点开门，买过期的菜，一块钱一堆。过节在出租屋默默流泪，心在滴血。想起来美国种种不容易，加上没有工作，不知道这个日子什么时候到头。\
+      每到半夜，夜深人静的时候，都自己偷偷在哭，流泪，心在滴血。我也不知道这种日子什么时候到头，我也想早点结束这种日子，给我们一个工作，靠自己挣钱，为了家人，为了自己。希望能给我们一个工作的机会。\n \n 过年本来应该是一个庆祝的时候，过年没有聚，都很消极，没有工作，房租都交不上，买菜都买一块钱的。没有心情一起聚会。过年没有工作，吃饭钱都没有。本来过年应该开开心心的，穿新衣服，但现在我的裤子都是破的。本来应该聚一聚，AA制，唱唱歌。每次我们晚上在出租房，天天自己流泪，还不能和家人说过得不好，还要报喜。但我们确实是非常不好，天天睡不着觉，怕家人担心。\n \n希望社会各界的朋友关注我们群体，不要再来伤害我们，我们的心灵也很脆弱。谢谢大家关注我们这个群体!';
+    }
+  }
   document.getElementById('panel').style.display = 'block';
-});
+  });
 
 var videoElement = document.getElementById('mp4-content');
 
