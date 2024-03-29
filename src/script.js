@@ -375,17 +375,37 @@ map.on('load', () => {
   });
 
   document.getElementById('viewhist').addEventListener('click', function () {
+    if (window.location.hash) {
+      if (window.location.hash == "#en") {
+        document.getElementById('hist-title').innerText = 'Policing of Asian Massage Workers in NYC';
+        document.getElementById('hist-description').innerText = 'Welcome! This demonstration will walk through major periods of policing of Asian massage work as a result of changes in state policies and tactics of criminalization';
+        if (document.getElementById('hist-title').innerText === 'Policing of Asian Massage Workers in NYC') { document.getElementById('back').style.display = 'none'; }
+        else { document.getElementById('back').innerText = 'BACK'; }
+        if (document.getElementById('hist-title').innerText === 'Policing of Asian Massage Workers in NYC') { document.getElementById('next').innerText = 'START'; }
+        else { document.getElementById('next').innerText = 'NEXT'; }
+    }
+    else if (window.location.hash == '#es') {
+      document.getElementById('hist-title').innerText = 'Vigilancia Policial de Trabajadores de Masaje Asiáticos en NYC';
+      document.getElementById('hist-description').innerText = '¡Bienvenido/a! Esta demostración cubrirá las etapas más importantes de la vigilancia policial del masaje asiatico resultado por cambios en políticas estatales y tácticas de criminalización.';
+      if (document.getElementById('hist-title').innerText === 'Vigilancia Policial de Trabajadores de Masaje Asiáticos en NYC') { document.getElementById('back').style.display = 'none'; }
+      else { document.getElementById('back').innerText = 'REGRESAR'; }
+      if (document.getElementById('hist-title').innerText === 'Vigilancia Policial de Trabajadores de Masaje Asiáticos en NYC') { document.getElementById('next').innerText = 'INICIAR'; }
+      else { document.getElementById('next').innerText = 'SIGUIENTE'; }
+    }
+    else if (window.location.hash == "#zh") {
+      document.getElementById('hist-title').innerText = '纽约市对于亚裔按摩工人的监控与暴力';
+      document.getElementById('hist-description').innerText = '欢迎！这幅图表会带你走过几个主要的时期，了解纽约州政策和定罪方式的变化，以及它们给亚裔按摩工人带来的监控和暴力。';
+      if (document.getElementById('hist-title').innerText === '纽约市对于亚裔按摩工人的监控与暴力') { document.getElementById('back').style.display = 'none'; }
+      else { document.getElementById('back').innerText = '回去'; }
+      if (document.getElementById('hist-title').innerText === '纽约市对于亚裔按摩工人的监控与暴力') { document.getElementById('next').innerText = 'INICIAR'; }
+      else { document.getElementById('next').innerText = '下一个'; }
+  }
+}
     document.getElementById('intropanel').style.display = 'none';
     document.getElementById('map').style.filter = 'none';
     document.getElementById('console').style.display = 'block';
     document.getElementById('reset').style.display = 'block';
-    document.getElementById('hist-title').innerText = 'Policing of Asian Massage Workers in NYC';
     document.getElementById('hist-year').innerText = '2006-2023';
-    document.getElementById('hist-description').innerText = 'Welcome! This demonstration will walk through major periods of policing of Asian massage work as a result of changes in state policies and tactics of criminalization';
-    if (document.getElementById('hist-title').innerText === 'Policing of Asian Massage Workers in NYC') { document.getElementById('back').style.display = 'none'; }
-    else { document.getElementById('back').innerText = 'BACK'; }
-    if (document.getElementById('hist-title').innerText === 'Policing of Asian Massage Workers in NYC') { document.getElementById('next').innerText = 'START'; }
-    else { document.getElementById('next').innerText = 'NEXT'; }
     document.getElementById('histpanel').style.display = 'block';
   });
 
@@ -406,9 +426,21 @@ map.on('load', () => {
   var histYear = document.getElementById('hist-year').innerText;
   var i = -1;
 
+  var text1zh = '2000年联合国《巴勒莫议定书》出台，同年美国《人口贩卖受害者保护法》通过，开始了当代打击人口贩卖的运动，将以往有关性别、性、儿童、劳工和移民权利的法律整合为一个新的框架。就此，它们共同为美国帝国主义增添了新的手段，比如：每年 6 月，美国国务院都会发布《人口贩卖报告》，根据各国是否符合解决人口贩卖问题的 "最低标准"（此标准由美国制定），对世界各国进行四项排名。2006 年，法律学者简妮·庄（Janie Chuang）首次对美国的 "世界警察 "倾向提出警告，认为美国自封为法官，对全球各地的反人口贩卖工作进行裁决。无数性工作者、行动者和学者对庄博士批评中的“警察"部分表示赞同，ta们认为反人口贩卖政策始终将警务和起诉工作置于受害者保护之上。红莺歌Red Canary Song加入了这一呼声，主张 "权利而非救援"，即要求保护工人、移民安全和劳工组织，而非在我们的社区派驻警察。  ';
+  var text2zh = '在过去十年中，亚洲按摩工作已成为人口贩卖的代名词。这并非偶然，而是美国反人口贩卖组织促成的结果，这些组织设计并开展了整场运动来取缔 "不正当按摩业"。自 2000 年美国《人口贩卖受害者保护法》通过以来，大多数反人口贩卖救援工作都是通过刑事法律系统进行的，通常是寻求刑事起诉而非受害者保护（Chapkis，2005 年）。关于全球反人口贩卖干预措施的研究常常受困于主流的 "监禁女权主义"而受到批评，尤其是当这些干预措施聚焦于性交易时，并且亚裔按摩工作常常被错认为性交易。（Bernstein，2007 年）。在此期间，北美各地通过了数十项法律，从反人口贩卖组织获得灵感、资金和政治权力，对 "身体工作 "进行了新的分类进行监管（例如，罗德岛州2016年通过的 H7007允许执法部门对亚裔按摩工作进行监管）。其它法律，如北卡罗来纳州 2017 年参议院第 548 号法案，是由美国最大的反人口贩卖组织之一 "北极星计划"（Polaris Project）与美国按摩治疗协会（American Massage Therapy Association）合作制定的。这项法律要求所有按摩师在候诊室张贴海报，标明全国人口贩卖热线电话号码。该法还要求从业人员必须拥有高中文凭，并且证明自己会说流利的英语。这种公然排外的规定体现了不同国族和阶级的劳动是如何被区分出正当与不正当的，从而允许政府对亚裔工作进行合法的监控和暴力。我们邀请你来看看，在这一时期政客游说并通过这些法律，是如何导致下一时期的治安和逮捕行动升级的。';
+  var text3zh = "近年来，围绕性工作去罪化在人权方面的益处，越来越多的国家达成了共识，这预示着重要的立法变革。例如，2021 年，纽约市五个区的地方检察官宣布停止起诉卖淫，并取消所有对于公开卖淫拉客的指控。然而，矛盾的是，自 2021 年以来，亚裔按摩工人因无证按摩和违反楼宇局规定而被逮捕和传唤的人数急剧增加。在纽约市，因为这些民事法规收到传票的人中，90% 以上是亚裔低薪移民女工（城市正义中心，2021 年）。在纽约市，亚裔按摩工人因无证按摩而被传唤和/或逮捕，其实根据的是一项很久以前设立的教育法规。纽约的无证按摩传票适用于违反《纽约教育法》第 6512 条的行为，该条禁止个人从事无证按摩，以及在知情的情况下帮助三个或三个以上的无证人员从事按摩。这些执照法将白人至上主义和仇外心理写入法律，同时声称要拯救人口贩卖的亚裔受害者。这些对民事司法的侵犯对所有低薪移民工人的社会、情感和经济生活造成了极大伤害。我们邀请你通过地图来了解这些不断变化的警务趋势。";
+  var textzh = [text1zh, text2zh, text3zh];
+
+  var text1es = 'La Introducción del Protocolo Palermo en la UN junto al pasaje del Acto Para La Protección de Víctimas de Trata en los Estados Unidos en el año 2000 soltó al movimiento contemporáneo para luchar contra la trata de personas, consolidando a leyes previas sobre el genero, la sexo, los hijos, el empleo, y los migrantes a un nuevo systema. Utilizados juntos, estos acuerdos han respaldado nuevas formas de Imperialismo Americano a través de mecanismos como el Reporte Anual del Departamento de Estado de los EE. UU. del Trato de Personas, que cada junio clasifica a los países del mundo en acuerdo a unos “estándares mínimos” para abordar el trato de las personas. En el año 2006, la académica jurídica Janie Chuang advirtió por primera vez de las tendencias “globales alguaciles” de los EE. UU. por el hecho de que se había designado el juez contra el trato de las personas alrededor del mundo. El tema “alguacil” de los estudios de Chuang ha sido repetido por innumerables trabajadores sexuales, activistas, y académicos que afirman.';
+  var text2es = 'En la última década, el trabajo de masaje asiático se ha convertido sinónimo a la trata de personas. Esto no es por equivocacíon, sino que fue un objetivo activo de las organizaciones estadounidenses contra la trata de personas que han diseñado y dedicado campañas enteras para cerrar los “Negocios Ilícitos de Masajes”. Desde la aprobación de la Ley de Protección a las Víctimas de la Trata de Estados Unidos de 2000, la mayoría de los esfuerzos de rescate contra la trata se han hecho a través del sistema legal penal, buscando a menudo el procesamiento penal en lugar de la protección de las víctimas (Chapkis 2005). Las investigaciones sobre intervenciones globales contra la trata–especialmente cuando apuntan a combatir el tráfico sexual, como a menudo se considera el trabajo de masaje asiático– han sido criticadas por sus compromisos predominantemente “feministas carcelarios” (Bernstein 2007). Durante este período, siguiendo el ejemplo, la financiación y el poder político de las organizaciones contra la trata de personas, se aprobaron docenas de leyes en toda América del Norte que crearon nuevas categorías de “trabajo corporal” (ver, por ejemplo, Rhode Island H7007 (2016), que permite a las fuerzas del orden para vigilar el trabajo de masaje asiático. Otras leyes, como el Proyecto de Ley 548 del Senado de Carolina del Norte de 2017, se forjaron a través de una colaboración entre el Proyecto Polaris, una de las organizaciones contra el tráfico de las personas más grandes del país, y la Asociación Estadounidense de Terapia de Masaje. Esta ley requiere que todos los terapeutas de masaje exponan carteles en sus salas de espera que muestren el número de teléfono de la línea directa nacional contra la trata de personas. También exige que los empleados tengan un diploma de escuela secundaria y que demuestren un dominio satisfactorio del idioma inglés. Estos requisitos descaradamente xenófobos subrayan cómo el trabajo está legitimado a través de las normas nacionales y marcadores de clase, permitiendo la vigilancia legítima del trabajo asiático. Le invitamos a usted a ver cómo el cabildeo y la adopción de estas leyes durante esta época llevaron a una intensificación de la vigilancia y los arrestos en la siguiente.';
+  var text3es = "En los años mas recientes, un creciente consenso nacional sobre los beneficios para los derechos humanos que vienen con el despenalizar del trabajo sexual ha señalado importantes cambios legislativos. Por ejemplo, en 2021, los fiscales de distrito de la ciudad de Nueva York en los cinco condados anunciaron que dejarían de procesar la prostitución y cerrarían todos los cargos abiertos de solicitación de prostitución. Sin embargo, paradójicamente, desde el año 2021, los arrestos y citaciones de masajistas asiáticos por masajes sin licencia y violaciones del departamento de edificios han aumentado dramáticamente. En la ciudad de Nueva York, más del 90 por ciento de las personas que reciben citaciones a través de estos estatutos civiles son trabajadoras asiáticas migrantes con salarios bajos (Urban Justice 2021). En Nueva York, los masajistas asiáticos son citados y/o arrestados por masajes sin licencia según un antiguo estatuto educativo. Las citaciones por masajes sin licencia en Nueva York suponen una violación de la Ley de Educación 6512 de Nueva York, que prohíbe a una persona practicar terapias de masajes sin licencia y ayudar conscientemente a tres o más personas sin licencia a practicar. Estas leyes de concesión de licencias han convertido en ley la supremacía blanca y la xenofobia, al tiempo que pretenden rescatar a las víctimas asiáticas de la trata de personas. Estas intrusiones en la justicia civil tienen impactos perjudiciales en el sustento social, emocional y económico de todos los trabajadores migrantes con salarios bajos. Le invitamos a usted a ver estas tendencias cambiantes en la actuación policial a través de estos mapas.";
+  var textes = [text1es, text2es, text3es];
+
+
   document.getElementById('next').addEventListener('click', function () {
     next();
     document.getElementById('next').innerText = 'NEXT';
+  
     document.getElementById('back').style.display = 'block';
   });
 
@@ -430,7 +462,18 @@ map.on('load', () => {
   }
 
   function setHistText() {
-    document.getElementById('hist-description').innerText = text[i];
+    if (window.location.hash) {
+      if (window.location.hash == "#en") {
+        document.getElementById('hist-description').innerText = text[i];
+    }
+    else if (window.location.hash == '#es'){
+      document.getElementById('hist-description').innerText = textes[i];
+      
+    }
+    else if (window.location.hash == "#zh") {
+      document.getElementById('hist-description').innerText = textzh[i];
+  }
+}
     document.getElementById('hist-year').innerText = years[i]
     if (i == 0) { document.getElementById('back').className = ('backOff') }
     else { document.getElementById('back').className = ('back') }
@@ -557,22 +600,32 @@ const marker4 = new mapboxgl.Marker(e4)
   .addTo(map)
 
 marker1.getElement().addEventListener('click', function () {
-  // Show the panel
-  console.log("Clicked");
-  document.getElementById('popup-title').innerText = 'Lisa';
-  // document.getElementById('popup-description').innerText = 'Person 1';
-  document.getElementById('interview-title').innerText = 'Lisa is a migrant Chinese massage worker who is also a lead organizer for the Red Canary Song Chinese outreach team.'
+  if (window.location.hash) {
+    if (window.location.hash == "#en") {
+      document.getElementById('popup-title').innerText = 'Lisa';
+      document.getElementById('interview-title').innerText = 'Lisa is a migrant Chinese massage worker who is also a lead organizer for the Red Canary Song Chinese outreach team.'
+  }
+  else if (window.location.hash == "#zh") {
+    document.getElementById('popup-title').innerText = '丽莎';
+    document.getElementById('interview-title').innerText = 'Lisa是一位中国移民按摩女工，也是红莺歌中国外展队的队长和组织者。';
+}
+}
   document.getElementById('interview-description').innerText = ''
   document.getElementById('mp4-content').src = 'oralHistories/Harm.mp4';
   document.getElementById('panel').style.display = 'block';
 });
 
 marker2.getElement().addEventListener('click', function () {
-  // Show the panel
-  console.log("Clicked");
-  document.getElementById('popup-title').innerText = 'Lisa';
-  // document.getElementById('popup-description').innerText = 'Person 2';
-  document.getElementById('interview-title').innerText = 'Lisa is a migrant Chinese massage worker who is also a lead organizer for the Red Canary Song Chinese outreach team.'
+  if (window.location.hash) {
+    if (window.location.hash == "#en") {
+      document.getElementById('popup-title').innerText = 'Lisa';
+      document.getElementById('interview-title').innerText = 'Lisa is a migrant Chinese massage worker who is also a lead organizer for the Red Canary Song Chinese outreach team.'
+  }
+  else if (window.location.hash == "#zh") {
+    document.getElementById('popup-title').innerText = '丽莎';
+    document.getElementById('interview-title').innerText = 'Lisa是一位中国移民按摩女工，也是红莺歌中国外展队的队长和组织者。';
+}
+}
   document.getElementById('interview-description').innerText = ''
   document.getElementById('mp4-content').src = 'oralHistories/DOB.mp4';
   document.getElementById('panel').style.display = 'block';
@@ -580,33 +633,48 @@ marker2.getElement().addEventListener('click', function () {
 });
 
 marker3.getElement().addEventListener('click', function () {
-  // Show the panel
-  console.log("Clicked");
-  document.getElementById('popup-title').innerText = 'Lisa';
-  // document.getElementById('popup-description').innerText = 'Person 3';
-  document.getElementById('interview-title').innerText = 'Lisa is a migrant Chinese massage worker who is also a lead organizer for the Red Canary Song Chinese outreach team.'
+  if (window.location.hash) {
+    if (window.location.hash == "#en") {
+      document.getElementById('popup-title').innerText = 'Lisa';
+      document.getElementById('interview-title').innerText = 'Lisa is a migrant Chinese massage worker who is also a lead organizer for the Red Canary Song Chinese outreach team.'
+  }
+  else if (window.location.hash == "#zh") {
+    document.getElementById('popup-title').innerText = '丽莎';
+    document.getElementById('interview-title').innerText = 'Lisa是一位中国移民按摩女工，也是红莺歌中国外展队的队长和组织者。';
+}
+}
   document.getElementById('interview-description').innerText = ''
   document.getElementById('mp4-content').src = 'oralHistories/cops.mp4';
   document.getElementById('panel').style.display = 'block';
 });
 
 marker4.getElement().addEventListener('click', function () {
-  // Show the panel
-  console.log("Clicked");
-  document.getElementById('popup-title').innerText = 'Lisa';
-  // document.getElementById('popup-description').innerText = 'Mrs. H';
-  document.getElementById('interview-title').innerText = 'Lisa is a migrant Chinese massage worker who is also a lead organizer for the Red Canary Song Chinese outreach team.'
+  if (window.location.hash) {
+    if (window.location.hash == "#en") {
+      document.getElementById('popup-title').innerText = 'Lisa';
+      document.getElementById('interview-title').innerText = 'Lisa is a migrant Chinese massage worker who is also a lead organizer for the Red Canary Song Chinese outreach team.'
+  }
+  else if (window.location.hash == "#zh") {
+    document.getElementById('popup-title').innerText = '丽莎';
+    document.getElementById('interview-title').innerText = 'Lisa是一位中国移民按摩女工，也是红莺歌中国外展队的队长和组织者。';
+}
+}
   document.getElementById('interview-description').innerText = ''
   document.getElementById('mp4-content').src = 'oralHistories/Ex1.mp4';
   document.getElementById('panel').style.display = 'block';
 });
 
 marker5.getElement().addEventListener('click', function () {
-  // Show the panel
-  console.log("Clicked");
-  document.getElementById('popup-title').innerText = 'Ms. Hwang';
-  // document.getElementById('popup-description').innerText = 'Person 5';
-  document.getElementById('interview-title').innerText = 'Ms. Hwang is a Korean migrant massage worker living and working in New York.'
+  if (window.location.hash) {
+    if (window.location.hash == "#en") {
+      document.getElementById('popup-title').innerText = 'Ms. Hwang';
+      document.getElementById('interview-title').innerText = 'Ms. Hwang is a Korean migrant massage worker living and working in New York.'
+  }
+  else if (window.location.hash == "#zh") {
+    document.getElementById('popup-title').innerText = '黄小姐';
+    document.getElementById('interview-title').innerText = '黄小姐是一位韩国移民按摩女工，在纽约工作生活。 ';
+}
+}
   document.getElementById('interview-description').innerText = ''
   document.getElementById('mp4-content').src = 'oralHistories/RCS_LA_draft.mp4';
   document.getElementById('panel').style.display = 'block';
@@ -614,10 +682,16 @@ marker5.getElement().addEventListener('click', function () {
 
 marker6.getElement().addEventListener('click', function () {
   // Show the panel
-  console.log("Clicked");
-  document.getElementById('popup-title').innerText = 'Si Si';
-  // document.getElementById('popup-description').innerText = 'Person 6';
-  document.getElementById('interview-title').innerText = 'Si Si is a massage worker in her 50s from Chongqing. She arrived in the US in 2017 and has lived in Queens and Long Island ever since.'
+  if (window.location.hash) {
+    if (window.location.hash == "#en") {
+      document.getElementById('popup-title').innerText = 'Si Si';
+      document.getElementById('interview-title').innerText = 'Si Si is a massage worker in her 50s from Chongqing. She arrived in the US in 2017 and has lived in Queens and Long Island ever since.'
+  }
+  else if (window.location.hash == "#zh") {
+    document.getElementById('popup-title').innerText = '西西';
+    document.getElementById('interview-title').innerText = '西西是一位50多岁的按摩工人，来自重庆。她在2017年到达美国，从那以后一直生活在皇后区和长岛。';
+}
+}
   var transcript = "<strong>What kind of work did you do when you first came to the US? </strong> <br><br>When I arrived in New York, I knew one person from my hometown who helped me get settled. I always thought I would work in a restaurant, \
    and worked a number of restaurant jobs and quickly learned that the pay was very low, I didn’t earn enough to pay back my debts. My friends told me, if you can’t speak English, massage \
    is the only way to make enough money to return our debts. Those of us who are older face a lot of pressure to pay back our debts quickly.<br><br>So working in massage helps us return our debts, \
@@ -685,6 +759,76 @@ document.getElementById('markerclose').addEventListener('click', function () {
   videoElement.pause();
 });
 
+
+// Create a function to change
+        // the hash value of the page
+        function changeLanguage(lang) {
+          location.hash = lang;
+          location.reload();
+      }
+
+      // Check if a hash value exists in the URL
+      if (window.location.hash) {
+
+          // Set the content of the webpage
+          // depending on the hash value
+          if (window.location.hash == "#en") {
+              headerText.textContent = "Liberation Atlas";
+              headerTwoText.textContent = "Data Justice for Migrant Massage Workers";
+              introdescription.textContent = "We invite you to grapple with the policing of migrant Asian massage work throughout New York City and to listen to the voices and lives behind the data. This project offers a critical intervention to the mapping projects undertaken by carceral anti-trafficking organizations that manipulate big data to stroke fears around massage work. These visualizations flatten the lives of workers to one-dimensional points on a map and are used to bolster policies that criminalize racialized and gendered low wage work. We encourage you to engage with the stories (un)told here and share them to amplify the struggle and power of migrant massage worker organizing.";
+              explore.textContent = "explore the map";
+              viewhist.textContent = "walk through a brief history";
+              dropbutton.textContent = "select language";
+              consoletitle.textContent = "Prostitution & Unlicensed Massage Arrests";
+              updated.textContent = "Updated January 2024";
+              cumulabel.textContent = "Cumulative";
+              yearlabel.textContent = "By Year";
+              arrestcharges.textContent = "Arrest Charges";
+              prostitutionlabel.textContent = "Prostitution";
+              massagelabel.textContent = "Unlicensed Massage";
+              housingviols.textContent = "Housing Code Violations";
+              buildinglabel.textContent = "Building Inspections (DOB)";
+              reset.textContent = "RESET MAP"
+
+            }
+            else if (window.location.hash == '#es'){
+              headerText.textContent = "Atlas De Liberación";
+              headerTwoText.textContent = "Utilizando Datos Estadísticos Para La Justicia de Trabajadores de Masaje Migrantes.";
+              introdescription.textContent = "Nosotros le invitamos a enfrentarse a la vigilancia policial de los trabajadores migrantes en las salas de masaje asiáticas en la Ciudad de Nueva York y le invitamos a ponerle atención a las voces y vidas detrás de estos datos e historias. Este proyecto ofrece una intervención crítica a los proyectos cartográficos dirigidos por organizaciones carcelarias y anti-migrantes que manipulan grandes datos para crear miedo alrededor del masaje profesional. Estas visualizaciones negativas reducen las vidas de estos empleados a solo puntos en un mapa para reforzar las políticas que criminalizan a trabajos radicalizados de bajo pago.  Nosotros le animamos a interactuar con las historias contadas aquí y a compartirlas para amplificar la lucha y el poder del organizamiento de trabajadores de masaje migrantes.";
+              explore.textContent = "explorar el mapa";
+              viewhist.textContent = "recorrer una breve historia";
+              dropbutton.textContent = "seleccione el idioma";
+              consoletitle.textContent = "Arrestos por Prostitución y Masaje No Licensiado";
+              updated.textContent = "Actualizado Enero 2024";
+              cumulabel.textContent = "Cumulativo";
+              yearlabel.textContent = "Por Año";
+              arrestcharges.textContent = "Cargos";
+              prostitutionlabel.textContent = "Prostitucíon";
+              massagelabel.textContent = "Masaje No Licenciado";
+              housingviols.textContent = "violaciones de vivienda";
+              buildinglabel.textContent = "Inspecciones de Edificios";
+              reset.textContent = "REINICIAR EL MAPA"
+            }
+          else if (window.location.hash == "#zh") {
+            headerText.textContent = "自由姐妹地图集";
+            headerTwoText.textContent = "为移民按摩工人争取数据正义";
+            introdescription.textContent = "在这张地图里，我们邀请你探讨纽约市对亚裔移民按摩工作的监控和暴力，倾听数据背后的声音和生活。这张地图致力于干预现有的叙事，例如一些反人口贩卖组织，它们利用大数据来鼓动民众对按摩工作的恐惧，来支持更多刑事监禁。它们制作的地图用视觉效果，将工人丰富立体的生活压缩为地图上扁平的一点，将种族化和性别化的低工资工作视作犯罪，以此来支持加强定罪的政策。与它们不同的是，我们希望你可以聆听这张地图里讲述的故事及无法讲述的沉默，并分享这些故事，来壮大我们移民按摩工人组织的斗争和力量。";
+            explore.textContent = "探索地图";
+            viewhist.textContent = "回顾一下简史";
+            dropbutton.textContent = "选择语言";
+            consoletitle.textContent = "卖淫罪&无证按摩逮捕";
+            updated.textContent = "2024年1月更新";
+            cumulabel.textContent = "全部显示";
+            yearlabel.textContent = "按年份显示";
+            arrestcharges.textContent = "控罪";
+            prostitutionlabel.textContent = "卖淫罪";
+            massagelabel.textContent = "无证按摩";
+            housingviols.textContent = "违反房屋法";
+            buildinglabel.textContent = "楼宇检查（楼宇局";
+            reset.textContent = "重置地图"
+
+          }
+      }
 
 // // Close the panel when the map is clicked
 // map.on('click', function() {
