@@ -48,7 +48,7 @@ a {
     position: absolute;
     margin: 15px;
     width: 215px;
-    height: 500px;
+    height: 550px;
     background-color: whitesmoke;
     padding: 5px 20px;
     border-radius: 10px;
@@ -246,6 +246,118 @@ hr {
     border-radius: 5px;
     transition: background-color 1000ms, color 1000ms;
 }
+
+#btn-all{
+    display: none;
+    bottom: 5%;
+    width: 215px;
+    height: 45px;
+    border: 3px solid #b40505fb;
+    background-color: whitesmoke;
+    color: hsla(0, 95%, 36%, 0.984);
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 5px;
+    transition: background-color 1000ms, color 1000ms;
+
+}
+
+#btn-prostitution{
+    display: none;
+    width: 215px;
+    height: 45px;
+    border: 3px solid #b40505fb;
+    background-color: whitesmoke;
+    color: hsla(0, 95%, 36%, 0.984);
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 5px;
+    transition: background-color 1000ms, color 1000ms;
+
+}
+#btn-um{
+    display: none;
+    width: 215px;
+    height: 45px;
+    border: 3px solid #b40505fb;
+    background-color: whitesmoke;
+    color: hsla(0, 95%, 36%, 0.984);
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 5px;
+    transition: background-color 1000ms, color 1000ms;
+
+}
+#btn-dob{
+    display: none;
+    width: 215px;
+    height: 45px;
+    border: 3px solid #b40505fb;
+    background-color: whitesmoke;
+    color: hsla(0, 95%, 36%, 0.984);
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 5px;
+    transition: background-color 1000ms, color 1000ms;
+
+}
+
+#btn-prostitution:hover {
+    background-color: #0080FF;
+    border: 3px solid #0080FF;
+    color: whitesmoke;
+
+}
+
+#btn-prostitution:focus {
+    background-color: #0080FF;
+    border: 3px solid #0080FF;
+    color: whitesmoke;
+
+}
+
+#btn-um:hover {
+    background-color: #009900;
+    border: 3px solid #009900;
+    color: whitesmoke;
+
+}
+#btn-um:focus {
+    background-color: #009900;
+    border: 3px solid #009900;
+    color: whitesmoke;
+
+}
+#btn-dob:hover{
+    background-color: #99004C;
+    border: 3px solid #99004C;
+    color: whitesmoke;
+
+}
+#btn-dob:focus {
+    background-color: #99004C;
+    border: 3px solid #99004C;
+    color: whitesmoke;
+
+}
+#btn-all:hover {
+    background-color: #b40505fb;
+    border: 3px solid #b40505fb;
+    color: whitesmoke;
+
+}
+#btn-all:focus {
+    background-color: #b40505fb;
+    border: 3px solid #b40505fb;
+    color: whitesmoke;
+
+}
+
+
+
+
+
+
 
 .viewhist:hover,
 .explore:hover,

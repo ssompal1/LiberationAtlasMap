@@ -54,6 +54,68 @@ map.on('load', () => {
   'rgb(255,145,210)',
   'rgb(255,205,235)']
   console.log("right before layer add")
+
+  map.addLayer({
+    id: 'prostitution',
+    type: 'fill',
+    source: {
+      type: 'geojson',
+      data: '../src/geoData/dobInHex.geojson'
+    },
+    paint: {
+      'fill-color': ['interpolate', ['linear'], ['coalesce', ['get', ['to-string', selectedYear], ['get', 'yearlyData', ['get', 'prostitutionPoints']]], 0],
+      0, 'transparent',
+      1, 'rgb(0,76,153)', 
+      200, 'rgb(0,255,255)'
+    ],
+    'fill-opacity': 0.75
+    },
+    layout: {
+      visibility: 'none'
+    }
+  });
+
+  map.addLayer({
+    id: 'um',
+    type: 'fill',
+    source: {
+      type: 'geojson',
+      data: '../src/geoData/dobInHex.geojson'
+    },
+    paint: {
+      'fill-color': ['interpolate', ['linear'], ['coalesce', ['get', ['to-string', selectedYear], ['get', 'yearlyData', ['get', 'umPoints']]], 0],
+      0, 'transparent',
+      1, 'rgb(0,102,51)', 
+      40, 'rgb(51,255,51)'
+    ],
+    'fill-opacity': 0.75
+    },
+    layout: {
+      visibility: 'none'
+    }
+  });
+
+  map.addLayer({
+    id: 'dob',
+    type: 'fill',
+    source: {
+      type: 'geojson',
+      data: '../src/geoData/dobInHex.geojson'
+    },
+    paint: {
+      'fill-color': ['interpolate', ['linear'], ['coalesce', ['get', ['to-string', selectedYear], ['get', 'yearlyData', ['get', 'dobPoints']]], 0],
+      0, 'transparent',
+      1, 'rgb(102,0,51)', 
+      50, 'rgb(255,51,153)'
+    ],
+    'fill-opacity': 0.75
+    },
+    layout: {
+      visibility: 'none'
+    }
+  });
+
+
   map.addLayer({
     id: 'collisions1',
     type: 'fill',
@@ -78,8 +140,8 @@ map.on('load', () => {
           ]
         ],
         ['interpolate', ['linear'], ['get', ['to-string', selectedYear], ['get', 'yearlyData', ['get', 'prostitutionPoints']]],
-          0, 'rgb(0,0,100)', 
-          100, 'rgb(144,202,250)'
+          1, 'rgb(0,76,153)', 
+          200, 'rgb(0,255,255)'
         ],
         ['all',
           ['>', 
@@ -95,8 +157,8 @@ map.on('load', () => {
           ]
         ],
         ['interpolate', ['linear'], ['get', ['to-string', selectedYear], ['get', 'yearlyData', ['get', 'umPoints']]],
-          0, 'rgb(102,0,0)', 
-          40, 'rgb(219,255,165)'
+          1, 'rgb(0,102,51)', 
+          40, 'rgb(51,255,51)'
         ],
         ['all',
           ['>', 
@@ -112,11 +174,11 @@ map.on('load', () => {
           ]
         ],
         ['interpolate', ['linear'], ['get', ['to-string', selectedYear], ['get', 'yearlyData', ['get', 'dobPoints']]],
-          0, 'rgb(255,205,235)', 
-          80, 'rgb(160,0,95)'
+          1, 'rgb(102,0,51)', 
+          50, 'rgb(255,51,153)'
         ],
         'transparent'],
-'fill-opacity': 0.6
+'fill-opacity': 0.75
 //,
 //"fill-extrusion-height" :["get", "arrestHeight"]
 }
@@ -130,21 +192,28 @@ map.on('load', () => {
     const year = parseInt(event.target.value);
     //update the map
     //const cumBreakdown = document.getElementById("cumulative").checked
-    const byYearBreakdown = document.getElementById("byYear").checked
+    //const byYearBreakdown = document.getElementById("byYear").checked
     // if (cumBreakdown) {
     //   filterYear = ['<=', ['number', ['get', 'ARREST_YEAR']], year];
     //   filterHouseYear = ['<=', ['number', ['get', 'Year']], year];
     // }
-    if (byYearBreakdown) {
+    //if (byYearBreakdown) {
       selectedYear = year;
-      const updatedPaintExpression = getFillColorExpression(selectedYear);
-      map.setPaintProperty('collisions1', 'fill-color', updatedPaintExpression); 
+      const updatedAllColor = getAllFillColor(selectedYear);
+      const updatedProstitutionColor = getProstitutionFillColor(selectedYear)
+      const updatedUmColor = getUmFillColor(selectedYear);
+      const updatedDobColor = getDobFillColor(selectedYear);
+      map.setPaintProperty('collisions1', 'fill-color', updatedAllColor); 
+      map.setPaintProperty('prostitution', 'fill-color', updatedProstitutionColor); 
+      map.setPaintProperty('um', 'fill-color', updatedUmColor); 
+      map.setPaintProperty('dob', 'fill-color', updatedDobColor); 
+
       // filterYear = ['==', ['number', ['get', 'ARREST_YEAR']], year];
       // filterHouseYear = ['==', ['number', ['get', 'Year']], year];
-    }
-    else {
+   // }
+   // else {
       console.log('error');
-    }
+   // }
     // filterP = ['==', ['string', ['get', 'LAW_CODE']], "PL 2300000"]
     // filterU = ['==', ['string', ['get', 'LAW_CODE']], "ED 6512001"]
     // map.setFilter('collisions', ['all', filterYear, filterP]);
@@ -186,6 +255,10 @@ map.on('load', () => {
     document.getElementById('map').style.filter = 'none';
     document.getElementById('console').style.display = 'block';
     document.getElementById('reset').style.display = 'block';
+    document.getElementById('btn-prostitution').style.display = 'block';
+    document.getElementById('btn-um').style.display = 'block';
+    document.getElementById('btn-dob').style.display = 'block';
+    document.getElementById('btn-all').style.display = 'block';
   });
 
   document.getElementById('explore').addEventListener('click', function () {
@@ -193,6 +266,11 @@ map.on('load', () => {
     document.getElementById('map').style.filter = 'none';
     document.getElementById('console').style.display = 'block';
     document.getElementById('reset').style.display = 'block';
+    document.getElementById('btn-prostitution').style.display = 'block';
+    document.getElementById('btn-um').style.display = 'block';
+    document.getElementById('btn-dob').style.display = 'block';
+    document.getElementById('btn-all').style.display = 'block';
+    document.getElementById('btn-all').classList.add('focus');
   });
 
   document.getElementById('viewhist').addEventListener('click', function () {
@@ -226,6 +304,12 @@ map.on('load', () => {
     document.getElementById('map').style.filter = 'none';
     document.getElementById('console').style.display = 'block';
     document.getElementById('reset').style.display = 'block';
+    document.getElementById('btn-prostitution').style.display = 'block';
+    document.getElementById('btn-um').style.display = 'block';
+    document.getElementById('btn-dob').style.display = 'block';
+    document.getElementById('btn-all').style.display = 'block';
+    document.getElementById('btn-all').classList.add('focus');
+
     document.getElementById('hist-year').innerText = '2006-2023';
     document.getElementById('histpanel').style.display = 'block';
   });
@@ -317,7 +401,33 @@ map.on('load', () => {
     }
 
   }
-  function getFillColorExpression(selectedYear) {
+  function getProstitutionFillColor(selectedYear){
+    return ['interpolate', ['linear'], ['coalesce', ['get', ['to-string', selectedYear], ['get', 'yearlyData', ['get', 'umPoints']]], 0],
+    0, 'transparent',
+    1, 'rgb(0,76,153)', 
+    200, 'rgb(0,255,255)'
+    ]
+
+  }
+  function getUmFillColor(selectedYear){
+   return  ['interpolate', ['linear'], ['coalesce', ['get', ['to-string', selectedYear], ['get', 'yearlyData', ['get', 'umPoints']]], 0],
+      0, 'transparent',
+      1, 'rgb(0,102,51)', 
+      40, 'rgb(51,255,51)'
+    ]
+    
+  }
+  function getDobFillColor(selectedYear){
+   return ['interpolate', ['linear'], ['coalesce', ['get', ['to-string', selectedYear], ['get', 'yearlyData', ['get', 'dobPoints']]], 0],
+      0, 'transparent',
+      1, 'rgb(102,0,51)', 
+      30, 'rgb(255,153,204)'
+    ]
+    
+  }
+
+
+  function getAllFillColor(selectedYear) {
     return [
       'case',
         ['all',
@@ -334,8 +444,8 @@ map.on('load', () => {
           ]
         ],
         ['interpolate', ['linear'], ['get', ['to-string', selectedYear], ['get', 'yearlyData', ['get', 'prostitutionPoints']]],
-          0, 'rgb(0,0,100)', 
-          100, 'rgb(144,202,250)'
+          1, 'rgb(0,76,153)', 
+          200, 'rgb(0,255,255)'
         ],
         ['all',
           ['>', 
@@ -351,8 +461,8 @@ map.on('load', () => {
           ]
         ],
         ['interpolate', ['linear'], ['get', ['to-string', selectedYear], ['get', 'yearlyData', ['get', 'umPoints']]],
-          0, 'rgb(102,0,0)', 
-          40, 'rgb(219,255,165)'
+          1, 'rgb(0,102,51)', 
+          40, 'rgb(51,255,51)'
         ],
         ['all',
           ['>', 
@@ -368,8 +478,8 @@ map.on('load', () => {
           ]
         ],
         ['interpolate', ['linear'], ['get', ['to-string', selectedYear], ['get', 'yearlyData', ['get', 'dobPoints']]],
-          0, 'rgb(255,205,235)', 
-          80, 'rgb(160,0,95)'
+          1, 'rgb(102,0,51)', 
+          30, 'rgb(255,153,204)'
         ],
       // Default color if no data matches (or the values are zero)
       'transparent'
@@ -407,6 +517,45 @@ map.on('load', () => {
       }, delay);
     });
   }
+
+  const buttonIDs = ['btn-prostitution','btn-dob','btn-um','btn-all']
+  const layerIDs = ['prostitution','dob','um','collisions1']
+  for (let i = 0; i < buttonIDs.length; i++) {
+    document
+      .getElementById(buttonIDs[i])
+      .addEventListener('click', (e) => {
+        // Loop through all layer IDs
+        console.log('registered click')
+        buttonIDs.forEach(id => document.getElementById(id).classList.remove('focus'));
+        document.getElementById(buttonIDs[i]).classList.add('focus');
+        layerIDs.forEach((layerID, index) => {
+          // Set visibility based on whether this is the clicked layer or not
+          map.setLayoutProperty(
+            layerID,
+            'visibility',
+            index === i ? 'visible' : 'none'
+          );
+        });
+      });
+  }
+
+
+  // const checks = ['prostitution', 'unlicensed massage', 'housing violation']
+  // const layerIDs = ['collisions1', 'collisions2']
+  // const checks = ['prostitution', 'housing violation']
+  // for (let i = 0; i < checks.length; i++) {
+  //   document
+  //     .getElementById(checks[i])
+  //     .addEventListener('change', (e) => {
+  //       console.log(e)
+  //       map.setLayoutProperty(
+  //         layerIDs[i],
+  //         'visibility',
+  //         e.target.checked ? 'visible' : 'none'
+  //       );
+  //     });
+
+  // }
 
 
 

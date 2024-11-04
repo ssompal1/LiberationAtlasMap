@@ -262,9 +262,9 @@ map.on('load', () => {
         ['linear'],
         ['zoom'],
         1,
-        2,
         3,
-        5
+        6,
+        9
       ],
       //LIGHT BLUE
       // 'heatmap-color': [
@@ -547,6 +547,7 @@ map.on('load', () => {
 
   }
 
+  //end of load
   // Add a marker to the map
 });
 for (const feature of geojson.features) {
