@@ -27,7 +27,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html',  // Use the index.html in /public
+      template: './public/index.html',
+      filename: 'index.html'  // Use the index.html in /public
     }),
   ],
   mode: 'development',  // Set mode to 'production' for production builds
