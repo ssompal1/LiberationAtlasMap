@@ -293,18 +293,34 @@ map.on('load', () => {
     else if (window.location.hash == '#es') {
       document.getElementById('hist-title').innerText = 'Vigilancia Policial de Trabajadores de Masaje Asiáticos en NYC';
       document.getElementById('hist-description').innerText = '¡Bienvenido/a! Esta demostración cubrirá las etapas más importantes de la vigilancia policial del masaje asiatico resultado por cambios en políticas estatales y tácticas de criminalización.';
-      if (document.getElementById('hist-title').innerText === 'Vigilancia Policial de Trabajadores de Masaje Asiáticos en NYC') { document.getElementById('back').style.display = 'none'; }
-      else { document.getElementById('back').innerText = 'REGRESAR'; }
-      if (document.getElementById('hist-title').innerText === 'Vigilancia Policial de Trabajadores de Masaje Asiáticos en NYC') { document.getElementById('next').innerText = 'INICIAR'; }
-      else { document.getElementById('next').innerText = 'SIGUIENTE'; }
+      if (document.getElementById('hist-title').innerText === 'Vigilancia Policial de Trabajadores de Masaje Asiáticos en NYC') { 
+        document.getElementById('back').style.display = 'none'; 
+        document.getElementById('next').style.display = 'none'; 
+        document.getElementById('start').innerText = "EMPEZAR"
+        document.getElementById('start').style.display  = 'inline-block';
+      }
+      else {
+        document.getElementById('back').style.display  = 'inline-block';
+        document.getElementById('next').style.display  = 'inline-block';
+        document.getElementById('start').style.display  = 'none'; 
+        
+      }
     }
     else if (window.location.hash == "#zh") {
       document.getElementById('hist-title').innerText = '纽约市对于亚裔按摩工人的监控与暴力';
       document.getElementById('hist-description').innerText = '欢迎！这幅图表会带你走过几个主要的时期，了解纽约州政策和定罪方式的变化，以及它们给亚裔按摩工人带来的监控和暴力。';
-      if (document.getElementById('hist-title').innerText === '纽约市对于亚裔按摩工人的监控与暴力') { document.getElementById('back').style.display = 'none'; }
-      else { document.getElementById('back').innerText = '回去'; }
-      if (document.getElementById('hist-title').innerText === '纽约市对于亚裔按摩工人的监控与暴力') { document.getElementById('next').innerText = '开始'; }
-      else { document.getElementById('next').innerText = '下一个'; }
+      if (document.getElementById('hist-title').innerText === '纽约市对于亚裔按摩工人的监控与暴力') { 
+        document.getElementById('back').style.display = 'none'; 
+        document.getElementById('next').style.display = 'none'; 
+        document.getElementById('start').innerText = "开始";
+        document.getElementById('start').style.display  = 'inline-block';
+      }
+      else {
+        document.getElementById('back').style.display  = 'inline-block';
+        document.getElementById('next').style.display  = 'inline-block';
+        document.getElementById('start').style.display  = 'none'; 
+        
+      }
   }
 }
     document.getElementById('intropanel').style.display = 'none';
@@ -420,12 +436,16 @@ map.on('load', () => {
     else if (window.location.hash == '#es'){
       document.getElementById('next').innerText = 'SIGUIENTE';
       document.getElementById('back').innerText = 'REGRESAR';
+      document.getElementById('next').style.display = 'inline-block';
+      document.getElementById('back').style.display = 'inline-block';
       document.getElementById('hist-description').innerText = textes[i];
       
     }
     else if (window.location.hash == "#zh") {
       document.getElementById('back').innerText = '回去'; 
       document.getElementById('next').innerText = '下一个';
+      document.getElementById('next').style.display = 'inline-block';
+      document.getElementById('back').style.display = 'inline-block';
       document.getElementById('hist-description').innerText = textzh[i];
   }
 }
