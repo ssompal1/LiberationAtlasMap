@@ -527,7 +527,7 @@ hr {
     }
 
     #hist-description{
-        font-size: 3vh;
+        font-size: 4vh;
     }
 
     #btn-um, #btn-prostitution, #btn-all, #btn-dob{
@@ -551,7 +551,7 @@ hr {
         position: relative;
         width:90%;
         justify-content: space-evenly; /* Distribute buttons evenly */
-        align-items: center; /* Center buttons vertically */
+        align-items: start; /* Center buttons vertically */
         flex-wrap: wrap; /* Ensure buttons wrap on smaller screens */
         flex-direction: column;
     } 
