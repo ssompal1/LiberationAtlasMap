@@ -254,7 +254,7 @@ map.on('load', () => {
     document.getElementById('intropanel').style.display = 'none';
     document.getElementById('map').style.filter = 'none';
     document.getElementById('console').style.display = 'block';
-    document.getElementById('reset').style.display = 'block';
+    document.getElementById('btn-reset').style.display = 'block';
     document.getElementById('btn-prostitution').style.display = 'block';
     document.getElementById('btn-um').style.display = 'block';
     document.getElementById('btn-dob').style.display = 'block';
@@ -265,7 +265,7 @@ map.on('load', () => {
     document.getElementById('intropanel').style.display = 'none';
     document.getElementById('map').style.filter = 'none';
     document.getElementById('console').style.display = 'block';
-    document.getElementById('reset').style.display = 'block';
+    document.getElementById('btn-reset').style.display = 'block';
     document.getElementById('btn-prostitution').style.display = 'block';
     document.getElementById('btn-um').style.display = 'block';
     document.getElementById('btn-dob').style.display = 'block';
@@ -303,7 +303,7 @@ map.on('load', () => {
     document.getElementById('intropanel').style.display = 'none';
     document.getElementById('map').style.filter = 'none';
     document.getElementById('console').style.display = 'block';
-    document.getElementById('reset').style.display = 'block';
+    document.getElementById('btn-reset').style.display = 'block';
     document.getElementById('btn-prostitution').style.display = 'block';
     document.getElementById('btn-um').style.display = 'block';
     document.getElementById('btn-dob').style.display = 'block';
@@ -314,7 +314,7 @@ map.on('load', () => {
     document.getElementById('histpanel').style.display = 'block';
   });
 
-  document.getElementById('reset').addEventListener('click', function () {
+  document.getElementById('btn-reset').addEventListener('click', function () {
     // document.getElementById('intropanel').style.display= 'block';
     // document.getElementById('map').style.filter = 'blur(2px);';
     // document.getElementById('console').style.display = 'none';
@@ -891,10 +891,10 @@ document.getElementById('markerclose').addEventListener('click', function () {
               explore.textContent = "explore the map";
               viewhist.textContent = "walk through a brief history";
               dropbutton.textContent = "select language";
-              consoletitle.textContent = "Prostitution & Unlicensed Massage Arrests";
+              consoletitle.textContent = "Liberation Atlas";
               updated.textContent = "Updated January 2024";
-              cumulabel.textContent = "Cumulative";
-              yearlabel.textContent = "By Year";
+             cumulabel.textContent = "Cumulative";
+             yearlabel.textContent = "By Year";
               arrestcharges.textContent = "Arrest Charges";
               prostitutionlabel.textContent = "Prostitution";
               massagelabel.textContent = "Unlicensed Massage";
