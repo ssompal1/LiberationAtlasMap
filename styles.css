@@ -223,7 +223,6 @@ hr {
 
 #btn-reset {
     display: none;
-    position: absolute;
     bottom: 2%;
     width: 215px;
     height: 45px;
@@ -356,7 +355,7 @@ hr {
     transition: background-color 500ms, color 500ms;
 }
 
-.next {
+.next,.back,#start {
     display: inline-block;
     width: 100px;
     height: 50px;
@@ -368,31 +367,13 @@ hr {
     transition: background-color 1000ms, color 1000ms;
 }
 
-.next:hover {
+.next:hover,.back:hover,#start:hover {
     background-color: #b40505fb;
     color: whitesmoke;
     cursor: pointer;
     transition: background-color 1000ms, color 1000ms;
 }
 
-.back {
-    display: inline-block;
-    width: 100px;
-    height: 50px;
-    border: 3px solid #b40505fb;
-    background-color: whitesmoke;
-    color: hsla(0, 95%, 36%, 0.984);
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 1000ms, color 1000ms;
-}
-
-.back:hover {
-    background-color: #b40505fb;
-    color: whitesmoke;
-    cursor: pointer;
-    transition: background-color 1000ms, color 1000ms;
-}
 
 .backOff {
     display: inline-block;
@@ -478,7 +459,7 @@ hr {
     margin-left: 4%;
   }
 
-@media (max-width: 900px) {
+@media (max-width: 932px) {
     #headerText {
         color: black;
         font-size: 12vh;
@@ -503,6 +484,7 @@ hr {
         width: 20%;
         height: 93%;
         margin: 10px;
+        overflow-y: scroll;
     }
 
     #consoletitle {
@@ -519,9 +501,10 @@ hr {
     }
 
     #panel, #histpanel, #zinepanel {
-        width: 30%;
-        margin: 10px;
-        padding: 10px;
+        width: 25%;
+        height: 88%;
+        margin: 10px 10px;
+        padding: 2vh 2vh;
     }
 
     #btn-um, #btn-prostitution, #btn-all, #btn-dob{
@@ -530,18 +513,22 @@ hr {
     }
 
     #btn-reset{
-        width:80%;
+        width:100%;
         height: 7%;
-        margin-left:3%;
-
+        margin-left: 1.5vh;
     }
 
     .btn-container {
         flex-direction: column;
     }
 
-    .viewhist, .explore, .next, .back, .dropbtn {
+    .viewhist, .explore, .dropbtn {
         margin: 5px 0;
+    }
+    .next, .back, #start  {
+        margin: 5px 0;
+        height:20%;
+
     }
 
     h3 {

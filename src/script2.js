@@ -278,10 +278,17 @@ map.on('load', () => {
       if (window.location.hash == "#en") {
         document.getElementById('hist-title').innerText = 'Policing of Asian Massage Workers in NYC';
         document.getElementById('hist-description').innerText = 'Welcome! This demonstration will walk through major periods of policing of Asian massage work as a result of changes in state policies and tactics of criminalization';
-        if (document.getElementById('hist-title').innerText === 'Policing of Asian Massage Workers in NYC') { document.getElementById('back').style.display = 'none'; }
-        else { document.getElementById('back').innerText = 'BACK'; }
-        if (document.getElementById('hist-title').innerText === 'Policing of Asian Massage Workers in NYC') { document.getElementById('next').innerText = 'START'; }
-        else { document.getElementById('next').innerText = 'NEXT'; }
+        if (document.getElementById('hist-title').innerText === 'Policing of Asian Massage Workers in NYC') { 
+          document.getElementById('back').style.display = 'none'; 
+          document.getElementById('next').style.display = 'none'; 
+          document.getElementById('start').style.display  = 'inline-block';
+        }
+        else {
+          document.getElementById('back').style.display  = 'inline-block';
+          document.getElementById('next').style.display  = 'inline-block';
+          document.getElementById('start').style.display  = 'none'; 
+          
+        }
     }
     else if (window.location.hash == '#es') {
       document.getElementById('hist-title').innerText = 'Vigilancia Policial de Trabajadores de Masaje Asiáticos en NYC';
@@ -342,15 +349,50 @@ map.on('load', () => {
   var textes = [text1es, text2es, text3es];
 
 
+  document.getElementById('start').addEventListener('click', function () {
+    document.getElementById('start').style.display = 'none';
+    next();
+    if (document.getElementById('hist-year').innerText == '2006-2013'){
+      document.getElementById('back').style.display = 'none';}
+    else {
+      document.getElementById('back').style.display = 'inline-block';}
+    
+    if (document.getElementById('hist-year').innerText == '2018-2023'){
+      document.getElementById('next').style.display = 'none';}
+    else {
+      document.getElementById('next').style.display = 'inline-block';
+    }
+  });
+
   document.getElementById('next').addEventListener('click', function () {
     next();
     //document.getElementById('next').innerText = 'NEXT';
-  
-    document.getElementById('back').style.display = 'block';
+    if (document.getElementById('hist-year').innerText == '2006-2013'){
+      document.getElementById('back').style.display = 'none';}
+    else {
+      document.getElementById('back').style.display = 'inline-block';}
+    
+    if (document.getElementById('hist-year').innerText == '2018-2023'){
+      document.getElementById('next').style.display = 'none';}
+    else {
+      document.getElementById('next').style.display = 'inline-block';
+    }
+    
   });
 
   document.getElementById('back').addEventListener('click', function () {
     back();
+    if (document.getElementById('hist-year').innerText == '2006-2013'){
+      document.getElementById('back').style.display = 'none';}
+    else {
+      document.getElementById('back').style.display = 'inline-block';}
+    
+    if (document.getElementById('hist-year').innerText == '2018-2023'){
+      document.getElementById('next').style.display = 'none';}
+    else {
+      document.getElementById('next').style.display = 'inline-block';
+    }
+   
   });
 
   function next() {
@@ -371,6 +413,8 @@ map.on('load', () => {
       if (window.location.hash == "#en") {
         document.getElementById('next').innerText = 'NEXT';
         document.getElementById('back').innerText = 'BACK';
+        document.getElementById('next').style.display = 'inline-block';
+        document.getElementById('back').style.display = 'inline-block';
         document.getElementById('hist-description').innerText = text[i];
     }
     else if (window.location.hash == '#es'){
