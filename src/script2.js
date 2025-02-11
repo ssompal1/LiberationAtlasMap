@@ -254,7 +254,7 @@ map.on('load', () => {
     document.getElementById('intropanel').style.display = 'none';
     document.getElementById('map').style.filter = 'none';
     document.getElementById('console').style.display = 'block';
-    document.getElementById('reset').style.display = 'block';
+    document.getElementById('btn-reset').style.display = 'block';
     document.getElementById('btn-prostitution').style.display = 'block';
     document.getElementById('btn-um').style.display = 'block';
     document.getElementById('btn-dob').style.display = 'block';
@@ -265,7 +265,7 @@ map.on('load', () => {
     document.getElementById('intropanel').style.display = 'none';
     document.getElementById('map').style.filter = 'none';
     document.getElementById('console').style.display = 'block';
-    document.getElementById('reset').style.display = 'block';
+    document.getElementById('btn-reset').style.display = 'block';
     document.getElementById('btn-prostitution').style.display = 'block';
     document.getElementById('btn-um').style.display = 'block';
     document.getElementById('btn-dob').style.display = 'block';
@@ -278,32 +278,55 @@ map.on('load', () => {
       if (window.location.hash == "#en") {
         document.getElementById('hist-title').innerText = 'Policing of Asian Massage Workers in NYC';
         document.getElementById('hist-description').innerText = 'Welcome! This demonstration will walk through major periods of policing of Asian massage work as a result of changes in state policies and tactics of criminalization';
-        if (document.getElementById('hist-title').innerText === 'Policing of Asian Massage Workers in NYC') { document.getElementById('back').style.display = 'none'; }
-        else { document.getElementById('back').innerText = 'BACK'; }
-        if (document.getElementById('hist-title').innerText === 'Policing of Asian Massage Workers in NYC') { document.getElementById('next').innerText = 'START'; }
-        else { document.getElementById('next').innerText = 'NEXT'; }
+        if (document.getElementById('hist-title').innerText === 'Policing of Asian Massage Workers in NYC') { 
+          document.getElementById('back').style.display = 'none'; 
+          document.getElementById('next').style.display = 'none'; 
+          document.getElementById('start').style.display  = 'inline-block';
+        }
+        else {
+          document.getElementById('back').style.display  = 'inline-block';
+          document.getElementById('next').style.display  = 'inline-block';
+          document.getElementById('start').style.display  = 'none'; 
+          
+        }
     }
     else if (window.location.hash == '#es') {
       document.getElementById('hist-title').innerText = 'Vigilancia Policial de Trabajadores de Masaje Asiáticos en NYC';
       document.getElementById('hist-description').innerText = '¡Bienvenido/a! Esta demostración cubrirá las etapas más importantes de la vigilancia policial del masaje asiatico resultado por cambios en políticas estatales y tácticas de criminalización.';
-      if (document.getElementById('hist-title').innerText === 'Vigilancia Policial de Trabajadores de Masaje Asiáticos en NYC') { document.getElementById('back').style.display = 'none'; }
-      else { document.getElementById('back').innerText = 'REGRESAR'; }
-      if (document.getElementById('hist-title').innerText === 'Vigilancia Policial de Trabajadores de Masaje Asiáticos en NYC') { document.getElementById('next').innerText = 'INICIAR'; }
-      else { document.getElementById('next').innerText = 'SIGUIENTE'; }
+      if (document.getElementById('hist-title').innerText === 'Vigilancia Policial de Trabajadores de Masaje Asiáticos en NYC') { 
+        document.getElementById('back').style.display = 'none'; 
+        document.getElementById('next').style.display = 'none'; 
+        document.getElementById('start').innerText = "EMPEZAR"
+        document.getElementById('start').style.display  = 'inline-block';
+      }
+      else {
+        document.getElementById('back').style.display  = 'inline-block';
+        document.getElementById('next').style.display  = 'inline-block';
+        document.getElementById('start').style.display  = 'none'; 
+        
+      }
     }
     else if (window.location.hash == "#zh") {
       document.getElementById('hist-title').innerText = '纽约市对于亚裔按摩工人的监控与暴力';
       document.getElementById('hist-description').innerText = '欢迎！这幅图表会带你走过几个主要的时期，了解纽约州政策和定罪方式的变化，以及它们给亚裔按摩工人带来的监控和暴力。';
-      if (document.getElementById('hist-title').innerText === '纽约市对于亚裔按摩工人的监控与暴力') { document.getElementById('back').style.display = 'none'; }
-      else { document.getElementById('back').innerText = '回去'; }
-      if (document.getElementById('hist-title').innerText === '纽约市对于亚裔按摩工人的监控与暴力') { document.getElementById('next').innerText = '开始'; }
-      else { document.getElementById('next').innerText = '下一个'; }
+      if (document.getElementById('hist-title').innerText === '纽约市对于亚裔按摩工人的监控与暴力') { 
+        document.getElementById('back').style.display = 'none'; 
+        document.getElementById('next').style.display = 'none'; 
+        document.getElementById('start').innerText = "开始";
+        document.getElementById('start').style.display  = 'inline-block';
+      }
+      else {
+        document.getElementById('back').style.display  = 'inline-block';
+        document.getElementById('next').style.display  = 'inline-block';
+        document.getElementById('start').style.display  = 'none'; 
+        
+      }
   }
 }
     document.getElementById('intropanel').style.display = 'none';
     document.getElementById('map').style.filter = 'none';
     document.getElementById('console').style.display = 'block';
-    document.getElementById('reset').style.display = 'block';
+    document.getElementById('btn-reset').style.display = 'block';
     document.getElementById('btn-prostitution').style.display = 'block';
     document.getElementById('btn-um').style.display = 'block';
     document.getElementById('btn-dob').style.display = 'block';
@@ -314,7 +337,7 @@ map.on('load', () => {
     document.getElementById('histpanel').style.display = 'block';
   });
 
-  document.getElementById('reset').addEventListener('click', function () {
+  document.getElementById('btn-reset').addEventListener('click', function () {
     // document.getElementById('intropanel').style.display= 'block';
     // document.getElementById('map').style.filter = 'blur(2px);';
     // document.getElementById('console').style.display = 'none';
@@ -342,15 +365,50 @@ map.on('load', () => {
   var textes = [text1es, text2es, text3es];
 
 
+  document.getElementById('start').addEventListener('click', function () {
+    document.getElementById('start').style.display = 'none';
+    next();
+    if (document.getElementById('hist-year').innerText == '2006-2013'){
+      document.getElementById('back').style.display = 'none';}
+    else {
+      document.getElementById('back').style.display = 'inline-block';}
+    
+    if (document.getElementById('hist-year').innerText == '2018-2023'){
+      document.getElementById('next').style.display = 'none';}
+    else {
+      document.getElementById('next').style.display = 'inline-block';
+    }
+  });
+
   document.getElementById('next').addEventListener('click', function () {
     next();
     //document.getElementById('next').innerText = 'NEXT';
-  
-    document.getElementById('back').style.display = 'block';
+    if (document.getElementById('hist-year').innerText == '2006-2013'){
+      document.getElementById('back').style.display = 'none';}
+    else {
+      document.getElementById('back').style.display = 'inline-block';}
+    
+    if (document.getElementById('hist-year').innerText == '2018-2023'){
+      document.getElementById('next').style.display = 'none';}
+    else {
+      document.getElementById('next').style.display = 'inline-block';
+    }
+    
   });
 
   document.getElementById('back').addEventListener('click', function () {
     back();
+    if (document.getElementById('hist-year').innerText == '2006-2013'){
+      document.getElementById('back').style.display = 'none';}
+    else {
+      document.getElementById('back').style.display = 'inline-block';}
+    
+    if (document.getElementById('hist-year').innerText == '2018-2023'){
+      document.getElementById('next').style.display = 'none';}
+    else {
+      document.getElementById('next').style.display = 'inline-block';
+    }
+   
   });
 
   function next() {
@@ -371,17 +429,23 @@ map.on('load', () => {
       if (window.location.hash == "#en") {
         document.getElementById('next').innerText = 'NEXT';
         document.getElementById('back').innerText = 'BACK';
+        document.getElementById('next').style.display = 'inline-block';
+        document.getElementById('back').style.display = 'inline-block';
         document.getElementById('hist-description').innerText = text[i];
     }
     else if (window.location.hash == '#es'){
       document.getElementById('next').innerText = 'SIGUIENTE';
       document.getElementById('back').innerText = 'REGRESAR';
+      document.getElementById('next').style.display = 'inline-block';
+      document.getElementById('back').style.display = 'inline-block';
       document.getElementById('hist-description').innerText = textes[i];
       
     }
     else if (window.location.hash == "#zh") {
       document.getElementById('back').innerText = '回去'; 
       document.getElementById('next').innerText = '下一个';
+      document.getElementById('next').style.display = 'inline-block';
+      document.getElementById('back').style.display = 'inline-block';
       document.getElementById('hist-description').innerText = textzh[i];
   }
 }
@@ -891,10 +955,10 @@ document.getElementById('markerclose').addEventListener('click', function () {
               explore.textContent = "explore the map";
               viewhist.textContent = "walk through a brief history";
               dropbutton.textContent = "select language";
-              consoletitle.textContent = "Prostitution & Unlicensed Massage Arrests";
+              consoletitle.textContent = "Liberation Atlas";
               updated.textContent = "Updated January 2024";
-              cumulabel.textContent = "Cumulative";
-              yearlabel.textContent = "By Year";
+             cumulabel.textContent = "Cumulative";
+             yearlabel.textContent = "By Year";
               arrestcharges.textContent = "Arrest Charges";
               prostitutionlabel.textContent = "Prostitution";
               massagelabel.textContent = "Unlicensed Massage";
