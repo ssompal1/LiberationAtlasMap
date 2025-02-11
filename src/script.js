@@ -850,11 +850,14 @@ document.getElementById('markerclose').addEventListener('click', function () {
           location.reload();
       }
 
+      print("The window location has value is" + window.location.hash)
+
       // Check if a hash value exists in the URL
       if (window.location.hash) {
 
           // Set the content of the webpage
           // depending on the hash value
+
           if (window.location.hash == "#en") {
               headerText.textContent = "Liberation Atlas";
               headerTwoText.textContent = "Data Justice for Migrant Massage Workers";

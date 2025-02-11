@@ -32,6 +32,14 @@ const geojson = {
     }
   ]
 };
+
+window.onload = function () {
+  if (window.location.hash == "#defaultHash") {  // Only set if no hash is present
+      window.location.hash = "#en";
+  } 
+  console.log("window location hash is" + window.location.hash)
+};
+
 map.on('load', () => {
   let filterYear = ['==', ['number', ['get', 'ARREST_YEAR']], 2006];
   let filterHouseYear = ['==', ['number', ['get', 'Year']], 2006];
@@ -41,6 +49,7 @@ map.on('load', () => {
   let filterHV = ['==', ['string', ['get', 'type_of_violation']], "maintenance code violation"]
   let filterArrestPoints = ['>',['number',['get','arrestPoints']],0]
   let selectedYear = 2006;
+
 
 
   arrestsColorRamp = ['rgba(0,0,100,0)','rgb(21,101,192)','rgb(25,118,210)','rgb(33,150,243)','rgb(100,181,246)','rgb(144,202,250)']
@@ -53,7 +62,6 @@ map.on('load', () => {
   'rgb(255,85,186)',
   'rgb(255,145,210)',
   'rgb(255,205,235)']
-  console.log("right before layer add")
 
   map.addLayer({
     id: 'prostitution',
@@ -183,7 +191,6 @@ map.on('load', () => {
 //"fill-extrusion-height" :["get", "arrestHeight"]
 }
 });
-
 
   //comment
   ///hearogiheoirghoaeig
@@ -942,9 +949,9 @@ document.getElementById('markerclose').addEventListener('click', function () {
           location.hash = lang;
           location.reload();
       }
-
       // Check if a hash value exists in the URL
       if (window.location.hash) {
+
 
           // Set the content of the webpage
           // depending on the hash value
