@@ -68,7 +68,7 @@ map.on('load', () => {
     type: 'fill',
     source: {
       type: 'geojson',
-      data: '../src/geoData/dobInHex.geojson'
+      data: '../public/src/geoData/dobInHex.geojson'
     },
     paint: {
       'fill-color': ['interpolate', ['linear'], ['coalesce', ['get', ['to-string', selectedYear], ['get', 'yearlyData', ['get', 'prostitutionPoints']]], 0],
@@ -88,7 +88,7 @@ map.on('load', () => {
     type: 'fill',
     source: {
       type: 'geojson',
-      data: '../src/geoData/dobInHex.geojson'
+      data: '../public/src/geoData/dobInHex.geojson'
     },
     paint: {
       'fill-color': ['interpolate', ['linear'], ['coalesce', ['get', ['to-string', selectedYear], ['get', 'yearlyData', ['get', 'umPoints']]], 0],
@@ -108,7 +108,7 @@ map.on('load', () => {
     type: 'fill',
     source: {
       type: 'geojson',
-      data: '../src/geoData/dobInHex.geojson'
+      data: '../public/src/geoData/dobInHex.geojson'
     },
     paint: {
       'fill-color': ['interpolate', ['linear'], ['coalesce', ['get', ['to-string', selectedYear], ['get', 'yearlyData', ['get', 'dobPoints']]], 0],
@@ -129,7 +129,7 @@ map.on('load', () => {
     type: 'fill',
     source: {
       type: 'geojson',
-      data: '../src/geoData/dobInHex.geojson'
+      data: '../public/src/geoData/dobInHex.geojson'
     },
     paint: {
       'fill-color': [
