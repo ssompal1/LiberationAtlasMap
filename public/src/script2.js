@@ -68,7 +68,7 @@ map.on('load', () => {
     type: 'fill',
     source: {
       type: 'geojson',
-      data: '../public/src/geoData/dobInHex.geojson'
+      data: './geoData/dobInHex.geojson'
     },
     paint: {
       'fill-color': ['interpolate', ['linear'], ['coalesce', ['get', ['to-string', selectedYear], ['get', 'yearlyData', ['get', 'prostitutionPoints']]], 0],
@@ -88,7 +88,7 @@ map.on('load', () => {
     type: 'fill',
     source: {
       type: 'geojson',
-      data: '../public/src/geoData/dobInHex.geojson'
+      data: './geoData/dobInHex.geojson'
     },
     paint: {
       'fill-color': ['interpolate', ['linear'], ['coalesce', ['get', ['to-string', selectedYear], ['get', 'yearlyData', ['get', 'umPoints']]], 0],
@@ -108,7 +108,7 @@ map.on('load', () => {
     type: 'fill',
     source: {
       type: 'geojson',
-      data: '../public/src/geoData/dobInHex.geojson'
+      data: './geoData/dobInHex.geojson'
     },
     paint: {
       'fill-color': ['interpolate', ['linear'], ['coalesce', ['get', ['to-string', selectedYear], ['get', 'yearlyData', ['get', 'dobPoints']]], 0],
@@ -129,7 +129,7 @@ map.on('load', () => {
     type: 'fill',
     source: {
       type: 'geojson',
-      data: '../public/src/geoData/dobInHex.geojson'
+      data: './geoData/dobInHex.geojson'
     },
     paint: {
       'fill-color': [
@@ -860,7 +860,7 @@ transcript = transcript.replace(/\n/g, '</p><p>&nbsp;</p><p>');
   // transcript = '<p>' + transcript + '</p>';
 
   document.getElementById('interview-description').innerHTML = transcript
-  document.getElementById('mp4-content').src = 'oralHistories/Si SI.mp4';
+  document.getElementById('mp4-content').src = '../oralHistories/Si SI.mp4';
   document.getElementById('mp4-content').style.display = 'inline';
   document.getElementById('panel').style.display = 'block';
 });
