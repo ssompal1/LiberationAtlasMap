@@ -1,4 +1,15 @@
-mapboxgl.accessToken = "pk.eyJ1Ijoic2hyYXZ5YS1zb21wYWxsaSIsImEiOiJjbGEycmZ3YnAwMzA4M3dwbjExejNqeDczIn0.U0UKRmRLgqJVkz1BizIQBg"
+// mapboxgl.accessToken = "pk.eyJ1Ijoic2hyYXZ5YS1zb21wYWxsaSIsImEiOiJjbGEycmZ3YnAwMzA4M3dwbjExejNqeDczIn0.U0UKRmRLgqJVkz1BizIQBg"
+fetch('/.netlify/functions/getMapboxKey')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Failed to fetch Mapbox API key');
+    }
+    return response.json();
+  })
+  .then(data => {
+    const mapboxKey = data.key;
+    mapboxgl.accessToken = mapboxKey;
+  });
 const map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/dark-v11',
